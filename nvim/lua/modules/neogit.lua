@@ -8,8 +8,18 @@ return function()
     disable_commit_confirmation = true,
     auto_refresh = true,
     disable_builtin_notifications = false,
-    -- commit_popup = {
-    --   kind = 'floating',
-    -- },
+    kind = 'floating',
+    commit_popup = {
+      kind = 'floating',
+    },
+    mappings = {
+      -- modify status buffer mappings
+      status = {
+        -- Adds a mapping with "B" as key that does the "BranchPopup" command
+        ['B'] = 'BranchPopup',
+        -- Removes the default mapping of "s"
+        ['<leader>q'] = 'Close',
+      },
+    },
   }
 end
