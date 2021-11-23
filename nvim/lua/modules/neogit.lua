@@ -8,7 +8,7 @@ return function()
     disable_commit_confirmation = true,
     auto_refresh = true,
     disable_builtin_notifications = false,
-    kind = 'floating',
+    -- kind = 'floating',
     -- sad this doesnt work :(
     -- commit_popup = {
     --   kind = 'floating',

@@ -23,7 +23,7 @@ require('packer').startup(function(use)
   }
 
   -- LSP AND LANG
-  use { 'folke/lsp-colors.nvim' }
+  -- use { 'folke/lsp-colors.nvim' }
   use {
     'hrsh7th/nvim-cmp',
     config = require 'modules.cmp',
@@ -43,10 +43,6 @@ require('packer').startup(function(use)
       'ray-x/lsp_signature.nvim',
     },
   }
-  -- use {
-  --   'ray-x/lsp_signature.nvim',
-  --   config = require 'modules.signature'
-  -- }
 
   -- FUZZY
   use {
@@ -124,8 +120,13 @@ require('packer').startup(function(use)
 
   use 'tpope/vim-commentary'
   use 'ap/vim-buftabline'
-  use 'karb94/neoscroll.nvim'
   use 'jiangmiao/auto-pairs'
+  use {
+    'karb94/neoscroll.nvim',
+    config = function()
+      require('neoscroll').setup()
+    end,
+  }
   -- use 'itchyny/lightline.vim'
 
   use {
