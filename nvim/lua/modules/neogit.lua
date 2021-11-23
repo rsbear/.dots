@@ -9,9 +9,10 @@ return function()
     auto_refresh = true,
     disable_builtin_notifications = false,
     kind = 'floating',
-    commit_popup = {
-      kind = 'floating',
-    },
+    -- sad this doesnt work :(
+    -- commit_popup = {
+    --   kind = 'floating',
+    -- },
     mappings = {
       -- modify status buffer mappings
       status = {
