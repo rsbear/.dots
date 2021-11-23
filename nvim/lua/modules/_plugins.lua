@@ -74,7 +74,7 @@ require('packer').startup(function(use)
   use {
     'TimUntersberger/neogit',
     requires = 'nvim-lua/plenary.nvim',
-    -- config = require 'modules.neogit',
+    config = require 'modules.neogit',
   }
 
   use 'tpope/vim-fugitive' -- Git commands in nvim
