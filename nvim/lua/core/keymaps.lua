@@ -32,7 +32,7 @@ map('n', '<leader>xq', '<cmd>Trouble quickfix<cr>')
 map('n', 'gR', '<cmd>Trouble lsp_references<cr>')
 
 -- neogit
-map('n', '<leader>gg', '<cmd>:Neogit<cr>')
+map('n', '<leader>gg', [[<cmd>lua require('neogit').open({ kind = "floating" })<cr>]])
 
 -- TOGGLE DIAGNOSTICS
 -- map('n', '<leader>d', ':call v:lua.toggle_diagnostics()<CR>')
