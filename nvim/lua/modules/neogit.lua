@@ -8,8 +8,8 @@ return function()
     disable_commit_confirmation = true,
     auto_refresh = true,
     disable_builtin_notifications = false,
-    commit_popup = {
-      kind = 'floating',
-    },
+    -- commit_popup = {
+    --   kind = 'floating',
+    -- },
   }
 end
