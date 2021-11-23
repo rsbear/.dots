@@ -24,15 +24,15 @@ require('packer').startup(function(use)
 
   -- LSP AND LANG
   use { 'folke/lsp-colors.nvim' }
-  use { 'L3MON4D3/LuaSnip', config = require 'modules.luasnip' }
-  use 'saadparwaiz1/cmp_luasnip'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
   use {
     'hrsh7th/nvim-cmp',
     config = require 'modules.cmp',
     requires = {
       'onsails/lspkind-nvim',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'saadparwaiz1/cmp_luasnip',
+      { 'L3MON4D3/LuaSnip', config = require 'modules.luasnip' },
     },
   }
   use {
@@ -43,6 +43,10 @@ require('packer').startup(function(use)
       'ray-x/lsp_signature.nvim',
     },
   }
+  -- use {
+  --   'ray-x/lsp_signature.nvim',
+  --   config = require 'modules.signature'
+  -- }
 
   -- FUZZY
   use {

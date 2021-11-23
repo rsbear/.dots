@@ -9,10 +9,10 @@ return function()
         i = {
           ['<C-u>'] = false,
           ['<C-d>'] = false,
-          ['<c-t>'] = trouble.open_with_trouble,
+          ['<C-t>'] = trouble.open_with_trouble,
         },
         n = {
-          ['<c-t>'] = trouble.open_with_trouble,
+          ['<C-t>'] = trouble.open_with_trouble,
         },
       },
     },

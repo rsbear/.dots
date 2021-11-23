@@ -9,13 +9,28 @@ local function symbols_override()
 end
 
 local function disable_virtual_text()
-  vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics,
-    { virtual_text = false, signs = true, underline = true, update_in_insert = true }
-  )
+  vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+    underline = true,
+    update_in_insert = false,
+    virtual_text = {
+      spacing = 4,
+    },
+    -- Use a function to dynamically turn signs off
+    -- and on, using buffer local variables
+    signs = function()
+      return true
+    end,
+  })
 end
 
-local is_virtual_text_active = true
+-- local function disable_virtual_text()
+--   vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
+--     vim.lsp.diagnostic.on_publish_diagnostics,
+--     { virtual_text = false, signs = true, underline = true, update_in_insert = true }
+--   )
+-- end
+
+local is_virtual_text_active = false
 function M.toggle_virtual_text()
   if is_virtual_text_active == true then
     is_virtual_text_active = false
@@ -28,6 +43,7 @@ end
 
 function M.setup()
   symbols_override()
+  disable_virtual_text()
 end
 
 return M

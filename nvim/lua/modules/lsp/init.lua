@@ -1,8 +1,5 @@
 return function()
   local lspconfig = require 'lspconfig'
-  -- if not lspconfig then
-  --   return
-  -- end
 
   local on_attach = require 'modules.lsp.on_attach'
   local format_config = require 'modules.lsp.format'

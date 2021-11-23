@@ -10,24 +10,19 @@ return function(client)
   lua_nmap('gD', 'vim.lsp.buf.declaration()')
   lua_nmap('gi', 'vim.lsp.buf.implementation()')
   lua_nmap('gr', 'vim.lsp.buf.references()')
-  lua_nmap('<space>ca', 'vim.lsp.buf.code_action()')
-  lua_nmap('<space>gh', 'vim.lsp.buf.signature_help()')
-  lua_nmap('<space>rn', 'vim.lsp.buf.rename()')
-  lua_nmap('<space>td', 'require"modules.lsp.ui".toggle_virtual_text()')
+  lua_nmap('<leader>e', 'vim.lsp.diagnostic.show_line_diagnostics()')
+  lua_nmap('<leader>ca', 'vim.lsp.buf.code_action()')
+  lua_nmap('<leader>gh', 'vim.lsp.buf.signature_help()')
+  lua_nmap('<leader>rn', 'vim.lsp.buf.rename()')
+  lua_nmap('<leader>td', 'require"modules.lsp.ui".toggle_virtual_text()')
+  lua_nmap('<leader>tt', 'vim.lsp.buf.type_definition()')
   lua_nmap('[d', 'vim.lsp.diagnostic.goto_prev()')
   lua_nmap(']d', 'vim.lsp.diagnostic.goto_next()')
+  lua_nmap('<leader>n', 'vim.lsp.buf.signature_help()')
 
-  -- local lsp_signature = safe_require 'lsp_signature'
+  local lsp_signature = require 'lsp_signature'
   -- if lsp_signature then
-  --   lsp_signature.on_attach()
-  -- end
-
-  -- if client.name == 'tsserver' then
-  --   local ts_utils = safe_require 'nvim-lsp-ts-utils'
-  --   if ts_utils then
-  --     -- ts_utilssetup {}
-  --     ts_utils.setup_client(client)
-  --   end
+  lsp_signature.on_attach()
   -- end
 
   -- So that the only client with format capabilities is efm
