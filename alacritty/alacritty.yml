@@ -1,12 +1,12 @@
 font:
   size: 15.0
   normal:
-    family: RobotoMono Nerd Font Mono
+    # family: RobotoMono Nerd Font Mono
     # family: SF Mono
     # family: BlexMono Nerd Font Mono
     # family: Cousine Nerd Font Mono
     # family: Inconsolata Nerd Font Mono
-    # family: Hasklug Nerd Font
+    family: Hasklug Nerd Font
     # family: iA Writer Mono S
 
     # comment out the regular and the font will be fatter like semibold
@@ -15,7 +15,7 @@ font:
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 0
-    y: 8
+    y: 6
 
 window:
   dimensions:

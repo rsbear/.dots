@@ -20,9 +20,10 @@ return function(client)
   lua_nmap(']d', 'vim.lsp.diagnostic.goto_next()')
   lua_nmap('<leader>n', 'vim.lsp.buf.signature_help()')
 
-  local lsp_signature = require 'lsp_signature'
+  -- DEPRECATE, idk not really loving this plugin
+  -- local lsp_signature = require 'lsp_signature'
   -- if lsp_signature then
-  lsp_signature.on_attach()
+  -- lsp_signature.on_attach()
   -- end
 
   -- So that the only client with format capabilities is efm
