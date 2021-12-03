@@ -58,6 +58,14 @@ require("packer").startup(function(use)
 		},
 	})
 
+	-- SEARCH AND REPLACE
+	use({
+		"VonHeikemen/searchbox.nvim",
+		requires = {
+			{ "MunifTanjim/nui.nvim" },
+		},
+	})
+
 	-- -- Add indentation guides even on blank lines
 	-- use 'lukas-reineke/indent-blankline.nvim'
 
@@ -114,13 +122,16 @@ require("packer").startup(function(use)
 	-- }
 
 	--  LUXURY
-	use("wadackel/vim-dogrun")
-	use("arzg/vim-substrata")
 	use("folke/tokyonight.nvim")
-
+	use({
+		"shaunsingh/nord.nvim",
+		-- config = require("modules.nordc"),
+	})
+	use("wadackel/vim-dogrun")
+	use("kvrohit/substrata.nvim")
 	use("tpope/vim-commentary")
-	use("ap/vim-buftabline")
 	use("jiangmiao/auto-pairs")
+	-- use("ap/vim-buftabline")
 	use({
 		"karb94/neoscroll.nvim",
 		config = function()

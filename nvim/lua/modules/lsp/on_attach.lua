@@ -30,11 +30,6 @@ return function(client)
 		client.resolved_capabilities.document_formatting = false
 	end
 
-	-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-	-- 	vim.lsp.diagnostic.on_publish_diagnostics,
-	-- 	{ virtual_text = false }
-	-- )
-
 	if client.resolved_capabilities.document_formatting then
 		vim.cmd([[
         augroup Format

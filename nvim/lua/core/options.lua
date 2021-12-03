@@ -1,7 +1,7 @@
 local o = vim.o
 
-o.completeopt = 'menuone,noinsert,noselect'
-o.inccommand = 'nosplit'
+o.completeopt = "menuone,noinsert,noselect"
+o.inccommand = "nosplit"
 
 o.tabstop = 2
 o.softtabstop = 2
@@ -9,7 +9,7 @@ o.shiftwidth = 2
 
 o.hlsearch = true
 o.hidden = true
-o.mouse = 'a'
+o.mouse = "a"
 o.breakindent = true
 o.updatetime = 100
 o.ignorecase = true
@@ -20,10 +20,13 @@ o.termguicolors = true
 -- vim.g.loaded_netrwPlugin = 0
 
 vim.wo.number = true
-vim.wo.signcolumn = 'yes'
+vim.wo.signcolumn = "yes"
 
-vim.cmd [[set undofile]]
-vim.cmd [[colorscheme tokyonight]]
+-- tokyo night theme specific
+vim.g.tokyonight_dark_sidebar = false
+
+vim.cmd([[set undofile]])
+vim.cmd([[colorscheme tokyonight]])
 -- vim.g.tokyonight_style = 'night'
 
 -- fugitive husky fix
@@ -32,7 +35,7 @@ vim.g.fugitive_pty = 0
 -- disable Tab copilot completion, see mapping in keymaps.lua
 vim.g.copilot_no_tab_map = true
 
-o.shortmess = o.shortmess .. 'A'
+o.shortmess = o.shortmess .. "A"
 
 -- Concat values to line above
 -- o.shortmess = o.shortmess
