@@ -16,23 +16,12 @@ o.ignorecase = true
 o.smartcase = true
 o.termguicolors = true
 
--- vim.g.loaded_netrw = 0
--- vim.g.loaded_netrwPlugin = 0
-
 vim.wo.number = true
 vim.wo.signcolumn = "yes"
-
--- tokyo night theme specific
-vim.g.tokyonight_dark_sidebar = false
-
-vim.cmd([[set undofile]])
-vim.cmd([[colorscheme tokyonight]])
--- vim.g.tokyonight_style = 'night'
 
 -- fugitive husky fix
 vim.g.fugitive_pty = 0
 
--- disable Tab copilot completion, see mapping in keymaps.lua
 vim.g.copilot_no_tab_map = true
 
 o.shortmess = o.shortmess .. "A"
@@ -46,3 +35,5 @@ o.shortmess = o.shortmess .. "A"
 --     c = true, -- don't give |ins-completion-menu| messages
 --     m = true, -- use "[+]" instead of "[Modified]"
 --   }
+
+vim.cmd([[set undofile]])

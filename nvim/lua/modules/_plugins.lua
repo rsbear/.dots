@@ -86,6 +86,12 @@ require("packer").startup(function(use)
 	-- use 'rbong/vim-flog'
 	-- use 'rhysd/git-messenger.vim'
 
+	-- TABLINe
+	use({
+		"noib3/cokeline.nvim",
+		config = require("modules.cokeline_cfg"),
+	})
+
 	-- EXPLORER
 	use({
 		"kyazdani42/nvim-tree.lua",
@@ -115,20 +121,7 @@ require("packer").startup(function(use)
 	use("junegunn/goyo.vim")
 	use("junegunn/limelight.vim")
 
-	-- buff tabs
-	-- use {
-	--   'noib3/cokeline.nvim',
-	--   config = require 'modules.cokeline',
-	-- }
-
 	--  LUXURY
-	use("folke/tokyonight.nvim")
-	use({
-		"shaunsingh/nord.nvim",
-		-- config = require("modules.nordc"),
-	})
-	use("wadackel/vim-dogrun")
-	use("kvrohit/substrata.nvim")
 	use("tpope/vim-commentary")
 	use("jiangmiao/auto-pairs")
 	-- use("ap/vim-buftabline")
@@ -138,12 +131,25 @@ require("packer").startup(function(use)
 			require("neoscroll").setup()
 		end,
 	})
-	-- use 'itchyny/lightline.vim'
 
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 		config = require("modules.lualine"),
+	})
+
+	-- THIS SHIT GOTTA BE PRETTY YOU KNOW
+	use("folke/tokyonight.nvim")
+	use({
+		"shaunsingh/nord.nvim",
+		-- config = require("modules.nordc"),
+	})
+	use("wadackel/vim-dogrun")
+	use("kvrohit/substrata.nvim")
+	use({
+		"rose-pine/neovim",
+		as = "rose-pine",
+		tag = "v0.1.0", -- Optional tag release
 	})
 
 	-- OLD unused

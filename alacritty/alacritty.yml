@@ -23,8 +23,10 @@ window:
     lines: 45
 
   padding:
-    x: 30
-    y: 10
+    # x: 30
+    # y: 10
+    x: 20
+    y: 8
 
   dynamic_padding: false
 
@@ -45,7 +47,11 @@ colors:
     # foreground: "0xD4C3DB"
 
     # tokyonight
-    background: '0x24283b'
+    # background: '0x24283b'
+    # foreground: '0xc0caf5'
+
+    # rose-pine
+    background: '0x191724'
     foreground: '0xc0caf5'
 
     # background: "0x191c25" #substrata bgc
