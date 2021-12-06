@@ -66,9 +66,6 @@ require("packer").startup(function(use)
 		},
 	})
 
-	-- -- Add indentation guides even on blank lines
-	-- use 'lukas-reineke/indent-blankline.nvim'
-
 	-- GIT
 	use({
 		"lewis6991/gitsigns.nvim",
@@ -87,9 +84,13 @@ require("packer").startup(function(use)
 	-- use 'rhysd/git-messenger.vim'
 
 	-- TABLINe
+	-- use({
+	-- 	"noib3/cokeline.nvim",
+	-- 	config = require("modules.cokeline_cfg"),
+	-- })
 	use({
-		"noib3/cokeline.nvim",
-		config = require("modules.cokeline_cfg"),
+		"romgrk/barbar.nvim",
+		config = require("modules.barbruh"),
 	})
 
 	-- EXPLORER
@@ -121,10 +122,14 @@ require("packer").startup(function(use)
 	use("junegunn/goyo.vim")
 	use("junegunn/limelight.vim")
 
+	-- comments
+	use({
+		"numToStr/Comment.nvim",
+		config = require("modules.comments"),
+	})
+
 	--  LUXURY
-	use("tpope/vim-commentary")
 	use("jiangmiao/auto-pairs")
-	-- use("ap/vim-buftabline")
 	use({
 		"karb94/neoscroll.nvim",
 		config = function()
@@ -154,6 +159,11 @@ require("packer").startup(function(use)
 
 	-- OLD unused
 	-- use("kyazdani42/nvim-web-devicons")
+
+	-- Add indentation guides even on blank lines
+	-- use 'lukas-reineke/indent-blankline.nvim'
+
+	-- use("ap/vim-buftabline")
 
 	-- require('packer').compile()
 	-- require('packer').install()
