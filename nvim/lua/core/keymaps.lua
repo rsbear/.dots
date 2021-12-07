@@ -7,7 +7,7 @@ vim.g.maplocalleader = " "
 
 -- TELESCOPE
 map("n", "<C-p>", "<cmd>lua require('telescope.builtin').git_files()<CR>")
-map("n", "<leader><space>", "<cmd>lua require('telescope.builtin').buffers()<CR>")
+map("n", "<leader>bb", "<cmd>lua require('telescope.builtin').buffers()<CR>")
 map("n", "<leader>sf", "<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>")
 map("n", "<leader>fd", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>")
 map("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
@@ -45,8 +45,7 @@ map("n", "Y", "y$", { noremap = true })
 -- NVIM TREE
 map("n", "<leader>r", ":NvimTreeRefresh<CR>")
 map("n", "<leader>n", ":NvimTreeFindFile<CR>")
-map("n", "<leader>q", ":NvimTreeToggle<CR>")
--- map("n", "<leader><space>", ":NvimTreeToggle<CR>")
+map("n", "<leader><space>", ":NvimTreeToggle<CR>")
 
 -- CMP complete functiones
 map("i", "<Tab>", "v:lua.tab_complete()", { expr = true })
@@ -66,8 +65,11 @@ map("i", "<S-Down>", "<cmd>:m+<CR>")
 -- buffer manager
 map("n", "<C-=>", "<cmd>:vert sb#<CR>")
 map("n", "<leader><BS>", "<cmd>:bd<CR>")
-map("n", "<C-right>", "<cmd>:bnext<CR>")
-map("n", "<C-left>", "<cmd>:bprev<CR>")
+-- map("n", "<C-right>", "<cmd>:bprev<CR>")
+-- map("n", "<C-left>", "<cmd>:bnext<CR>")
+-- barbar
+map("n", "<C-right>", "<cmd>:BufferNext<CR>")
+map("n", "<C-left>", "<cmd>:BufferPrevious<CR>")
 
 -- indenters
 map("v", "<", "<gv")

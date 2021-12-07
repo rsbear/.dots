@@ -9,5 +9,8 @@ vim.g.bufferline = {
 	icon_close_tab = "",
 	icon_close_tab_modified = "●",
 	icon_pinned = "",
+
+	insert_at_end = false,
+	insert_at_start = false,
 }
 -- end
