@@ -7,7 +7,7 @@ vim.g.maplocalleader = " "
 
 -- TELESCOPE
 map("n", "<C-p>", "<cmd>lua require('telescope.builtin').git_files()<CR>")
-map("n", "<leader>bb", "<cmd>lua require('telescope.builtin').buffers()<CR>")
+-- map("n", "<leader>bb", "<cmd>lua require('telescope.builtin').buffers()<CR>")
 map("n", "<leader>sf", "<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>")
 map("n", "<leader>fd", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>")
 map("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
@@ -22,7 +22,7 @@ map("n", "<leader>xl", "<cmd>Trouble loclist<cr>")
 map("n", "<leader>tq", "<cmd>Trouble quickfix<cr>")
 map("n", "gR", "<cmd>Trouble lsp_references<cr>")
 
--- neogit
+-- NEOGIT
 map("n", "<leader>gg", "<cmd>:Neogit<cr>")
 
 -- find replacer
@@ -31,6 +31,10 @@ map("n", "<leader>re", '<cmd>lua require("searchbox").replace()<CR>', { noremap 
 
 -- HOP
 map("n", "<leader>ff", [[<cmd>:HopWord<CR>]])
+
+-- FLOAT TERM
+map("n", "<leader>b", "<cmd>lua require('FTerm').toggle()<cr>")
+map("t", "<leader>b", "<cmd>lua require('FTerm').toggle()<cr>")
 
 -- GIT
 map("n", "<leader>ga", "<cmd>:Git add . | :Git commit<CR>")

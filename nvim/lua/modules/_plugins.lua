@@ -67,6 +67,8 @@ require("packer").startup(function(use)
 	})
 
 	-- GIT
+	use("tpope/vim-fugitive") -- Git commands in nvim
+	use("tpope/vim-rhubarb") -- Fugitive-companion to interact with github
 	use({
 		"lewis6991/gitsigns.nvim",
 		config = require("modules.gitsigns"),
@@ -78,26 +80,11 @@ require("packer").startup(function(use)
 		config = require("modules.neogit"),
 	})
 
-	use("tpope/vim-fugitive") -- Git commands in nvim
-	use("tpope/vim-rhubarb") -- Fugitive-companion to interact with github
-	-- use 'rbong/vim-flog'
-	-- use 'rhysd/git-messenger.vim'
-
 	-- TABLINe
-	-- use({
-	-- 	"noib3/cokeline.nvim",
-	-- 	config = require("modules.cokeline_cfg"),
-	-- })
-	use({
-		"romgrk/barbar.nvim",
-		config = require("modules.barbruh"),
-	})
+	use({ "romgrk/barbar.nvim", config = require("modules.barbruh") })
 
 	-- EXPLORER
-	use({
-		"kyazdani42/nvim-tree.lua",
-		config = require("modules.nvim_tree"),
-	})
+	use({ "kyazdani42/nvim-tree.lua", config = require("modules.nvim_tree") })
 
 	-- DASHBOARD
 	use({
@@ -106,6 +93,9 @@ require("packer").startup(function(use)
 		config = require("modules.alpha-dashboard"),
 	})
 
+	-- FLOATING TERMINAL
+	use({ "numToStr/FTerm.nvim", config = require("modules.floatterm") })
+
 	-- should be in vim core
 	use({ "tpope/vim-surround" })
 
@@ -113,20 +103,14 @@ require("packer").startup(function(use)
 	use({ "github/copilot.vim" })
 
 	-- easy motion
-	use({
-		"phaazon/hop.nvim",
-		config = require("modules.hop"),
-	})
+	use({ "phaazon/hop.nvim", config = require("modules.hop") })
 
 	-- writer mode
 	use("junegunn/goyo.vim")
 	use("junegunn/limelight.vim")
 
 	-- comments
-	use({
-		"numToStr/Comment.nvim",
-		config = require("modules.comments"),
-	})
+	use({ "numToStr/Comment.nvim", config = require("modules.comments") })
 
 	--  LUXURY
 	use("jiangmiao/auto-pairs")
@@ -145,10 +129,6 @@ require("packer").startup(function(use)
 
 	-- THIS SHIT GOTTA BE PRETTY YOU KNOW
 	use("folke/tokyonight.nvim")
-	use({
-		"shaunsingh/nord.nvim",
-		-- config = require("modules.nordc"),
-	})
 	use("wadackel/vim-dogrun")
 	use("kvrohit/substrata.nvim")
 	use({
