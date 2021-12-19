@@ -1,6 +1,7 @@
 return function()
 	require("FTerm").setup({
-		border = "double",
+		border = "single",
+		auto_close = false,
 		dimensions = {
 			height = 0.9,
 			width = 0.9,

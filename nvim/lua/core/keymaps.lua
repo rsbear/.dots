@@ -33,8 +33,8 @@ map("n", "<leader>re", '<cmd>lua require("searchbox").replace()<CR>', { noremap 
 map("n", "<leader>ff", [[<cmd>:HopWord<CR>]])
 
 -- FLOAT TERM
-map("n", "<leader>b", "<cmd>lua require('FTerm').toggle()<cr>")
-map("t", "<leader>b", "<cmd>lua require('FTerm').toggle()<cr>")
+map("n", "<C-m>", "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true })
+map("t", "<C-m>", "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true })
 
 -- GIT
 map("n", "<leader>ga", "<cmd>:Git add . | :Git commit<CR>")

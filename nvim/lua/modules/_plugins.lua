@@ -8,6 +8,8 @@ end
 require("packer").startup(function(use)
 	use("wbthomason/packer.nvim") -- Package manager
 
+	use({ 'tpope/vim-commentary' })
+
 	-- COMMONS
 	use({ "nvim-lua/plenary.nvim", module = "plenary" })
 	use({ "nvim-lua/popup.nvim", module = "popup" })
@@ -23,8 +25,8 @@ require("packer").startup(function(use)
 	})
 
 	-- LSP AND LANG
-	use({ "folke/lsp-colors.nvim" })
-	use({
+	 use({ "folke/lsp-colors.nvim" })
+	 use({
 		"hrsh7th/nvim-cmp",
 		config = require("modules.cmp"),
 		requires = {
@@ -71,16 +73,16 @@ require("packer").startup(function(use)
 	use("tpope/vim-rhubarb") -- Fugitive-companion to interact with github
 	use({
 		"lewis6991/gitsigns.nvim",
-		config = require("modules.gitsigns"),
 		requires = { "nvim-lua/plenary.nvim" },
+		config = require("modules.gitsigns"),
 	})
-	use({
+	 use({
 		"TimUntersberger/neogit",
 		requires = "nvim-lua/plenary.nvim",
 		config = require("modules.neogit"),
-	})
+	 })
 
-	-- TABLINe
+	-- TABLINe TODO: cause this shit makes packerr compile fail
 	use({ "romgrk/barbar.nvim", config = require("modules.barbruh") })
 
 	-- EXPLORER
@@ -110,7 +112,7 @@ require("packer").startup(function(use)
 	use("junegunn/limelight.vim")
 
 	-- comments
-	use({ "numToStr/Comment.nvim", config = require("modules.comments") })
+	-- use({ "numToStr/Comment.nvim", config = require("modules.comments") })
 
 	--  LUXURY
 	use("jiangmiao/auto-pairs")
