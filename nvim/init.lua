@@ -4,4 +4,3 @@ require("core.keymaps")
 require("core.autocommands")
 require("core.theme")
 
--- "test"

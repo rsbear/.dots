@@ -15,8 +15,9 @@ return {
   lua = { stylua },
   markdown = { prettier },
   scss = { prettier },
+  svelte = { prettier },
   typescript = { prettier },
   typescriptreact = { prettier },
   -- ['typescript.tsx'] = { prettier },
-  yaml = { prettier },
+  -- yaml = { prettier },
 }

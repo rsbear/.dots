@@ -144,11 +144,9 @@ return function()
 
       s('clg', {
         t { 'console.log(' },
-        t "'",
+        t '{',
         i(1),
-        t "  ---',",
-        i(2),
-        t ')',
+        t '})',
       }),
 
       s('rfc', {
