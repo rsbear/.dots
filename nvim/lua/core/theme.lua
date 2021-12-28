@@ -13,7 +13,12 @@ vim.g.rose_pine_disable_float_background = false
 vim.g.rose_pine_disable_italics = false
 
 -- vim.cmd([[colorscheme tokyonight]])
-vim.cmd [[colorscheme rose-pine]]
+vim.cmd [[
+colorscheme rose-pine
+hi GitSignsAdd guibg=none guifg=#008D83 ctermbg=none
+hi GitGutterChange guibg=none guifg=#845EC2 ctermbg=none
+hi DiffDelete guibg=#333333 guifg=#f0a0c0 ctermbg=none
+]]
 
 -- kinda annoying that this is a vim global
 -- instead of cfg but whatever
