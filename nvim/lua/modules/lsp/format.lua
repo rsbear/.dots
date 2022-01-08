@@ -1,5 +1,5 @@
 local prettier = {
-  formatCommand = './node_modules/.bin/prettier --find-config-path --stdin-filepath ${INPUT}',
+  formatCommand = 'prettierd ${INPUT}',
   formatStdin = true,
 }
 
@@ -15,7 +15,6 @@ return {
   lua = { stylua },
   markdown = { prettier },
   scss = { prettier },
-  svelte = { prettier },
   typescript = { prettier },
   typescriptreact = { prettier },
   -- ['typescript.tsx'] = { prettier },

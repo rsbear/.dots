@@ -13,7 +13,6 @@ return function()
       root_dir = lspconfig.util.root_pattern { '.git/', '.' },
       settings = {
         languages = format_config,
-        rootMarkers = { 'package.json' },
       },
     },
     sumneko_lua = {
@@ -25,14 +24,24 @@ return function()
         },
       },
     },
+    svelteserver = {
+      filetypes = { 'html', 'svelte' },
+    },
+    tsserver = {
+      settings = {
+        root_dir = lspconfig.util.root_pattern 'package.json',
+      },
+    },
   }
 
   local function get_config(server_name)
     local config = servers[server_name] or {}
+
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     if package.loaded['cmp_nvim_lsp'] then
       capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
     end
+
     config.on_attach = on_attach
 
     return config

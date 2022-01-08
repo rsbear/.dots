@@ -11,8 +11,10 @@ map('n', '<C-p>', "<cmd>lua require('telescope.builtin').git_files()<CR>")
 map('n', '<leader>sf', "<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>")
 map('n', '<leader>fd', "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>")
 map('n', '<leader>fg', "<cmd>lua require('telescope.builtin').live_grep()<CR>")
+map('n', '<leader>fw', "<cmd>lua require('telescope.builtin').find_word()<CR>")
 map('n', '<leader>gs', "<cmd>lua require('telescope.builtin').git_status()<CR>")
 map('n', '<leader>gc', "<cmd>lua require('telescope.builtin').git_commits()<CR>")
+map('n', '<C-q>', "<cmd>lua require('telescope.builtin').quickfix()<CR>")
 map('n', '<leader>?', "<cmd>lua require('telescope.builtin').oldfiles()<CR>")
 map('n', '<leader>ps', "<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input('GREPPER > ')})<CR>")
 
@@ -82,6 +84,5 @@ map('v', '>', '>gv')
 --Remap for dealing with word wrap
 
 map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
-
 
 map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
