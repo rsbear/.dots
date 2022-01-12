@@ -45,6 +45,11 @@ require('packer').startup(function(use)
       -- 'ray-x/lsp_signature.nvim',
     },
   }
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    config = require 'modules.lsp.nulls',
+    requires = { 'nvim-lua/plenary.nvim' },
+  }
 
   -- FUZZY
   use {
@@ -82,7 +87,7 @@ require('packer').startup(function(use)
     config = require 'modules.neogit',
   }
 
-  -- TABLINe TODO: cause this shit makes packerr compile fail
+  -- TABLINE
   use { 'romgrk/barbar.nvim', config = require 'modules.barbruh' }
 
   -- EXPLORER
@@ -107,6 +112,14 @@ require('packer').startup(function(use)
   -- easy motion
   use { 'phaazon/hop.nvim', config = require 'modules.hop' }
 
+  -- which key
+  use {
+    'folke/which-key.nvim',
+    config = function()
+      require('which-key').setup {}
+    end,
+  }
+
   -- writer mode
   use 'junegunn/goyo.vim'
   use 'junegunn/limelight.vim'
@@ -115,12 +128,18 @@ require('packer').startup(function(use)
   -- use({ "numToStr/Comment.nvim", config = require("modules.comments") })
 
   --  LUXURY
-  use 'jiangmiao/auto-pairs'
+  -- use 'jiangmiao/auto-pairs'
   use {
     'karb94/neoscroll.nvim',
     config = function()
       require('neoscroll').setup()
     end,
+  }
+
+  -- AUTO PAIRS
+  use {
+    'windwp/nvim-autopairs',
+    config = require 'modules.autopairs',
   }
 
   use {
@@ -138,14 +157,6 @@ require('packer').startup(function(use)
     as = 'rose-pine',
     tag = 'v0.1.0', -- Optional tag release
   }
-
-  -- OLD unused
-  -- use("kyazdani42/nvim-web-devicons")
-
-  -- Add indentation guides even on blank lines
-  -- use 'lukas-reineke/indent-blankline.nvim'
-
-  -- use("ap/vim-buftabline")
 
   -- require('packer').compile()
   -- require('packer').install()

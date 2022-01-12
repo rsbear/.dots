@@ -49,6 +49,6 @@ return function()
 
   require('nvim-lsp-installer').on_server_ready(function(server)
     server:setup(get_config(server.name))
-    -- vim.cd [[ do User LspAttachBuffers ]]
+    -- vim.cmd [[ do User LspAttachBuffers ]]
   end)
 end

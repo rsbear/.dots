@@ -1,8 +1,8 @@
 -- SET THE THEME IN THE CMD AT THE BOTTOM
 -- tokyo night theme specific
-vim.g.tokyonight_dark_sidebar = false
-vim.g.tokyonight_transparent = true
-vim.g.tokyonight_style = 'storm'
+-- vim.g.tokyonight_dark_sidebar = false
+-- vim.g.tokyonight_transparent = true
+-- vim.g.tokyonight_style = 'storm'
 
 -- rose-pine specific
 vim.g.rose_pine_variant = ''
@@ -38,9 +38,6 @@ vim.g.bufferline = {
 }
 
 vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError' })
-
 vim.fn.sign_define('DiagnosticSignWarn', { text = '!', texthl = 'DiagnosticSignWarn' })
-
 vim.fn.sign_define('DiagnosticSignInformation', { text = '', texthl = 'DiagnosticSignInfo' })
-
 vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })

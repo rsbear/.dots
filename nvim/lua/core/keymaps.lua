@@ -5,24 +5,28 @@ local map = utils.keymap.map
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+local function telemap(key, cmd)
+  map('n', key, '<cmd>lua require("telescope.builtin").' .. cmd .. '<CR>')
+end
+-- local tele = require 'telescope.builtin'
+
 -- TELESCOPE
-map('n', '<C-p>', "<cmd>lua require('telescope.builtin').git_files()<CR>")
--- map("n", "<leader>bb", "<cmd>lua require('telescope.builtin').buffers()<CR>")
-map('n', '<leader>sf', "<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>")
-map('n', '<leader>fd', "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>")
-map('n', '<leader>fg', "<cmd>lua require('telescope.builtin').live_grep()<CR>")
-map('n', '<leader>fw', "<cmd>lua require('telescope.builtin').find_word()<CR>")
-map('n', '<leader>gs', "<cmd>lua require('telescope.builtin').git_status()<CR>")
-map('n', '<leader>gc', "<cmd>lua require('telescope.builtin').git_commits()<CR>")
-map('n', '<C-q>', "<cmd>lua require('telescope.builtin').quickfix()<CR>")
-map('n', '<leader>?', "<cmd>lua require('telescope.builtin').oldfiles()<CR>")
-map('n', '<leader>ps', "<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input('GREPPER > ')})<CR>")
+telemap('<C-p>', 'git_files()')
+telemap('<leader>sf', 'find_files({previewer = false})')
+telemap('<leader>fd', 'current_buffer_fuzzy_find()')
+telemap('<leader>fg', 'live_grep()')
+telemap('<leader>fw', 'find_word()')
+telemap('<leader>gs', 'git_status()')
+telemap('<leader>gc', 'git_commits()')
+telemap('<leader>km', 'keymaps()')
+telemap('<leader>ps', "grep_string({ search = vim.fn.input('GREPPER > ')})")
+telemap('<C-q>', 'quickfix()')
 
 -- TROUBLE
 map('n', '<leader>tw', '<cmd>Trouble document_diagnostics<cr>')
 map('n', '<leader>xl', '<cmd>Trouble loclist<cr>')
 map('n', '<leader>tq', '<cmd>Trouble quickfix<cr>')
-map('n', 'gR', '<cmd>Trouble lsp_references<cr>')
+map('n', 'gr', '<cmd>Trouble lsp_references<cr>')
 
 -- NEOGIT
 map('n', '<leader>gg', '<cmd>:Neogit<cr>')
@@ -52,12 +56,6 @@ map('n', 'Y', 'y$', { noremap = true })
 map('n', '<leader>r', ':NvimTreeRefresh<CR>')
 map('n', '<leader>n', ':NvimTreeFindFile<CR>')
 map('n', '<leader><space>', ':NvimTreeToggle<CR>')
-
--- CMP complete functiones
-map('i', '<Tab>', 'v:lua.tab_complete()', { expr = true })
-map('s', '<Tab>', 'v:lua.tab_complete()', { expr = true })
-map('i', '<S-Tab>', 'v:lua.s_tab_complete()', { expr = true })
-map('s', '<S-Tab>', 'v:lua.s_tab_complete()', { expr = true })
 
 -- copilot
 map('i', '<C-e>', "copilot#Accept('<CR>')", { noremap = true, silent = true, expr = true })
