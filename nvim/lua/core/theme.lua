@@ -18,6 +18,14 @@ colorscheme rose-pine
 hi GitSignsAdd guibg=none guifg=#008D83 ctermbg=none
 hi GitGutterChange guibg=none guifg=#845EC2 ctermbg=none
 hi DiffDelete guibg=#333333 guifg=#f0a0c0 ctermbg=none
+
+highlight TelescopeBorder         guifg=#ea9a97
+highlight TelescopePromptBorder   guifg=#2a273f
+highlight TelescopeResultsBorder  guifg=#2a273f
+highlight TelescopePreviewBorder  guifg=#2a273f
+highlight TelescopeMatching       guifg=#ea9a97
+highlight TelescopeNormal       guifg=#9F9ABA
+
 ]]
 
 -- kinda annoying that this is a vim global

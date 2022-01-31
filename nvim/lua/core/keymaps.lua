@@ -53,9 +53,10 @@ map('n', '<leader>yy', '"+y')
 map('n', 'Y', 'y$', { noremap = true })
 
 -- NVIM TREE
-map('n', '<leader>r', ':NvimTreeRefresh<CR>')
-map('n', '<leader>n', ':NvimTreeFindFile<CR>')
-map('n', '<leader><space>', ':NvimTreeToggle<CR>')
+-- map('n', '<leader>r', ':NvimTreeRefresh<CR>')
+-- map('n', '<leader>n', ':NvimTreeFindFile<CR>')
+-- map('n', '<leader><space>', ':NvimTreeToggle<CR>')
+map('n', '<leader><space>', ':NeoTreeFloatToggle<CR>')
 
 -- copilot
 map('i', '<C-e>', "copilot#Accept('<CR>')", { noremap = true, silent = true, expr = true })

@@ -10,7 +10,7 @@ return function(client)
   lua_nmap('gd', 'vim.lsp.buf.definition()')
   lua_nmap('gD', 'vim.lsp.buf.declaration()')
   lua_nmap('gi', 'vim.lsp.buf.implementation()')
-  lua_nmap('<leader>e', 'vim.lsp.diagnostic.show_line_diagnostics()')
+  lua_nmap('<leader>e', 'vim.diagnostic.open_float({ border = "rounded" })')
   lua_nmap('<leader>ca', 'vim.lsp.buf.code_action()')
   lua_nmap('<leader>gh', 'vim.lsp.buf.signature_help()')
   lua_nmap('<leader>rn', 'vim.lsp.buf.rename()')
@@ -30,9 +30,13 @@ return function(client)
     client.resolved_capabilities.document_formatting = false
   end
 
-  if client.name == 'svelte' then
+  if client.name == 'gopls' then
     client.resolved_capabilities.document_formatting = true
   end
+
+  -- if client.name == 'svelte' then
+  --   client.resolved_capabilities.document_formatting = true
+  -- end
 
   if client.resolved_capabilities.document_formatting then
     vim.cmd 'autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()'

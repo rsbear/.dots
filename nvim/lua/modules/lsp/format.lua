@@ -16,14 +16,14 @@ local stylua = {
 return {
   css = { prettier },
   graphql = { prettier },
-  javascript = { dprint },
-  javascriptreact = { dprint },
+  javascript = { prettier },
+  javascriptreact = { prettier },
   json = { prettier },
   lua = { stylua },
   markdown = { prettier },
   scss = { prettier },
-  typescript = { dprint },
-  typescriptreact = { dprint },
+  typescript = { prettier },
+  typescriptreact = { prettier },
   -- ['typescript.tsx'] = { prettier },
   -- yaml = { prettier },
 }

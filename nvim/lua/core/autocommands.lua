@@ -1,7 +1,7 @@
 vim.api.nvim_exec(
   [[
 
-	autocmd BufWritePre *.go lua goimports(1000)
+ autocmd BufWritePre *.go lua organize_golang_imports(1000)
 
   augroup YankHighlight
     autocmd!

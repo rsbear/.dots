@@ -4,7 +4,18 @@ return function()
 
   telescope.setup {
     defaults = {
-      file_ignore_patterns = { 'node_modules', 'yarn.lock', 'yarn-error.log' },
+      vimgrep_arguments = {
+        'rg',
+        '--no-heading',
+        '--with-filename',
+        '--line-number',
+        '--column',
+        '--smart-case',
+      },
+      layout_config = {
+        horizontal = { width = 0.9 },
+      },
+      file_ignore_patterns = { 'node_modules', 'yarn.lock', 'yarn-error.log', 'pnpm-lock.yaml' },
       mappings = {
         i = {
           ['<C-u>'] = false,
@@ -16,10 +27,11 @@ return function()
         },
       },
     },
-    -- pickers = {
-    --   git_status = {
-    --     theme = 'cursor',
-    --   },
-    -- },
+    pickers = {
+      git_status = {
+        theme = 'dropdown',
+      },
+      live_grep = { theme = 'dropdown' },
+    },
   }
 end
