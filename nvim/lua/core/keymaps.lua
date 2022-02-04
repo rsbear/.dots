@@ -8,7 +8,6 @@ vim.g.maplocalleader = ' '
 local function telemap(key, cmd)
   map('n', key, '<cmd>lua require("telescope.builtin").' .. cmd .. '<CR>')
 end
--- local tele = require 'telescope.builtin'
 
 -- TELESCOPE
 telemap('<C-p>', 'git_files()')
@@ -19,6 +18,7 @@ telemap('<leader>fw', 'find_word()')
 telemap('<leader>gs', 'git_status()')
 telemap('<leader>gc', 'git_commits()')
 telemap('<leader>km', 'keymaps()')
+telemap('<leader>w', 'buffers()')
 telemap('<leader>ps', "grep_string({ search = vim.fn.input('GREPPER > ')})")
 telemap('<C-q>', 'quickfix()')
 
@@ -73,7 +73,7 @@ map('n', '<leader><BS>', '<cmd>:bd<CR>')
 -- map("n", "<C-right>", "<cmd>:bprev<CR>")
 -- map("n", "<C-left>", "<cmd>:bnext<CR>")
 -- barbar
-map('n', '<C-right>', '<cmd>:BufferNext<CR>')
+map('n', '<C-right>', '<cmd>:BufferNext <CR>')
 map('n', '<C-left>', '<cmd>:BufferPrevious<CR>')
 
 -- indenters

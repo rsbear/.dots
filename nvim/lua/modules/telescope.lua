@@ -28,10 +28,9 @@ return function()
       },
     },
     pickers = {
-      git_status = {
-        theme = 'dropdown',
-      },
-      live_grep = { theme = 'dropdown' },
+      git_status = { theme = 'ivy' },
+      live_grep = { theme = 'ivy' },
+      buffers = { theme = 'dropdown' },
     },
   }
 end

@@ -32,6 +32,11 @@ return function()
         root_dir = lspconfig.util.root_pattern 'package.json',
       },
     },
+    denols = {
+      settings = {
+        root_dir = lspconfig.util.root_pattern { 'deno.json', 'importmap.json', 'mod.ts' },
+      },
+    },
   }
 
   local function get_config(server_name)

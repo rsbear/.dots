@@ -131,6 +131,9 @@ require('packer').startup(function(use)
     end,
   }
 
+  -- notification component
+  use { 'MunifTanjim/nui.nvim' }
+
   -- writer mode
   -- use 'junegunn/goyo.vim'
   -- use 'junegunn/limelight.vim'
@@ -173,4 +176,5 @@ require('packer').startup(function(use)
 
   -- require('packer').compile()
   -- require('packer').install()
+  -- require 'modules.nui-popup'
 end)

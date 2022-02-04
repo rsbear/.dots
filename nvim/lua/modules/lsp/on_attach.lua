@@ -34,9 +34,9 @@ return function(client)
     client.resolved_capabilities.document_formatting = true
   end
 
-  -- if client.name == 'svelte' then
-  --   client.resolved_capabilities.document_formatting = true
-  -- end
+  if client.name == 'svelte' then
+    client.resolved_capabilities.document_formatting = true
+  end
 
   if client.resolved_capabilities.document_formatting then
     vim.cmd 'autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()'

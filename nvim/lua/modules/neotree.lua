@@ -32,7 +32,7 @@ return function()
       },
     },
     buffers = {
-      show_unloaded = true,
+      show_unloaded = false,
       window = {
         position = 'left',
         mappings = {

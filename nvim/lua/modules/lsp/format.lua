@@ -13,6 +13,11 @@ local stylua = {
   formatStdin = true,
 }
 
+local projectPathPrettier = {
+  formatCommand = 'prettierd --stdin --config ${PROJECT_PATH}/.prettierrc.json',
+  formatStdin = true,
+}
+
 return {
   css = { prettier },
   graphql = { prettier },
