@@ -23,7 +23,7 @@ require('packer').startup(function(use)
   -- TREESITTER
   use {
     'nvim-treesitter/nvim-treesitter',
-    config = require 'modules.treesitter',
+    config = require 'plugins.treeshitter',
     requires = {
       'JoosepAlviste/nvim-ts-context-commentstring',
       'windwp/nvim-ts-autotag',
@@ -34,18 +34,18 @@ require('packer').startup(function(use)
   use { 'folke/lsp-colors.nvim' }
   use {
     'hrsh7th/nvim-cmp',
-    config = require 'modules.cmp',
+    config = require 'plugins.cmp',
     requires = {
       'onsails/lspkind-nvim',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
       'saadparwaiz1/cmp_luasnip',
-      { 'L3MON4D3/LuaSnip', config = require 'modules.luasnip' },
+      { 'L3MON4D3/LuaSnip', config = require 'plugins.luasnip' },
     },
   }
   use {
     'neovim/nvim-lspconfig',
-    config = require 'modules.lsp',
+    config = require 'plugins.lsp',
     requires = {
       'williamboman/nvim-lsp-installer',
       -- 'ray-x/lsp_signature.nvim',
@@ -53,18 +53,18 @@ require('packer').startup(function(use)
   }
   -- use {
   --   'jose-elias-alvarez/null-ls.nvim',
-  --   config = require 'modules.lsp.nulls',
+  --   config = require 'plugins.lsp.nulls',
   --   requires = { 'nvim-lua/plenary.nvim' },
   -- }
 
   -- FUZZY
   use {
     'folke/trouble.nvim',
-    config = require 'modules.trouble',
+    config = require 'plugins.trouble',
   }
   use {
     'nvim-telescope/telescope.nvim',
-    config = require 'modules.telescope',
+    config = require 'plugins.telescope',
     requires = {
       { 'nvim-lua/popup.nvim' },
       { 'nvim-lua/plenary.nvim' },
@@ -72,7 +72,7 @@ require('packer').startup(function(use)
   }
   use {
     'rlane/pounce.nvim',
-    config = require 'modules.pouncer',
+    config = require 'plugins.pouncer',
   }
 
   -- SEARCH AND REPLACE
@@ -89,16 +89,16 @@ require('packer').startup(function(use)
   use {
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
-    config = require 'modules.git_signs',
+    config = require 'plugins.git_signs',
   }
   use {
     'TimUntersberger/neogit',
     requires = 'nvim-lua/plenary.nvim',
-    config = require 'modules.neogit',
+    config = require 'plugins.neogit',
   }
 
   -- TABLINE
-  use { 'romgrk/barbar.nvim', config = require 'modules.barbruh' }
+  use { 'romgrk/barbar.nvim', config = require 'plugins.barbruh' }
 
   use {
     'nvim-neo-tree/neo-tree.nvim',
@@ -107,18 +107,18 @@ require('packer').startup(function(use)
       'kyazdani42/nvim-web-devicons', -- not strictly required, but recommended
       'MunifTanjim/nui.nvim',
     },
-    config = require 'modules.neotree',
+    config = require 'plugins.neotree',
   }
 
   -- DASHBOARD
   use {
     'goolord/alpha-nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },
-    config = require 'modules.alpha-dashboard',
+    config = require 'plugins.alpha-dashboard',
   }
 
   -- FLOATING TERMINAL
-  use { 'numToStr/FTerm.nvim', config = require 'modules.floatterm' }
+  use { 'numToStr/FTerm.nvim', config = require 'plugins.floatterm' }
 
   -- should be in vim core
   use { 'tpope/vim-surround' }
@@ -127,7 +127,7 @@ require('packer').startup(function(use)
   use { 'github/copilot.vim' }
 
   -- easy motion
-  use { 'phaazon/hop.nvim', config = require 'modules.hop' }
+  use { 'phaazon/hop.nvim', config = require 'plugins.hop' }
 
   -- which key
   use {
@@ -141,11 +141,9 @@ require('packer').startup(function(use)
   use { 'MunifTanjim/nui.nvim' }
 
   -- writer mode
-  -- use 'junegunn/goyo.vim'
-  -- use 'junegunn/limelight.vim'
   use {
     'folke/zen-mode.nvim',
-    config = require 'modules.zenmode',
+    config = require 'plugins.zenmode',
   }
   use {
     'folke/twilight.nvim',
@@ -164,7 +162,7 @@ require('packer').startup(function(use)
   -- AUTO PAIRS
   use {
     'windwp/nvim-autopairs',
-    config = require 'modules.autopairs',
+    config = require 'plugins.autopairs',
   }
 
   use {
@@ -172,25 +170,25 @@ require('packer').startup(function(use)
     opt = true,
     keys = { 'gc', 'gcc', 'gbc' },
     config = function()
-      require 'modules.comments'
+      require 'plugins.comments'
     end,
   }
 
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    config = require 'modules.lualine',
+    config = require 'plugins.lualine',
   }
 
   -- disable search highlight on move
   use { 'romainl/vim-cool' }
 
   -- THIS SHIT GOTTA BE PRETTY YOU KNOW
-  use 'folke/tokyonight.nvim'
-  use 'wadackel/vim-dogrun'
-  use 'kvrohit/substrata.nvim'
+  -- use 'folke/tokyonight.nvim'
+  -- use 'wadackel/vim-dogrun'
+  -- use 'kvrohit/substrata.nvim'
 
   -- require('packer').compile()
   -- require('packer').install()
-  -- require 'modules.nui-popup'
+  -- require 'plugins.nui-popup'
 end)

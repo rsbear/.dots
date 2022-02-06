@@ -1,9 +1,9 @@
 return function()
   local lspconfig = require 'lspconfig'
 
-  local on_attach = require 'modules.lsp.on_attach'
-  local format_config = require 'modules.lsp.format'
-  require('modules.lsp.ui').setup()
+  local on_attach = require 'plugins.lsp.on_attach'
+  local format_config = require 'plugins.lsp.format'
+  require('plugins.lsp.ui').setup()
 
   local servers = {
     efm = {
