@@ -8,7 +8,13 @@ end
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
-  use { 'tpope/vim-commentary' }
+  use {
+    'rose-pine/neovim',
+    as = 'rose-pine',
+    tag = 'v0.1.0', -- Optional tag release
+  }
+
+  -- use { 'tpope/vim-commentary' }
 
   -- COMMONS
   use { 'nvim-lua/plenary.nvim', module = 'plenary' }
@@ -83,7 +89,7 @@ require('packer').startup(function(use)
   use {
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
-    config = require 'modules.gitsigns',
+    config = require 'modules.git_signs',
   }
   use {
     'TimUntersberger/neogit',
@@ -141,6 +147,12 @@ require('packer').startup(function(use)
     'folke/zen-mode.nvim',
     config = require 'modules.zenmode',
   }
+  use {
+    'folke/twilight.nvim',
+    config = function()
+      require('twilight').setup {}
+    end,
+  }
 
   use {
     'karb94/neoscroll.nvim',
@@ -156,6 +168,15 @@ require('packer').startup(function(use)
   }
 
   use {
+    'numToStr/Comment.nvim',
+    opt = true,
+    keys = { 'gc', 'gcc', 'gbc' },
+    config = function()
+      require 'modules.comments'
+    end,
+  }
+
+  use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     config = require 'modules.lualine',
@@ -168,11 +189,6 @@ require('packer').startup(function(use)
   use 'folke/tokyonight.nvim'
   use 'wadackel/vim-dogrun'
   use 'kvrohit/substrata.nvim'
-  use {
-    'rose-pine/neovim',
-    as = 'rose-pine',
-    tag = 'v0.1.0', -- Optional tag release
-  }
 
   -- require('packer').compile()
   -- require('packer').install()

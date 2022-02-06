@@ -21,6 +21,8 @@ local popup = Popup {
 -- mount/open the component
 popup.on(event.BufEnter, function()
   popup:mount()
+  -- Get current buffer name
+  -- vim.api.nvim_buf_get_name(0)
 end)
 
 -- unmount component when cursor leaves buffer

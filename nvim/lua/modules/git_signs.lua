@@ -1,5 +1,7 @@
 return function()
-  require('gitsigns').setup {
+  local signs = require 'gitsigns'
+
+  signs.setup {
     signs = {
       add = { hl = 'GitSignsAdd', text = '│' },
       change = { hl = 'GitGutterChange', text = '│' },

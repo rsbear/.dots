@@ -14,7 +14,7 @@ local stylua = {
 }
 
 local projectPathPrettier = {
-  formatCommand = 'prettierd --stdin --config ${PROJECT_PATH}/.prettierrc.json',
+  formatCommand = './node_modules/.bin/prettier ${--tab-width:tabWidth} ${--single-quote:singleQuote} --parser html',
   formatStdin = true,
 }
 
@@ -27,6 +27,7 @@ return {
   lua = { stylua },
   markdown = { prettier },
   scss = { prettier },
+  -- svelte = { projectPathPrettier },
   typescript = { prettier },
   typescriptreact = { prettier },
   -- ['typescript.tsx'] = { prettier },

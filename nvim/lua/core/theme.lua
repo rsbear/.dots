@@ -11,6 +11,9 @@ vim.g.rose_pine_inactive_background = false
 vim.g.rose_pine_disable_background = false
 vim.g.rose_pine_disable_float_background = false
 vim.g.rose_pine_disable_italics = false
+-- vim.g.rose_pine_colors = {
+--   git_add = '#008D83',
+-- }
 
 -- vim.cmd([[colorscheme tokyonight]])
 vim.cmd [[
@@ -24,7 +27,7 @@ highlight TelescopePromptBorder   guifg=#2a273f
 highlight TelescopeResultsBorder  guifg=#2a273f
 highlight TelescopePreviewBorder  guifg=#2a273f
 highlight TelescopeMatching       guifg=#ea9a97
-highlight TelescopeNormal       guifg=#9F9ABA
+highlight TelescopeNormal         guifg=#9F9ABA
 
 ]]
 
@@ -44,6 +47,11 @@ vim.g.bufferline = {
   insert_at_end = false,
   insert_at_start = false,
 }
+
+-- this api is still only in nightly sadzone
+-- vim.api.nvim_set_hl(0, 'GitSignsAdd', { fg = '#008D83', bg = 'none' })
+-- vim.api.nvim_set_hl(0, 'GitGutterChange', { fg = '#845ec2', bg = 'red' })
+-- vim.api.nvim_set_hl(0, 'DiffDelete', { fg = '#f0a0c0', bg = '#333333' })
 
 vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError' })
 vim.fn.sign_define('DiagnosticSignWarn', { text = '!', texthl = 'DiagnosticSignWarn' })
