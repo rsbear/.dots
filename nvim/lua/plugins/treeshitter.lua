@@ -10,6 +10,7 @@ return function()
     autotag = { enable = true },
     context_commentstring = {
       enable = true,
+      enable_autocmd = false,
       config = {
         javascript = {
           __default = '// %s',

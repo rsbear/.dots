@@ -14,13 +14,15 @@ require('packer').startup(function(use)
     tag = 'v0.1.0', -- Optional tag release
   }
 
-  -- use { 'tpope/vim-commentary' }
-
+  ----------------------------
   -- COMMONS
+  ----------------------------
   use { 'nvim-lua/plenary.nvim', module = 'plenary' }
   use { 'nvim-lua/popup.nvim', module = 'popup' }
 
+  ----------------------------
   -- TREESITTER
+  ----------------------------
   use {
     'nvim-treesitter/nvim-treesitter',
     config = require 'plugins.treeshitter',
@@ -30,8 +32,11 @@ require('packer').startup(function(use)
     },
   }
 
+  ----------------------------
   -- LSP AND LANG
+  ----------------------------
   use { 'folke/lsp-colors.nvim' }
+  use { 'L3MON4D3/LuaSnip', config = require 'plugins.luasnips' }
   use {
     'hrsh7th/nvim-cmp',
     config = require 'plugins.cmp',
@@ -40,7 +45,7 @@ require('packer').startup(function(use)
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
       'saadparwaiz1/cmp_luasnip',
-      { 'L3MON4D3/LuaSnip', config = require 'plugins.luasnip' },
+      { 'L3MON4D3/LuaSnip', config = require 'plugins.luasnips' },
     },
   }
   use {
@@ -57,7 +62,9 @@ require('packer').startup(function(use)
   --   requires = { 'nvim-lua/plenary.nvim' },
   -- }
 
+  ----------------------------
   -- FUZZY
+  ----------------------------
   use {
     'folke/trouble.nvim',
     config = require 'plugins.trouble',
@@ -75,7 +82,9 @@ require('packer').startup(function(use)
     config = require 'plugins.pouncer',
   }
 
+  ----------------------------
   -- SEARCH AND REPLACE
+  ----------------------------
   use {
     'VonHeikemen/searchbox.nvim',
     requires = {
@@ -83,9 +92,11 @@ require('packer').startup(function(use)
     },
   }
 
+  ----------------------------
   -- GIT
-  use 'tpope/vim-fugitive'
-  use 'tpope/vim-rhubarb'
+  ----------------------------
+  -- use 'tpope/vim-fugitive'
+  -- use 'tpope/vim-rhubarb'
   use {
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
@@ -96,8 +107,14 @@ require('packer').startup(function(use)
     requires = 'nvim-lua/plenary.nvim',
     config = require 'plugins.neogit',
   }
+  use {
+    'dinhhuy258/git.nvim',
+    config = require 'plugins.gitt',
+  }
 
+  ----------------------------
   -- TABLINE
+  ----------------------------
   use { 'romgrk/barbar.nvim', config = require 'plugins.barbruh' }
 
   use {
@@ -110,7 +127,9 @@ require('packer').startup(function(use)
     config = require 'plugins.neotree',
   }
 
+  ----------------------------
   -- DASHBOARD
+  ----------------------------
   use {
     'goolord/alpha-nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },
@@ -167,8 +186,9 @@ require('packer').startup(function(use)
 
   use {
     'numToStr/Comment.nvim',
-    opt = true,
-    keys = { 'gc', 'gcc', 'gbc' },
+    requires = {
+      'JoosepAlviste/nvim-ts-context-commentstring',
+    },
     config = function()
       require 'plugins.comments'
     end,

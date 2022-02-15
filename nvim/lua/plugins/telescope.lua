@@ -4,6 +4,9 @@ return function()
 
   telescope.setup {
     defaults = {
+      path_display = {
+        shorten = 5,
+      },
       vimgrep_arguments = {
         'rg',
         '--no-heading',
@@ -28,9 +31,10 @@ return function()
       },
     },
     pickers = {
-      git_status = { theme = 'ivy' },
+      git_status = { theme = 'ivy', shorten_path = true },
       live_grep = { theme = 'ivy' },
       buffers = { theme = 'dropdown' },
+      find_files = { theme = 'dropdown', previewer = false },
     },
   }
 end

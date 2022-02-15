@@ -11,8 +11,8 @@ end
 
 -- TELESCOPE
 telemap('<C-p>', 'git_files()')
-telemap('<leader>sf', 'find_files({previewer = false})')
-telemap('<leader>fd', 'current_buffer_fuzzy_find()')
+telemap('<leader>ff', 'find_files()')
+telemap('<leader>fb', 'current_buffer_fuzzy_find()')
 telemap('<leader>fg', 'live_grep()')
 telemap('<leader>fw', 'find_word()')
 telemap('<leader>gs', 'git_status()')
@@ -36,8 +36,7 @@ map('n', '<S-f>', '<cmd>lua require("searchbox").incsearch()<CR>', { noremap = t
 map('n', '<leader>re', '<cmd>lua require("searchbox").replace()<CR>', { noremap = true })
 
 -- HOP
-map('n', '<leader>ff', [[<cmd>:HopWord<CR>]])
-
+map('n', '<leader>hh', [[<cmd>:HopWord<CR>]])
 -- FLOAT TERM
 map('n', '<leader>m', "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true })
 map('t', '<leader>m', "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true })

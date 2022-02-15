@@ -6,7 +6,7 @@ return function()
     filesystem = {
       window = {
         position = 'left',
-        width = 40,
+        width = 70,
         mappings = {
           ['<2-LeftMouse>'] = 'open',
           ['<cr>'] = 'open',
@@ -34,6 +34,7 @@ return function()
       show_unloaded = false,
       window = {
         position = 'left',
+        width = 70,
         mappings = {
           ['<2-LeftMouse>'] = 'open',
           ['<cr>'] = 'open',
@@ -54,6 +55,7 @@ return function()
     git_status = {
       window = {
         position = 'float',
+        width = 70,
         mappings = {
           ['<2-LeftMouse>'] = 'open',
           ['<cr>'] = 'open',
