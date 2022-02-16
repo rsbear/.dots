@@ -13,6 +13,7 @@ require('packer').startup(function(use)
     as = 'rose-pine',
     tag = 'v0.1.0', -- Optional tag release
   }
+  use 'kvrohit/substrata.nvim'
 
   ----------------------------
   -- COMMONS
@@ -117,6 +118,16 @@ require('packer').startup(function(use)
   ----------------------------
   use { 'romgrk/barbar.nvim', config = require 'plugins.barbruh' }
 
+  -- use {
+  --   'nvim-lualine/lualine.nvim',
+  --   requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+  --   config = require 'plugins.lualine',
+  -- }
+
+  ----------------------------
+  -- EXPLORER
+  ----------------------------
+
   use {
     'nvim-neo-tree/neo-tree.nvim',
     requires = {
@@ -159,7 +170,9 @@ require('packer').startup(function(use)
   -- notification component
   use { 'MunifTanjim/nui.nvim' }
 
+  ----------------------------
   -- writer mode
+  ---------------------------
   use {
     'folke/zen-mode.nvim',
     config = require 'plugins.zenmode',
@@ -178,11 +191,17 @@ require('packer').startup(function(use)
     end,
   }
 
+  ----------------------------
   -- AUTO PAIRS
+  ----------------------------
   use {
     'windwp/nvim-autopairs',
     config = require 'plugins.autopairs',
   }
+
+  ----------------------------
+  -- COMMENT
+  ----------------------------
 
   use {
     'numToStr/Comment.nvim',
@@ -194,11 +213,9 @@ require('packer').startup(function(use)
     end,
   }
 
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    config = require 'plugins.lualine',
-  }
+  ----------------------------
+  -- LUA LINE
+  ----------------------------
 
   -- disable search highlight on move
   use { 'romainl/vim-cool' }
@@ -206,7 +223,6 @@ require('packer').startup(function(use)
   -- THIS SHIT GOTTA BE PRETTY YOU KNOW
   -- use 'folke/tokyonight.nvim'
   -- use 'wadackel/vim-dogrun'
-  -- use 'kvrohit/substrata.nvim'
 
   -- require('packer').compile()
   -- require('packer').install()

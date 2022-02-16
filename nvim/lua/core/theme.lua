@@ -11,13 +11,15 @@ vim.g.rose_pine_inactive_background = false
 vim.g.rose_pine_disable_background = false
 vim.g.rose_pine_disable_float_background = false
 vim.g.rose_pine_disable_italics = false
--- vim.g.rose_pine_colors = {
---   git_add = '#008D83',
--- }
+vim.g.rose_pine_colors = {
+  git_add = '#008D83',
+}
 
 -- vim.cmd([[colorscheme tokyonight]])
 vim.cmd [[
 colorscheme rose-pine
+" colorscheme substrata
+
 hi GitSignsAdd guibg=none guifg=#008D83 ctermbg=none
 hi GitGutterChange guibg=none guifg=#845EC2 ctermbg=none
 hi DiffDelete guibg=#333333 guifg=#f0a0c0 ctermbg=none
@@ -29,11 +31,21 @@ highlight TelescopePreviewBorder  guifg=#2a273f
 highlight TelescopeMatching       guifg=#ea9a97
 highlight TelescopeNormal         guifg=#9F9ABA
 
+hi NeoTreeFloatBorder guifg=#2a273f guibg=#191724
+
+" search and replace border
+hi FloatBorder guifg=#ea9a97 guibg=none
+
+ "more barbar
+hi BufferOffset guifg=#2a273f guibg=#191c25 
+hi BufferTabpageFill guifg=#2a273f guibg=#191c25
 ]]
 
 -- kinda annoying that this is a vim global
 -- instead of cfg but whatever
+-- itss for barbar
 vim.g.bufferline = {
+  animation = false,
   closable = true,
   clickable = false,
   icons = false,
@@ -41,10 +53,10 @@ vim.g.bufferline = {
   icon_separator_active = '',
   icon_separator_inactive = '',
   icon_close_tab = '',
-  icon_close_tab_modified = '●',
+  icon_close_tab_modified = '',
   icon_pinned = '',
 
-  insert_at_end = false,
+  insert_at_end = true,
   insert_at_start = false,
 }
 

@@ -3,10 +3,30 @@ return function()
     popup_border_style = 'rounded',
     enable_git_status = true,
     enable_diagnostics = true,
+    default_component_configs = {
+      icon = {
+        folder_closed = '',
+        folder_open = '',
+      },
+    },
     filesystem = {
+      filters = { --These filters are applied to both browsing and searching
+        show_hidden = true,
+        respect_gitignore = false,
+      },
+      use_libuv_file_watcher = true,
       window = {
-        position = 'left',
-        width = 70,
+        popup = {
+          position = { col = '100%', row = '1' },
+          size = function(state)
+            local root_name = vim.fn.fnamemodify(state.path, ':~')
+            local root_len = string.len(root_name) + 4
+            return {
+              width = math.max(root_len, 60),
+              height = vim.o.lines - 0,
+            }
+          end,
+        },
         mappings = {
           ['<2-LeftMouse>'] = 'open',
           ['<cr>'] = 'open',
@@ -54,7 +74,7 @@ return function()
     },
     git_status = {
       window = {
-        position = 'float',
+        position = 'left',
         width = 70,
         mappings = {
           ['<2-LeftMouse>'] = 'open',

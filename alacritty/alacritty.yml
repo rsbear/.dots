@@ -55,7 +55,9 @@ colors:
     background: '0x191724'
     foreground: '0xc0caf5'
 
-    # background: "0x191c25" #substrata bgc
+    # substrata
+    # background: "0x191c25"    
+
     # background: '0x23252c' # deep navy
     # background: '0x000000' # black
 

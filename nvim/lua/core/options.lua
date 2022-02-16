@@ -20,6 +20,7 @@ o.swapfile = false -- disable swap
 o.writebackup = false -- disable backup
 o.backup = false -- disable backup
 o.backupcopy = 'yes' -- fix weirdness for stuff that replaces the entire file when hot reloading
+o.laststatus = 0
 
 vim.wo.number = true
 vim.wo.signcolumn = 'yes'

@@ -1,4 +1,3 @@
--- return function()
 return function()
-
+  -- require('barbar').setup()
 end

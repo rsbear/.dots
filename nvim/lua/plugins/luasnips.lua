@@ -13,7 +13,7 @@ return function()
 
   -- Every unspecified option will be set to the default.
   ls.config.set_config {
-    history = true,
+    history = false,
     updateevents = 'TextChanged,TextChangedI',
   }
 
