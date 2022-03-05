@@ -54,7 +54,7 @@ require('packer').startup(function(use)
   use { 'L3MON4D3/LuaSnip', config = require 'plugins.luasnips' }
   use {
     'hrsh7th/nvim-cmp',
-    config = require 'plugins.cmp',
+    config = require 'plugins.cmpp',
     requires = {
       'onsails/lspkind-nvim',
       'hrsh7th/cmp-nvim-lsp',

@@ -2,7 +2,6 @@ return function()
   require('nvim-treesitter.configs').setup {
     highlight = {
       enable = true,
-      -- disable = { 'json' },
     },
     ensure_installed = 'maintained',
     indent = { enable = true },
@@ -31,8 +30,4 @@ return function()
       },
     },
   }
-
-  -- require('nvim-ts-autotag').setup({
-  -- enable = true
-  -- })
 end

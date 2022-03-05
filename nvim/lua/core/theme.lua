@@ -4,16 +4,6 @@
 -- vim.g.tokyonight_transparent = true
 -- vim.g.tokyonight_style = 'storm'
 
--- rose-pine specific
--- vim.g.rose_pine_variant = ''
--- vim.g.rose_pine_bold_vertical_split_line = false
--- vim.g.rose_pine_inactive_background = false
--- vim.g.rose_pine_disable_background = false
--- vim.g.rose_pine_disable_float_background = false
--- vim.g.rose_pine_colors = {
---   git_add = '#008D83',
--- }
-
 -- vim.cmd([[colorscheme tokyonight]])
 vim.cmd [[
 " colorscheme rose-pine
@@ -39,16 +29,13 @@ hi FloatBorder guifg=#ea9a97 guibg=none
 hi BufferOffset guifg=#2a273f guibg=none 
 hi BufferTabpageFill guifg=#2a273f guibg=none
 
+hi NonText guifg=bg
+
 " hop colors
 " hi HopNextKey guifg=#f7wf38
 " hi HopNextKey1 guifg=#f7wf38
 " hi HopNextKey2 guifg=#f7wf38
 ]]
-
--- vim.cmd 'hi ModesCopy guibg=#f5c359'
--- vim.cmd 'hi ModesDelete guibg=#c75c6a'
--- vim.cmd 'hi ModesInsert guibg=#78ccc5'
--- vim.cmd 'hi ModesVisual guibg=#9745be'
 
 -- kinda annoying that this is a vim global
 -- instead of cfg but whatever

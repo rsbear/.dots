@@ -47,8 +47,8 @@ return function()
       format = lspkind.cmp_format {
         with_text = false,
         menu = {
-          buffer = '[buf]',
           nvim_lsp = '[LSP]',
+          buffer = '[buf]',
           nvim_lua = '[api]',
           path = '[path]',
           luasnip = '[snip]',
