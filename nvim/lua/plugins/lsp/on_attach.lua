@@ -2,10 +2,14 @@ local function lua_nmap(key, cmd, opts)
   require('core.utils').keymap.buf_map('n', key, '<cmd>lua ' .. cmd .. '<CR>', opts)
 end
 
-return function(client)
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+  border = 'rounded',
+})
+
+return function(client, bufnr)
   vim.opt.omnifunc = 'v:lua.vim.lsp.omnifunc'
 
-  lua_nmap('K', 'vim.lsp.buf.hover()')
+  lua_nmap('K', 'vim.lsp.buf.type_definition()')
   lua_nmap('?', 'vim.lsp.buf.hover()')
   lua_nmap('gd', 'vim.lsp.buf.definition()')
   lua_nmap('gD', 'vim.lsp.buf.declaration()')
@@ -22,7 +26,7 @@ return function(client)
   -- DEPRECATE, idk not really loving this plugin
   -- local lsp_signature = require 'lsp_signature'
   -- if lsp_signature then
-  -- lsp_signature.on_attach()
+  -- lsp_signature.on_attach(cfg, bufnr)
   -- end
 
   -- So that the only client with format capabilities is efm

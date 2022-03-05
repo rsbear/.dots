@@ -11,7 +11,21 @@ require('packer').startup(function(use)
   use {
     'rose-pine/neovim',
     as = 'rose-pine',
-    tag = 'v0.1.0', -- Optional tag release
+    tag = 'v1.*', -- Optional tag release
+    config = function()
+      require('rose-pine').setup {
+        dark_variant = 'main',
+        bold_vert_split = false,
+        dim_nc_background = false,
+        disable_background = false,
+        disable_float_background = false,
+        disable_italics = true,
+        groups = {
+          TSString = { style = 'italic' },
+        },
+      }
+      vim.cmd 'colorscheme rose-pine'
+    end,
   }
   use 'kvrohit/substrata.nvim'
 
@@ -57,11 +71,6 @@ require('packer').startup(function(use)
       -- 'ray-x/lsp_signature.nvim',
     },
   }
-  -- use {
-  --   'jose-elias-alvarez/null-ls.nvim',
-  --   config = require 'plugins.lsp.nulls',
-  --   requires = { 'nvim-lua/plenary.nvim' },
-  -- }
 
   ----------------------------
   -- FUZZY
@@ -79,9 +88,26 @@ require('packer').startup(function(use)
     },
   }
   use {
-    'rlane/pounce.nvim',
-    config = require 'plugins.pouncer',
+    'phaazon/hop.nvim',
+    config = function()
+      require('hop').setup {}
+    end,
   }
+
+  -----------------------
+  -- EASY MOTION
+  -----------------------
+  -- use {
+  --   'rlane/pounce.nvim',
+  --   config = function()
+  --     require('pounce').setup {
+  --       accept_keys = 'JFKDLSAHGNUVRBYTMICEOXWPQZ',
+  --       accept_best_key = '<enter>',
+  --       multi_window = true,
+  --       debug = false,
+  --     }
+  --   end,
+  -- }
 
   ----------------------------
   -- SEARCH AND REPLACE
@@ -91,6 +117,16 @@ require('packer').startup(function(use)
     requires = {
       { 'MunifTanjim/nui.nvim' },
     },
+  }
+
+  ----------------------------
+  -- MODES
+  ------------------------------
+
+  use {
+    'mvllow/modes.nvim',
+    event = 'BufRead', -- optional lazy loading
+    config = require 'plugins.modess',
   }
 
   ----------------------------
@@ -112,6 +148,7 @@ require('packer').startup(function(use)
     'dinhhuy258/git.nvim',
     config = require 'plugins.gitt',
   }
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   ----------------------------
   -- TABLINE
@@ -127,7 +164,6 @@ require('packer').startup(function(use)
   ----------------------------
   -- EXPLORER
   ----------------------------
-
   use {
     'nvim-neo-tree/neo-tree.nvim',
     requires = {
@@ -147,23 +183,31 @@ require('packer').startup(function(use)
     config = require 'plugins.alpha-dashboard',
   }
 
+  ----------------------------
   -- FLOATING TERMINAL
+  ----------------------------
   use { 'numToStr/FTerm.nvim', config = require 'plugins.floatterm' }
 
+  ----------------------------
   -- should be in vim core
+  ----------------------------
   use { 'tpope/vim-surround' }
 
   -- haha uh oh
   use { 'github/copilot.vim' }
 
-  -- easy motion
-  use { 'phaazon/hop.nvim', config = require 'plugins.hop' }
-
   -- which key
   use {
     'folke/which-key.nvim',
     config = function()
-      require('which-key').setup {}
+      require('which-key').setup {
+        plugins = {
+          presets = {
+            -- Disable operators
+            operators = false,
+          },
+        },
+      }
     end,
   }
 

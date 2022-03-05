@@ -36,7 +36,7 @@ map('n', '<S-f>', '<cmd>lua require("searchbox").incsearch()<CR>', { noremap = t
 map('n', '<leader>re', '<cmd>lua require("searchbox").replace()<CR>', { noremap = true })
 
 -- HOP
-map('n', '<leader>hh', [[<cmd>:HopWord<CR>]])
+map('n', 's', '<cmd>:HopWord<CR>')
 -- FLOAT TERM
 map('n', '<leader>m', "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true })
 map('t', '<leader>m', "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true })

@@ -45,7 +45,7 @@ colors:
   primary:
     # dogrun
     # background: "0x222433" # dogrun bgc
-    # foreground: "0xD4C3DB"
+    foreground: "0xD4C3DB"
 
     # tokyonight
     # background: '0x24283b'
@@ -53,7 +53,7 @@ colors:
 
     # rose-pine
     background: '0x191724'
-    foreground: '0xc0caf5'
+    # foreground: '0xc0caf5'
 
     # substrata
     # background: "0x191c25"    

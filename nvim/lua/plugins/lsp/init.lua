@@ -37,6 +37,7 @@ return function()
         root_dir = lspconfig.util.root_pattern { 'deno.json', 'importmap.json', 'mod.ts' },
       },
     },
+    cssls = {},
   }
 
   local function get_config(server_name)
@@ -45,6 +46,10 @@ return function()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     if package.loaded['cmp_nvim_lsp'] then
       capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+    end
+
+    if server_name == 'cssls' then
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
     end
 
     config.on_attach = on_attach

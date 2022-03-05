@@ -41,7 +41,7 @@ return function()
       { name = 'nvim_lsp' },
       { name = 'luasnip' },
     }, {
-      { name = 'buffer' },
+      { name = 'buffer', max_item_count = 10 },
     }),
     formatting = {
       format = lspkind.cmp_format {
