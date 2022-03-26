@@ -58,7 +58,7 @@ map('n', 'Y', 'y$', { noremap = true })
 map('n', '<leader><space>', ':NeoTreeFloatToggle<CR>')
 
 -- copilot
-map('i', '<C-e>', "copilot#Accept('<CR>')", { noremap = true, silent = true, expr = true })
+map('i', '<C-e>', 'copilot#Accept("<CR>")', { noremap = true, silent = true, expr = true })
 
 -- Move lines up and down
 map('n', '<S-up>', '<cmd>:m-2<CR>')
