@@ -3,7 +3,7 @@ return function()
     highlight = {
       enable = true,
     },
-    ensure_installed = 'maintained',
+    ensure_installed = 'all',
     indent = { enable = true },
     autopairs = { enable = true },
     autotag = { enable = true },
