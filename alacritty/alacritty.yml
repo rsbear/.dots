@@ -63,16 +63,15 @@ key_bindings:
   - { key: W, mods: Command, action: Quit }
   - { key: N, mods: Command, action: SpawnNewInstance }
   - { key: Return, mods: Command, action: ToggleSimpleFullscreen }
-  # - { key: F,        mods: Control|Shift, mode: ~Search,     action: ReceiveChar }
-  - { key: F,        mods: Command,       mode: ~Search,     action: ReceiveChar }
+  - { key: F,      mods: Command, action: SearchForward }
+  - { key: Equals, mods: Command, action: IncreaseFontSize }
+  - { key: Minus,  mods: Command, action: DecreaseFontSize }
+  - { key: Minus,  mods: Command|Shift, action: ResetFontSize }
 
   - { key: Home, chars: "\x1bOH", mode: AppCursor }
   - { key: Home, chars: "\x1b[H", mode: ~AppCursor }
   - { key: End, chars: "\x1bOF", mode: AppCursor }
   - { key: End, chars: "\x1b[F", mode: ~AppCursor }
-  - { key: Equals, mods: Command, action: IncreaseFontSize }
-  - { key: Minus, mods: Command, action: DecreaseFontSize }
-  - { key: Minus, mods: Command|Shift, action: ResetFontSize }
   - { key: PageUp, mods: Shift, chars: "\x1b[5;2~" }
   - { key: PageUp, mods: Control, chars: "\x1b[5;5~" }
   - { key: PageUp, chars: "\x1b[5~" }
