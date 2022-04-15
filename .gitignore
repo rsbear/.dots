@@ -6,6 +6,7 @@ gcloud
 github-copilot
 iterm2
 neovim
+nvim/plugin/packer_compiled.lua
 plugged
 planetscale
 yarn

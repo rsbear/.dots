@@ -51,14 +51,11 @@ map('v', '<leader>y', '"+y')
 map('n', '<leader>yy', '"+y')
 map('n', 'Y', 'y$', { noremap = true })
 
--- NVIM TREE
--- map('n', '<leader>r', ':NvimTreeRefresh<CR>')
--- map('n', '<leader>n', ':NvimTreeFindFile<CR>')
--- map('n', '<leader><space>', ':NvimTreeToggle<CR>')
+-- NEO TREE
 map('n', '<leader><space>', ':NeoTreeFloatToggle<CR>')
 
 -- copilot
-map('i', '<C-e>', 'copilot#Accept("<CR>")', { noremap = true, silent = true, expr = true })
+map('i', '<C-h>', 'copilot#Accept("<CR>")', { noremap = true, silent = true, expr = true })
 
 -- Move lines up and down
 map('n', '<S-up>', '<cmd>:m-2<CR>')
