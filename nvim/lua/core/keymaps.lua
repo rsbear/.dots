@@ -42,8 +42,8 @@ map('n', '<leader>m', "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true
 map('t', '<leader>m', "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true })
 
 -- GIT
-map('n', '<leader>ga', '<cmd>:Git add . | :Git commit<CR>')
-map('n', '<leader>gp', '<cmd>:Git push<CR>')
+-- map('n', '<leader>ga', '<cmd>:Git add . | :Git commit<CR>')
+-- map('n', '<leader>gp', '<cmd>:Git push<CR>')
 
 -- SYSTEM CLIPBOARD
 map('n', '<leader>y', '"+y')

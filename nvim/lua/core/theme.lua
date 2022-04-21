@@ -8,6 +8,7 @@
 vim.cmd [[
 " colorscheme rose-pine
 " colorscheme substrata
+colorscheme nord
 
 hi GitSignsAdd guibg=none guifg=#008D83 ctermbg=none
 hi GitGutterChange guibg=none guifg=#845EC2 ctermbg=none
@@ -28,8 +29,10 @@ hi FloatBorder guifg=#ea9a97 guibg=none
  "more barbar
 hi BufferOffset guifg=#2a273f guibg=none 
 hi BufferTabpageFill guifg=#2a273f guibg=none
+hi BufferCurrent guifg=#FF6F91 guibg=none
 
-hi NonText guifg=bg
+" damn i dont remember why i added this
+" hi NonText guifg=bg
 
 " hop colors
 " hi HopNextKey guifg=#f7wf38

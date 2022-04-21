@@ -8,6 +8,12 @@ local prettier = {
   formatStdin = true,
 }
 
+-- testing rome
+-- local rome = {
+--   formatCommand = './node_modules/.bin/rome format .',
+--   formatStdin = true,
+-- }
+
 local stylua = {
   formatCommand = 'stylua -s -',
   formatStdin = true,

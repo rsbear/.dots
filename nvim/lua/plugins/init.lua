@@ -8,6 +8,8 @@ end
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
+  use 'shaunsingh/nord.nvim'
+
   use {
     'rose-pine/neovim',
     as = 'rose-pine',
@@ -24,7 +26,7 @@ require('packer').startup(function(use)
           TSString = { style = 'italic' },
         },
       }
-      vim.cmd 'colorscheme rose-pine'
+      -- vim.cmd 'colorscheme rose-pine'
     end,
   }
   use 'kvrohit/substrata.nvim'

@@ -51,11 +51,15 @@ colors:
     # foreground: '0xc0caf5'
 
     # rose-pine
-    background: '0x191724'
-    foreground: '0xc0caf5'
+    # background: '0x191724'
+    # foreground: '0xc0caf5'
 
     # substrata
     # background: "0x191c25"    
+
+    # nord
+    background: '0x2E3440'
+    # foreground: '0xc0caf5'
 
 key_bindings:
   - { key: V, mods: Command, action: Paste }

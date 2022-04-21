@@ -1,4 +1,4 @@
-local function lua_nmap(key, cmd, opts)
+local function lsp_nmap(key, cmd, opts)
   require('core.utils').keymap.buf_map('n', key, '<cmd>lua ' .. cmd .. '<CR>', opts)
 end
 
@@ -9,19 +9,18 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
 return function(client, bufnr)
   vim.opt.omnifunc = 'v:lua.vim.lsp.omnifunc'
 
-  lua_nmap('K', 'vim.lsp.buf.type_definition()')
-  lua_nmap('?', 'vim.lsp.buf.hover()')
-  lua_nmap('gd', 'vim.lsp.buf.definition()')
-  lua_nmap('gD', 'vim.lsp.buf.declaration()')
-  lua_nmap('gi', 'vim.lsp.buf.implementation()')
-  lua_nmap('<leader>e', 'vim.diagnostic.open_float({ border = "rounded" })')
-  lua_nmap('<leader>ca', 'vim.lsp.buf.code_action()')
-  lua_nmap('<leader>gh', 'vim.lsp.buf.signature_help()')
-  lua_nmap('<leader>rn', 'vim.lsp.buf.rename()')
-  lua_nmap('<leader>ty', 'vim.lsp.buf.type_definition()')
-  lua_nmap('[d', 'vim.lsp.diagnostic.goto_prev()')
-  lua_nmap(']d', 'vim.lsp.diagnostic.goto_next()')
-  lua_nmap('<leader>n', 'vim.lsp.buf.signature_help()')
+  lsp_nmap('K', 'vim.lsp.buf.type_definition()')
+  lsp_nmap('?', 'vim.lsp.buf.hover()')
+  lsp_nmap('gd', 'vim.lsp.buf.definition()')
+  lsp_nmap('gD', 'vim.lsp.buf.declaration()')
+  lsp_nmap('gi', 'vim.lsp.buf.implementation()')
+  lsp_nmap('<leader>e', 'vim.diagnostic.open_float({ border = "rounded" })')
+  lsp_nmap('<leader>ca', 'vim.lsp.buf.code_action()')
+  lsp_nmap('<leader>gh', 'vim.lsp.buf.signature_help()')
+  lsp_nmap('<leader>rn', 'vim.lsp.buf.rename()')
+  lsp_nmap('[d', 'vim.lsp.diagnostic.goto_prev()')
+  lsp_nmap(']d', 'vim.lsp.diagnostic.goto_next()')
+  lsp_nmap('<leader>n', 'vim.lsp.buf.signature_help()')
 
   -- DEPRECATE, idk not really loving this plugin
   -- local lsp_signature = require 'lsp_signature'
@@ -46,5 +45,7 @@ return function(client, bufnr)
     vim.cmd 'autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()'
     -- vim.cmd 'autocmd BufWritePre silent exec "!dprint fmt"'
     -- vim.cmd ':silent exec "!dprint fmt"'
+    -- vim.cmd 'autocmd BufWritePre silent exec "!yarn run format"'
+    -- vim.cmd ':silent exec "!yarn run format"'
   end
 end
