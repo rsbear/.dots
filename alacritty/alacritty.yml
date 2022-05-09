@@ -17,7 +17,7 @@ font:
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: -1
-    y: 2
+    y: 6
 
 window:
   dynamic_padding: false
@@ -51,14 +51,14 @@ colors:
     # foreground: '0xc0caf5'
 
     # rose-pine
-    # background: '0x191724'
-    # foreground: '0xc0caf5'
+    background: '0x191724'
+    foreground: '0xc0caf5'
 
     # substrata
     # background: "0x191c25"    
 
     # nord
-    background: '0x2E3440'
+    # background: '0x2E3440'
     # foreground: '0xc0caf5'
 
 key_bindings:

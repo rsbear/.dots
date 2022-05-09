@@ -1,12 +1,40 @@
 return function()
-  local cmp = require 'cmp'
-  local lspkind = require 'lspkind'
-  local snippets = require 'luasnip'
+  local cmp = require('cmp')
+  local lspkind = require('lspkind')
+  local luasnip = require('luasnip')
 
-  cmp.setup {
+  local icons = {
+    Text = '',
+    Method = '',
+    Function = '',
+    Constructor = '⌘',
+    Field = 'ﰠ',
+    Variable = '',
+    Class = 'ﴯ',
+    Interface = '',
+    Module = '',
+    Property = 'ﰠ',
+    Unit = '塞',
+    Value = '',
+    Enum = '',
+    Keyword = '廓',
+    Snippet = '',
+    Color = '',
+    File = '',
+    Reference = '',
+    Folder = '',
+    EnumMember = '',
+    Constant = '',
+    Struct = 'פּ',
+    Event = '',
+    Operator = '',
+    TypeParameter = '',
+  }
+
+  cmp.setup({
     snippet = {
       expand = function(args)
-        snippets.lsp_expand(args.body)
+        luasnip.lsp_expand(args.body)
       end,
     },
     mapping = {
@@ -14,12 +42,12 @@ return function()
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-q>'] = cmp.mapping.close(),
-      ['<CR>'] = cmp.mapping.confirm { select = true },
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
       ['<Tab>'] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()
-        elseif snippets.expand_or_jumpable() then
-          snippets.expand_or_jump()
+        elseif luasnip.expand_or_jumpable() then
+          luasnip.expand_or_jump()
         else
           fallback()
         end
@@ -30,8 +58,8 @@ return function()
       ['<S-Tab>'] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_prev_item()
-        elseif snippets.jumpable(-1) then
-          snippets.jump(-1)
+        elseif luasnip.jumpable(-1) then
+          luasnip.jump(-1)
         else
           fallback()
         end
@@ -40,20 +68,20 @@ return function()
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = 'luasnip' },
-    }, {
-      { name = 'buffer', max_item_count = 10 },
     }),
-    formatting = {
-      format = lspkind.cmp_format {
-        with_text = false,
-        menu = {
-          nvim_lsp = '[LSP]',
-          buffer = '[buf]',
-          nvim_lua = '[api]',
-          path = '[path]',
-          luasnip = '[snip]',
-        },
-      },
+    {
+      { name = 'luasnip' },
+      { name = 'buffer' },
+      { name = 'path' },
     },
-  }
+    formatting = {
+      fields = { 'kind', 'abbr', 'menu' },
+      format = function(_, vim_item)
+        vim_item.menu = vim_item.kind
+        vim_item.kind = icons[vim_item.kind]
+
+        return vim_item
+      end,
+    },
+  })
 end

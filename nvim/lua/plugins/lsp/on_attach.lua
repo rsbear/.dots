@@ -5,6 +5,9 @@ end
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = 'rounded',
 })
+vim.lsp.handlers['textDocument/codeActions'] = vim.lsp.with(vim.lsp.handlers.hover, {
+  border = 'rounded',
+})
 
 return function(client, bufnr)
   vim.opt.omnifunc = 'v:lua.vim.lsp.omnifunc'
@@ -18,8 +21,8 @@ return function(client, bufnr)
   lsp_nmap('<leader>ca', 'vim.lsp.buf.code_action()')
   lsp_nmap('<leader>gh', 'vim.lsp.buf.signature_help()')
   lsp_nmap('<leader>rn', 'vim.lsp.buf.rename()')
-  lsp_nmap('[d', 'vim.lsp.diagnostic.goto_prev()')
-  lsp_nmap(']d', 'vim.lsp.diagnostic.goto_next()')
+  lsp_nmap('<leader>[', 'vim.lsp.diagnostic.goto_prev({ border = "rounded" })')
+  lsp_nmap('<leader>]', 'vim.lsp.diagnostic.goto_next({ border = "rounded" })')
   lsp_nmap('<leader>n', 'vim.lsp.buf.signature_help()')
 
   -- DEPRECATE, idk not really loving this plugin

@@ -17,7 +17,7 @@ return function()
       use_libuv_file_watcher = true,
       window = {
         popup = {
-          position = { col = '100%', row = '1' },
+          position = { col = '0%', row = '1' },
           size = function(state)
             local root_name = vim.fn.fnamemodify(state.path, ':~')
             local root_len = string.len(root_name) + 4
