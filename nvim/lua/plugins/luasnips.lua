@@ -71,6 +71,10 @@ return function()
     parsnip('span', '<span>$0</span>'),
     parsnip('input', '<input className="$1" placeholder="$2" onChange={$0} />'),
     parsnip('button', '<button className="$1" onClick={$2} type="button">$0</button>'),
+    parsnip(
+      'rfc',
+      'import { FC } from "react"\n\nconst $1:FC = () => {\n  return(\n    <div>\n$0\n</div>)}\n\nexport default $2'
+    ),
     s('clg', fmt("console.log('{}', {})", { rep(1), i(1) })),
   })
 end
