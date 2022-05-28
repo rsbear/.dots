@@ -1,4 +1,4 @@
-local utils = require 'core.utils'
+local utils = require('core.utils')
 local map = utils.keymap.map
 
 -- MAP SPACE TO LEADER
@@ -66,11 +66,14 @@ map('i', '<S-Down>', '<cmd>:m+<CR>')
 -- buffer manager
 map('n', '<C-=>', '<cmd>:vert sb#<CR>')
 map('n', '<leader><BS>', '<cmd>:bd<CR>')
+map('n', '<C-BS>', '<cmd>:bd<CR>')
 -- map("n", "<C-right>", "<cmd>:bprev<CR>")
 -- map("n", "<C-left>", "<cmd>:bnext<CR>")
 -- barbar
-map('n', '<C-right>', '<cmd>:BufferNext <CR>')
+map('n', '<C-right>', '<cmd>:BufferNext<CR>')
+map('n', '<C-]>', '<cmd>:BufferNext<CR>')
 map('n', '<C-left>', '<cmd>:BufferPrevious<CR>')
+map('n', '<C-[>', '<cmd>:BufferPrevious<CR>')
 
 -- indenters
 map('v', '<', '<gv')
