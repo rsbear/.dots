@@ -29,7 +29,7 @@ map('n', '<leader>tq', '<cmd>Trouble quickfix<cr>')
 map('n', 'gr', '<cmd>Trouble lsp_references<cr>')
 
 -- NEOGIT
-map('n', 'gi', '<cmd>:Neogit<cr>')
+map('n', '<leader>gg', '<cmd>:Neogit<cr>')
 
 -- find replacer
 map('n', '<S-f>', '<cmd>lua require("searchbox").incsearch()<CR>', { noremap = true })
