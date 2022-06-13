@@ -105,19 +105,11 @@ require('packer').startup(function(use)
   })
 
   -----------------------
-  -- EASY MOTION
+  -- WORKSPACES
   -----------------------
-  -- use {
-  --   'rlane/pounce.nvim',
-  --   config = function()
-  --     require('pounce').setup {
-  --       accept_keys = 'JFKDLSAHGNUVRBYTMICEOXWPQZ',
-  --       accept_best_key = '<enter>',
-  --       multi_window = true,
-  --       debug = false,
-  --     }
-  --   end,
-  -- }
+  use({
+    'natecraddock/workspaces.nvim',
+  })
 
   ----------------------------
   -- SEARCH AND REPLACE
