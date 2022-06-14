@@ -1,14 +1,14 @@
 font:
-  size: 18
+  size: 16
   normal:
-    family: RobotoMono Nerd Font Mono
+    # family: RobotoMono Nerd Font Mono
     # family: SF Mono
     # family: BlexMono Nerd Font Mono
     # family: Cousine Nerd Font Mono
     # family: Inconsolata Nerd Font Mono
     # family: Hasklug Nerd Font
     # family: iA Writer Mono S
-    # family: iMWritingMonoS Nerd Font Mono
+    family: iMWritingMonoS Nerd Font 
 
     # comment out the regular and the font will be fatter like semibold
     # style: Regular
@@ -16,7 +16,7 @@ font:
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
-    x: -1
+    x: 0
     y: 6
 
 window:
