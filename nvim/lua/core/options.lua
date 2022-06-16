@@ -21,7 +21,7 @@ o.swapfile = false -- disable swap
 o.writebackup = false -- disable backup
 o.backup = false -- disable backup
 o.backupcopy = 'yes' -- fix weirdness for stuff that replaces the entire file when hot reloading
-o.laststatus = 0
+-- o.laststatus = 2
 o.scrolloff = 8
 
 -- required for modes plugin
@@ -35,7 +35,7 @@ vim.g.fugitive_pty = 0
 
 vim.g.copilot_no_tab_map = true
 
-o.diffopt:append { 'algorithm:histogram', 'indent-heuristic' }
+o.diffopt:append({ 'algorithm:histogram', 'indent-heuristic' })
 
 o.completeopt = {
   'menu',
@@ -55,12 +55,12 @@ o.shortmess = o.shortmess
   }
 
 o.formatoptions = o.formatoptions
- - 'a' -- Auto formatting is BAD.
- - 't' -- Don't auto format my code. I got linters for that.
- + 'c' -- In general, I like it when comments respect textwidth
- + 'q' -- Allow formatting comments w/ gq
- - 'o' -- O and o, don't continue comments
- + 'r' -- But do continue when pressing enter.
- + 'n' -- Indent past the formatlistpat, not underneath it.
- + 'j' -- Auto-remove comments if possible.
- - '2' -- I'm not in gradeschool anymore
+  - 'a' -- Auto formatting is BAD.
+  - 't' -- Don't auto format my code. I got linters for that.
+  + 'c' -- In general, I like it when comments respect textwidth
+  + 'q' -- Allow formatting comments w/ gq
+  - 'o' -- O and o, don't continue comments
+  + 'r' -- But do continue when pressing enter.
+  + 'n' -- Indent past the formatlistpat, not underneath it.
+  + 'j' -- Auto-remove comments if possible.
+  - '2' -- I'm not in gradeschool anymore

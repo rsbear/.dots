@@ -5,7 +5,7 @@
 -- vim.g.tokyonight_style = 'storm'
 
 -- vim.cmd([[colorscheme tokyonight]])
-vim.cmd [[
+vim.cmd([[
 " colorscheme rose-pine
 " colorscheme substrata
 " colorscheme nord
@@ -38,26 +38,26 @@ hi BufferCurrent guifg=#FF6F91 guibg=none
 " hi HopNextKey guifg=#f7wf38
 " hi HopNextKey1 guifg=#f7wf38
 " hi HopNextKey2 guifg=#f7wf38
-]]
+]])
 
 -- kinda annoying that this is a vim global
 -- instead of cfg but whatever
 -- itss for barbar
-vim.g.bufferline = {
-  animation = false,
-  closable = true,
-  clickable = false,
-  icons = false,
-
-  icon_separator_active = '',
-  icon_separator_inactive = '',
-  icon_close_tab = '',
-  icon_close_tab_modified = '',
-  icon_pinned = '',
-
-  insert_at_end = true,
-  insert_at_start = false,
-}
+-- vim.g.bufferline = {
+--   animation = false,
+--   closable = true,
+--   clickable = false,
+--   icons = false,
+--
+--   icon_separator_active = '',
+--   icon_separator_inactive = '',
+--   icon_close_tab = '',
+--   icon_close_tab_modified = '',
+--   icon_pinned = '',
+--
+--   insert_at_end = true,
+--   insert_at_start = false,
+-- }
 
 -- this api is still only in nightly sadzone
 -- vim.api.nvim_set_hl(0, 'GitSignsAdd', { fg = '#008D83', bg = 'none' })

@@ -8,8 +8,6 @@ end
 require('packer').startup(function(use)
   use('wbthomason/packer.nvim')
 
-  use('shaunsingh/nord.nvim')
-
   use({
     'rose-pine/neovim',
     as = 'rose-pine',
@@ -155,13 +153,21 @@ require('packer').startup(function(use)
   ----------------------------
   -- TABLINE
   ----------------------------
-  use({ 'romgrk/barbar.nvim', config = require('plugins.barbruh') })
+  -- use({ 'romgrk/barbar.nvim', config = require('plugins.barbruh') })
 
-  -- use {
-  --   'nvim-lualine/lualine.nvim',
-  --   requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-  --   config = require 'plugins.lualine',
-  -- }
+  use({
+    'nvim-lualine/lualine.nvim',
+    -- requires = { 'kyazdani42/nvim-web-devicons', opt = false },
+    -- event = 'ColorScheme',
+    config = require('plugins.lualinee'),
+    -- config = function()
+    --   require('lualine').setup({
+    --     options = {
+    --       theme = 'rose-pine',
+    --     },
+    --   })
+    -- end,
+  })
 
   ----------------------------
   -- EXPLORER
@@ -231,6 +237,7 @@ require('packer').startup(function(use)
     'folke/zen-mode.nvim',
     config = require('plugins.zenmode'),
   })
+
   use({
     'folke/twilight.nvim',
     config = function()

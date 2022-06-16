@@ -11,6 +11,7 @@ end
 
 -- TELESCOPE
 telemap('<C-p>', 'git_files()')
+telemap('<C-f>', 'find_files()')
 telemap('<leader>ff', 'find_files()')
 telemap('<leader>fb', 'current_buffer_fuzzy_find()')
 telemap('<leader>fg', 'live_grep()')
@@ -67,13 +68,13 @@ map('i', '<S-Down>', '<cmd>:m+<CR>')
 map('n', '<C-=>', '<cmd>:vert sb#<CR>')
 map('n', '<leader><BS>', '<cmd>:bd<CR>')
 map('n', '<C-BS>', '<cmd>:bd<CR>')
--- map("n", "<C-right>", "<cmd>:bprev<CR>")
--- map("n", "<C-left>", "<cmd>:bnext<CR>")
+map('n', '<C-right>', '<cmd>:bprev<CR>')
+map('n', '<C-left>', '<cmd>:bnext<CR>')
 -- barbar
-map('n', '<C-right>', '<cmd>:BufferNext<CR>')
-map('n', '<C-]>', '<cmd>:BufferNext<CR>')
-map('n', '<C-left>', '<cmd>:BufferPrevious<CR>')
-map('n', '<C-[>', '<cmd>:BufferPrevious<CR>')
+-- map('n', '<C-right>', '<cmd>:BufferNext<CR>')
+-- map('n', '<C-]>', '<cmd>:BufferNext<CR>')
+-- map('n', '<C-left>', '<cmd>:BufferPrevious<CR>')
+-- map('n', '<C-[>', '<cmd>:BufferPrevious<CR>')
 
 -- indenters
 map('v', '<', '<gv')
