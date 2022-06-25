@@ -1,291 +1,293 @@
 -- Install packer
-local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
+	vim.fn.execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
 end
 
-require('packer').startup(function(use)
-  use('wbthomason/packer.nvim')
+require("packer").startup(function(use)
+	use("wbthomason/packer.nvim")
 
-  use({
-    'rose-pine/neovim',
-    as = 'rose-pine',
-    -- tag = 'v1.*', -- Optional tag release
-    config = function()
-      require('rose-pine').setup({
-        dark_variant = 'main',
-        bold_vert_split = false,
-        dim_nc_background = false,
-        disable_background = false,
-        disable_float_background = false,
-        disable_italics = false,
-        groups = {
-          TSString = { style = 'italic' },
-        },
-        highlight_groups = {
-          GitSignsAdd = { fg = '#008D83' },
-          -- GitSignsChange = { fg = '#f6c177' },
-          IndentBlanklineChar = { fg = '#2c2a36' },
-        },
-      })
-      vim.cmd('colorscheme rose-pine')
-    end,
-  })
-  use('kvrohit/substrata.nvim')
+	use({
+		"rose-pine/neovim",
+		as = "rose-pine",
+		-- tag = 'v1.*', -- Optional tag release
+		config = function()
+			require("rose-pine").setup({
+				dark_variant = "main",
+				bold_vert_split = false,
+				dim_nc_background = false,
+				disable_background = false,
+				disable_float_background = false,
+				disable_italics = false,
+				groups = {
+					TSString = { style = "italic" },
+				},
+				highlight_groups = {
+					GitSignsAdd = { fg = "#008D83" },
+					-- GitSignsChange = { fg = '#f6c177' },
+					IndentBlanklineChar = { fg = "#2c2a36" },
+				},
+			})
+			vim.cmd("colorscheme rose-pine")
+		end,
+	})
+	use("kvrohit/substrata.nvim")
 
-  ----------------------------
-  -- COMMONS
-  ----------------------------
-  use({ 'nvim-lua/plenary.nvim', module = 'plenary' })
-  use({ 'nvim-lua/popup.nvim', module = 'popup' })
+	----------------------------
+	-- COMMONS
+	----------------------------
+	use({ "nvim-lua/plenary.nvim", module = "plenary" })
+	use({ "nvim-lua/popup.nvim", module = "popup" })
 
-  ----------------------------
-  -- TREESITTER
-  ----------------------------
-  use({
-    'nvim-treesitter/nvim-treesitter',
-    config = require('plugins.treeshitter'),
-    requires = {
-      'JoosepAlviste/nvim-ts-context-commentstring',
-      'windwp/nvim-ts-autotag',
-    },
-  })
+	----------------------------
+	-- TREESITTER
+	----------------------------
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		config = require("plugins.treeshitter"),
+		requires = {
+			"JoosepAlviste/nvim-ts-context-commentstring",
+			"windwp/nvim-ts-autotag",
+		},
+	})
 
-  ----------------------------
-  -- LSP AND LANG
-  ----------------------------
-  use({ 'folke/lsp-colors.nvim' })
-  use({ 'L3MON4D3/LuaSnip', config = require('plugins.luasnips') })
-  use({
-    'hrsh7th/nvim-cmp',
-    config = require('plugins.cmpp'),
-    requires = {
-      'onsails/lspkind-nvim',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
-    },
-  })
+	----------------------------
+	-- LSP AND LANG
+	----------------------------
+	use({ "folke/lsp-colors.nvim" })
+	use({ "L3MON4D3/LuaSnip", config = require("plugins.luasnips") })
+	use({
+		"hrsh7th/nvim-cmp",
+		config = require("plugins.cmpp"),
+		requires = {
+			"onsails/lspkind-nvim",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+		},
+	})
 
-  use({ 'saadparwaiz1/cmp_luasnip' })
-  use({
-    'neovim/nvim-lspconfig',
-    config = require('plugins.lsp'),
-    requires = {
-      'williamboman/nvim-lsp-installer',
-      -- 'ray-x/lsp_signature.nvim',
-    },
-  })
+	use("lukas-reineke/lsp-format.nvim")
 
-  use({ 'RishabhRD/popfix' })
-  use({ 'RishabhRD/nvim-lsputils' })
+	use({ "saadparwaiz1/cmp_luasnip" })
+	use({
+		"neovim/nvim-lspconfig",
+		config = require("plugins.lsp"),
+		requires = {
+			"williamboman/nvim-lsp-installer",
+			-- 'ray-x/lsp_signature.nvim',
+		},
+	})
 
-  ----------------------------
-  -- FUZZY
-  ----------------------------
-  use({
-    'folke/trouble.nvim',
-    config = require('plugins.trouble'),
-  })
-  use({
-    'nvim-telescope/telescope.nvim',
-    config = require('plugins.telescope'),
-    requires = {
-      { 'nvim-lua/popup.nvim' },
-      { 'nvim-lua/plenary.nvim' },
-    },
-  })
-  use({
-    'phaazon/hop.nvim',
-    config = function()
-      require('hop').setup({})
-    end,
-  })
+	use({ "RishabhRD/popfix" })
+	use({ "RishabhRD/nvim-lsputils" })
 
-  -----------------------
-  -- WORKSPACES
-  -----------------------
-  use({
-    'natecraddock/workspaces.nvim',
-  })
+	----------------------------
+	-- FUZZY
+	----------------------------
+	use({
+		"folke/trouble.nvim",
+		config = require("plugins.trouble"),
+	})
+	use({
+		"nvim-telescope/telescope.nvim",
+		config = require("plugins.telescope"),
+		requires = {
+			{ "nvim-lua/popup.nvim" },
+			{ "nvim-lua/plenary.nvim" },
+		},
+	})
+	use({
+		"phaazon/hop.nvim",
+		config = function()
+			require("hop").setup({})
+		end,
+	})
 
-  ----------------------------
-  -- SEARCH AND REPLACE
-  ----------------------------
-  use({
-    'VonHeikemen/searchbox.nvim',
-    requires = {
-      { 'MunifTanjim/nui.nvim' },
-    },
-  })
+	-----------------------
+	-- WORKSPACES
+	-----------------------
+	use({
+		"natecraddock/workspaces.nvim",
+	})
 
-  ----------------------------
-  -- MODES
-  ------------------------------
+	----------------------------
+	-- SEARCH AND REPLACE
+	----------------------------
+	use({
+		"VonHeikemen/searchbox.nvim",
+		requires = {
+			{ "MunifTanjim/nui.nvim" },
+		},
+	})
 
-  use({
-    'mvllow/modes.nvim',
-    event = 'BufRead', -- optional lazy loading
-    config = require('plugins.modess'),
-  })
+	----------------------------
+	-- MODES
+	------------------------------
 
-  ----------------------------
-  -- GIT
-  ----------------------------
-  -- use 'tpope/vim-fugitive'
-  -- use 'tpope/vim-rhubarb'
-  use({
-    'lewis6991/gitsigns.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
-    config = require('plugins.git_signs'),
-  })
-  use({
-    'TimUntersberger/neogit',
-    requires = 'nvim-lua/plenary.nvim',
-    config = require('plugins.neogit'),
-  })
-  use({
-    'dinhhuy258/git.nvim',
-    config = require('plugins.gitt'),
-  })
-  use({ 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' })
+	use({
+		"mvllow/modes.nvim",
+		event = "BufRead", -- optional lazy loading
+		config = require("plugins.modess"),
+	})
 
-  ----------------------------
-  -- TABLINE
-  ----------------------------
-  -- use({ 'romgrk/barbar.nvim', config = require('plugins.barbruh') })
+	----------------------------
+	-- GIT
+	----------------------------
+	-- use 'tpope/vim-fugitive'
+	-- use 'tpope/vim-rhubarb'
+	use({
+		"lewis6991/gitsigns.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+		config = require("plugins.git_signs"),
+	})
+	use({
+		"TimUntersberger/neogit",
+		requires = "nvim-lua/plenary.nvim",
+		config = require("plugins.neogit"),
+	})
+	use({
+		"dinhhuy258/git.nvim",
+		config = require("plugins.gitt"),
+	})
+	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 
-  use({
-    'nvim-lualine/lualine.nvim',
-    -- requires = { 'kyazdani42/nvim-web-devicons', opt = false },
-    -- event = 'ColorScheme',
-    config = require('plugins.lualinee'),
-    -- config = function()
-    --   require('lualine').setup({
-    --     options = {
-    --       theme = 'rose-pine',
-    --     },
-    --   })
-    -- end,
-  })
+	----------------------------
+	-- TABLINE
+	----------------------------
+	use({ "romgrk/barbar.nvim", config = require("plugins.barbruh") })
 
-  ----------------------------
-  -- EXPLORER
-  ----------------------------
-  use({
-    'nvim-neo-tree/neo-tree.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'kyazdani42/nvim-web-devicons', -- not strictly required, but recommended
-      'MunifTanjim/nui.nvim',
-    },
-    config = require('plugins.neotree'),
-  })
+	use({
+		"nvim-lualine/lualine.nvim",
+		-- requires = { 'kyazdani42/nvim-web-devicons', opt = false },
+		-- event = 'ColorScheme',
+		config = require("plugins.lualinee"),
+		-- config = function()
+		--   require('lualine').setup({
+		--     options = {
+		--       theme = 'rose-pine',
+		--     },
+		--   })
+		-- end,
+	})
 
-  ----------------------------
-  -- DASHBOARD
-  ----------------------------
-  use({
-    'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-    config = require('plugins.alpha-dashboard'),
-  })
+	----------------------------
+	-- EXPLORER
+	----------------------------
+	use({
+		"nvim-neo-tree/neo-tree.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+		},
+		config = require("plugins.neotree"),
+	})
 
-  ----------------------------
-  -- FLOATING TERMINAL
-  ----------------------------
-  use({ 'numToStr/FTerm.nvim', config = require('plugins.floatterm') })
+	----------------------------
+	-- DASHBOARD
+	----------------------------
+	use({
+		"goolord/alpha-nvim",
+		requires = { "kyazdani42/nvim-web-devicons" },
+		config = require("plugins.alpha-dashboard"),
+	})
 
-  ----------------------------
-  -- should be in vim core
-  ----------------------------
-  use({ 'tpope/vim-surround' })
+	----------------------------
+	-- FLOATING TERMINAL
+	----------------------------
+	use({ "numToStr/FTerm.nvim", config = require("plugins.floatterm") })
 
-  -- haha uh oh
-  use({ 'github/copilot.vim' })
+	----------------------------
+	-- should be in vim core
+	----------------------------
+	use({ "tpope/vim-surround" })
 
-  -- stuff
-  use({
-    'lukas-reineke/indent-blankline.nvim',
-    config = function()
-      require('indent_blankline').setup({})
-    end,
-  })
+	-- haha uh oh
+	use({ "github/copilot.vim" })
 
-  -- which key
-  use({
-    'folke/which-key.nvim',
-    config = function()
-      require('which-key').setup({
-        plugins = {
-          presets = {
-            -- Disable operators
-            operators = false,
-          },
-        },
-      })
-    end,
-  })
+	-- stuff
+	use({
+		"lukas-reineke/indent-blankline.nvim",
+		config = function()
+			require("indent_blankline").setup({})
+		end,
+	})
 
-  -- notification component
-  use({ 'MunifTanjim/nui.nvim' })
+	-- which key
+	use({
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup({
+				plugins = {
+					presets = {
+						-- Disable operators
+						operators = false,
+					},
+				},
+			})
+		end,
+	})
 
-  ----------------------------
-  -- writer mode
-  ---------------------------
-  use({
-    'folke/zen-mode.nvim',
-    config = require('plugins.zenmode'),
-  })
+	-- notification component
+	use({ "MunifTanjim/nui.nvim" })
 
-  use({
-    'folke/twilight.nvim',
-    config = function()
-      require('twilight').setup({})
-    end,
-  })
+	----------------------------
+	-- writer mode
+	---------------------------
+	use({
+		"folke/zen-mode.nvim",
+		config = require("plugins.zenmode"),
+	})
 
-  use({
-    'karb94/neoscroll.nvim',
-    config = function()
-      require('neoscroll').setup()
-    end,
-  })
+	use({
+		"folke/twilight.nvim",
+		config = function()
+			require("twilight").setup({})
+		end,
+	})
 
-  ----------------------------
-  -- AUTO PAIRS
-  ----------------------------
-  use({
-    'windwp/nvim-autopairs',
-    config = require('plugins.autopairs'),
-  })
+	use({
+		"karb94/neoscroll.nvim",
+		config = function()
+			require("neoscroll").setup()
+		end,
+	})
 
-  ----------------------------
-  -- COMMENT
-  ----------------------------
+	----------------------------
+	-- AUTO PAIRS
+	----------------------------
+	use({
+		"windwp/nvim-autopairs",
+		config = require("plugins.autopairs"),
+	})
 
-  use({
-    'numToStr/Comment.nvim',
-    requires = {
-      'JoosepAlviste/nvim-ts-context-commentstring',
-    },
-    config = function()
-      require('plugins.comments')
-    end,
-  })
+	----------------------------
+	-- COMMENT
+	----------------------------
 
-  ----------------------------
-  -- LUA LINE
-  ----------------------------
+	use({
+		"numToStr/Comment.nvim",
+		requires = {
+			"JoosepAlviste/nvim-ts-context-commentstring",
+		},
+		config = function()
+			require("plugins.comments")
+		end,
+	})
 
-  -- disable search highlight on move
-  use({ 'romainl/vim-cool' })
+	----------------------------
+	-- LUA LINE
+	----------------------------
 
-  -- THIS SHIT GOTTA BE PRETTY YOU KNOW
-  -- use 'folke/tokyonight.nvim'
-  -- use 'wadackel/vim-dogrun'
+	-- disable search highlight on move
+	use({ "romainl/vim-cool" })
 
-  -- require('packer').compile()
-  -- require('packer').install()
-  -- require 'plugins.nui-popup'
+	-- THIS SHIT GOTTA BE PRETTY YOU KNOW
+	-- use 'folke/tokyonight.nvim'
+	-- use 'wadackel/vim-dogrun'
+
+	-- require('packer').compile()
+	-- require('packer').install()
+	-- require 'plugins.nui-popup'
 end)

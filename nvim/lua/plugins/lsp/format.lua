@@ -1,11 +1,11 @@
 local dprint = {
-  formatCommand = 'dprint fmt --stdin ${INPUT}',
-  formatStdin = true,
+	formatCommand = "dprint fmt --stdin ${INPUT}",
+	formatStdin = true,
 }
 
 local prettier = {
-  formatCommand = 'prettierd ${INPUT}',
-  formatStdin = true,
+	formatCommand = "prettierd ${INPUT}",
+	formatStdin = true,
 }
 
 -- testing rome
@@ -15,27 +15,21 @@ local prettier = {
 -- }
 
 local stylua = {
-  formatCommand = 'stylua -s -',
-  formatStdin = true,
-}
-
-local projectPathPrettier = {
-  formatCommand = './node_modules/.bin/prettier ${--tab-width:tabWidth} ${--single-quote:singleQuote} --parser html',
-  formatStdin = true,
+	formatCommand = "stylua -s -",
+	formatStdin = true,
 }
 
 return {
-  css = { prettier },
-  graphql = { prettier },
-  javascript = { prettier },
-  javascriptreact = { prettier },
-  json = { prettier },
-  lua = { stylua },
-  markdown = { prettier },
-  scss = { prettier },
-  -- svelte = { projectPathPrettier },
-  typescript = { prettier },
-  typescriptreact = { prettier },
-  -- ['typescript.tsx'] = { prettier },
-  -- yaml = { prettier },
+	css = { prettier },
+	graphql = { prettier },
+	javascript = { prettier },
+	javascriptreact = { prettier },
+	json = { prettier },
+	lua = { stylua },
+	markdown = { prettier },
+	scss = { prettier },
+	typescript = { prettier },
+	typescriptreact = { prettier },
+	-- svelte = { projectPathPrettier },
+	yaml = { prettier },
 }
