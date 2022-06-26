@@ -6,7 +6,6 @@
 
 -- vim.cmd([[colorscheme tokyonight]])
 vim.cmd([[
-" colorscheme rose-pine
 " colorscheme substrata
 " colorscheme nord
 
@@ -20,7 +19,6 @@ highlight TelescopePreviewBorder  guifg=#2a273f
 highlight TelescopeMatching       guifg=#ea9a97
 highlight TelescopeNormal         guifg=#9F9ABA
 
-
 hi NeoTreeFloatBorder guifg=#2a273f guibg=#191724
 
 " search and replace border
@@ -31,13 +29,18 @@ hi BufferOffset guifg=#2a273f guibg=none
 hi BufferTabpageFill guifg=#2a273f guibg=none
 hi BufferCurrent guifg=#FF6F91 guibg=none
 
-" damn i dont remember why i added this
-" hi NonText guifg=bg
-
 " hop colors
 " hi HopNextKey guifg=#f7wf38
 " hi HopNextKey1 guifg=#f7wf38
 " hi HopNextKey2 guifg=#f7wf38
+
+" dashboard
+hi DashboardHeader guifg=#ebbcba "rose pine, rose
+hi DashboardCenterIcon guifg=#696778
+hi DashboardShortCut guifg=#696778
+
+" hide tildes at end of buffer
+hi EndOfBuffer guifg=#191724
 ]])
 
 -- kinda annoying that this is a vim global
@@ -64,7 +67,7 @@ hi BufferCurrent guifg=#FF6F91 guibg=none
 -- vim.api.nvim_set_hl(0, 'GitGutterChange', { fg = '#845ec2', bg = 'red' })
 -- vim.api.nvim_set_hl(0, 'DiffDelete', { fg = '#f0a0c0', bg = '#333333' })
 
-vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError' })
-vim.fn.sign_define('DiagnosticSignWarn', { text = '!', texthl = 'DiagnosticSignWarn' })
-vim.fn.sign_define('DiagnosticSignInformation', { text = '', texthl = 'DiagnosticSignInfo' })
-vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
+vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
+vim.fn.sign_define("DiagnosticSignWarn", { text = "!", texthl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignInformation", { text = "", texthl = "DiagnosticSignInfo" })
+vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })

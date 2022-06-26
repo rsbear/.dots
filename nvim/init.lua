@@ -1,5 +1,6 @@
-require 'plugins'
-require 'core.theme'
-require 'core.options'
-require 'core.keymaps'
-require 'core.autocommands'
+require("plugins")
+require("core.theme")
+require("core.dashbored")
+require("core.options")
+require("core.keymaps")
+require("core.autocommands")

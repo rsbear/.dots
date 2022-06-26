@@ -67,8 +67,6 @@ require("packer").startup(function(use)
 		},
 	})
 
-	use("lukas-reineke/lsp-format.nvim")
-
 	use({ "saadparwaiz1/cmp_luasnip" })
 	use({
 		"neovim/nvim-lspconfig",
@@ -187,11 +185,13 @@ require("packer").startup(function(use)
 	----------------------------
 	-- DASHBOARD
 	----------------------------
-	use({
-		"goolord/alpha-nvim",
-		requires = { "kyazdani42/nvim-web-devicons" },
-		config = require("plugins.alpha-dashboard"),
-	})
+	-- use({
+	-- 	"goolord/alpha-nvim",
+	-- 	requires = { "kyazdani42/nvim-web-devicons" },
+	-- 	config = require("plugins.alpha-dashboard"),
+	-- })
+
+	use({ "glepnir/dashboard-nvim" })
 
 	----------------------------
 	-- FLOATING TERMINAL
@@ -210,7 +210,7 @@ require("packer").startup(function(use)
 	use({
 		"lukas-reineke/indent-blankline.nvim",
 		config = function()
-			require("indent_blankline").setup({})
+			require("indent_blankline").setup({ filetype_exclude = { "dashboard" } })
 		end,
 	})
 
