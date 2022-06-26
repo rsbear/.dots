@@ -32,7 +32,6 @@ require("packer").startup(function(use)
 			vim.cmd("colorscheme rose-pine")
 		end,
 	})
-	use("kvrohit/substrata.nvim")
 
 	----------------------------
 	-- COMMONS
@@ -102,13 +101,6 @@ require("packer").startup(function(use)
 		end,
 	})
 
-	-----------------------
-	-- WORKSPACES
-	-----------------------
-	use({
-		"natecraddock/workspaces.nvim",
-	})
-
 	----------------------------
 	-- SEARCH AND REPLACE
 	----------------------------
@@ -157,16 +149,7 @@ require("packer").startup(function(use)
 
 	use({
 		"nvim-lualine/lualine.nvim",
-		-- requires = { 'kyazdani42/nvim-web-devicons', opt = false },
-		-- event = 'ColorScheme',
 		config = require("plugins.lualinee"),
-		-- config = function()
-		--   require('lualine').setup({
-		--     options = {
-		--       theme = 'rose-pine',
-		--     },
-		--   })
-		-- end,
 	})
 
 	----------------------------
@@ -185,12 +168,6 @@ require("packer").startup(function(use)
 	----------------------------
 	-- DASHBOARD
 	----------------------------
-	-- use({
-	-- 	"goolord/alpha-nvim",
-	-- 	requires = { "kyazdani42/nvim-web-devicons" },
-	-- 	config = require("plugins.alpha-dashboard"),
-	-- })
-
 	use({ "glepnir/dashboard-nvim" })
 
 	----------------------------
@@ -228,9 +205,6 @@ require("packer").startup(function(use)
 			})
 		end,
 	})
-
-	-- notification component
-	use({ "MunifTanjim/nui.nvim" })
 
 	----------------------------
 	-- writer mode
