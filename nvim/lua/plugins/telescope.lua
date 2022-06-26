@@ -18,7 +18,14 @@ return function()
 			layout_config = {
 				horizontal = { width = 0.9 },
 			},
-			file_ignore_patterns = { "node_modules", "yarn.lock", "yarn-error.log", "pnpm-lock.yaml" },
+			file_ignore_patterns = {
+				"node_modules",
+				"yarn.lock",
+				"yarn-error.log",
+				"pnpm-lock.yaml",
+				"package-lock.json",
+				".git",
+			},
 			mappings = {
 				i = {
 					["<C-u>"] = false,

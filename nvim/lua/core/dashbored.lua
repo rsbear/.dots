@@ -7,7 +7,7 @@ dash.preview_file_width = 80
 dash.custom_center = {
 	{
 		icon = "  ",
-		desc = "telescope                        ",
+		desc = "finder                           ",
 		shortcut = "~",
 		action = "Telescope find_files find_command=rg,--hidden,--files",
 	},
@@ -15,13 +15,13 @@ dash.custom_center = {
 		icon = "  ",
 		desc = "notes                            ",
 		shortcut = "~",
-		action = "e ~/Documents/vimnotes.md <BAR>:ZenMode",
+		action = ":e ~/Documents/vimnotes.md",
 	},
 	{
 		icon = "  ",
 		desc = "dots                             ",
 		shortcut = "~",
-		action = "Telescope git_files path=" .. home .. "/.config",
+		action = "Telescope dotfiles path=" .. home .. "~/.config",
 	},
 	{
 		icon = "  ",
@@ -30,6 +30,9 @@ dash.custom_center = {
 		action = "qa",
 	},
 }
+
+-- local count = vim.api.tbl_keys(packer_plugins)
+-- print(count)
 
 -- dash.custom_header = {
 -- 	[[                                                                              ]],

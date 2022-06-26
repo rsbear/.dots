@@ -38,9 +38,10 @@ hi BufferCurrent guifg=#FF6F91 guibg=none
 hi DashboardHeader guifg=#ebbcba "rose pine, rose
 hi DashboardCenterIcon guifg=#696778
 hi DashboardShortCut guifg=#696778
+hi DashboardFooter guifg=#696778
 
-" hide tildes at end of buffer
-hi EndOfBuffer guifg=#191724
+" hide tildes at end of buffer NOW INT OPTIONS
+" hi EndOfBuffer guifg=#191724
 ]])
 
 -- kinda annoying that this is a vim global

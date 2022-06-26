@@ -26,6 +26,7 @@ return function()
 		},
 		tailwindcss = {
 			filetypes = { "typescriptreact", "astro", "javascriptreact" },
+			root_dir = lspconfig.util.root_pattern({ "tailwind.config.js" }),
 		},
 		svelteserver = {
 			filetypes = { "html", "svelte" },

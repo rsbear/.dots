@@ -1,10 +1,11 @@
 add_newline = true
 
-# Replace the "❯" symbol in the prompt with "➜"
 [character]                            # The name of the module we are configuring is "character"
-success_symbol = "[❯](bold bright-purple)"     # The "success_symbol" is being set to "➜" with the color "bold green"
-# success_symbol = "[](bold green)"     # The "success_symbol" is being set to "➜" with the color "bold green"
-# success_symbol = "[➜](bold green)"     # The "success_symbol" is being set to "➜" with the color "bold green"
+# success_symbol = "[](bold bright-purple)"     # The "success_symbol" is being set to "➜" with the color "bold green"
+# success_symbol = "[](bold bright-purple)"     # The "success_symbol" is being set to "➜" with the color "bold green"
+success_symbol = "[](bold bright-purple)"     # The "success_symbol" is being set to "➜" with the color "bold green"
+# success_symbol = "[聾](bold bright-purple)"     # The "success_symbol" is being set to "➜" with the color "bold green"
+# success_symbol = "[](bold #ebbcba)"     # The "success_symbol" is being set to "➜" with the color "bold green"
 
 # format = """
 # $username\
@@ -82,6 +83,7 @@ symbol = " "
 
 [directory]
 read_only = " "
+style = "bold #ebbcba"
 truncation_length = 8
 truncation_symbol = "…/"
 
@@ -101,6 +103,10 @@ disabled = true
 
 [git_branch]
 symbol = " "
+style = "bright-purple"
+
+[git_status]
+style = "#eb6f92"
 
 [golang]
 symbol = " "
