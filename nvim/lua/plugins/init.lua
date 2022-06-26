@@ -134,14 +134,14 @@ require("packer").startup(function(use)
 	})
 	use({
 		"TimUntersberger/neogit",
-		requires = "nvim-lua/plenary.nvim",
+		requires = { "nvim-lua/plenary.nvim", "sindrets/diffview.nvim" },
 		config = require("plugins.neogit"),
 	})
 	use({
 		"dinhhuy258/git.nvim",
 		config = require("plugins.gitt"),
 	})
-	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
+	-- use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 
 	----------------------------
 	-- TABLINE
