@@ -32,6 +32,7 @@ require("packer").startup(function(use)
 			vim.cmd("colorscheme rose-pine")
 		end,
 	})
+	-- use("kvrohit/substrata.nvim")
 
 	----------------------------
 	-- COMMONS
