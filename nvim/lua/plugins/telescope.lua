@@ -25,6 +25,7 @@ return function()
 				"pnpm-lock.yaml",
 				"package-lock.json",
 				".git",
+				"dist",
 			},
 			mappings = {
 				i = {
