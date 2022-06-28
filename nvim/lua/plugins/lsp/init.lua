@@ -70,13 +70,8 @@ return function()
 	local function get_config(server_name)
 		local config = servers[server_name] or {}
 
-		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		if package.loaded["cmp_nvim_lsp"] then
 			capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
-		end
-
-		if server_name == "cssls" then
-			capabilities.textDocument.completion.completionItem.snippetSupport = true
 		end
 
 		config.on_attach = on_attach
@@ -86,6 +81,5 @@ return function()
 
 	require("nvim-lsp-installer").on_server_ready(function(server)
 		server:setup(get_config(server.name))
-		-- vim.cmd [[ do User LspAttachBuffers ]]
 	end)
 end

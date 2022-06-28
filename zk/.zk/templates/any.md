@@ -1,9 +1,7 @@
 ---
+title: {{ title }}
+date: {{ date now }}
 tags: [any]
 ---
-
-{{date now}}
-
-# {{title}}
 
 {{content}}

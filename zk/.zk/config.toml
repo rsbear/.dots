@@ -2,7 +2,7 @@
 [note]
 language = "en"
 default-title = "Untitled"
-filename = "{{slug title}}-{{date now}}"
+filename = "{{title}}-{{date now}}"
 extension = "md"
 template = "default.md"
 id-charset = "alphanum"
@@ -48,6 +48,8 @@ editor = "nvim"
 pager = "less -FIRX"
 # Command used to preview a note during interactive fzf mode.
 fzf-preview = "bat -p --color always {-1}"
+fzf-line = "{{style 'blue' title-or-path}}"
+
 
 # NAMED FILTERS
 [filter]
@@ -55,16 +57,14 @@ recents = "--sort created- --created-after 'last two weeks'"
 
 # COMMAND ALIASES
 [alias]
-# Edit the last modified note.
-edlast = "zk edit --limit 1 --sort modified- $@"
-# Edit the notes selected interactively among the notes created the last two weeks.
+editlast = "zk edit --limit 1 --sort modified- $@"
 recent = "zk edit --sort created- --created-after 'last two weeks' --interactive"
-# Show a random note.
-lucky = "zk list --quiet --format full --sort random --limit 1"
-
 ts = 'zk new "$ZK_NOTEBOOK_DIR/ts" --group ts --title "$*"'
 any = 'zk new "$ZK_NOTEBOOK_DIR/any" --group any --title "$*"'
 private = 'zk new "$ZK_NOTEBOOK_DIR/private" --group private --title "$*"'
+tslist = 'zk list --tag ts --quiet --interactive'
+anylist = 'zk list --tag any --quiet --interactive'
+privlist = 'zk list --tag private --quiet --interactive'
 
 # LSP (EDITOR INTEGRATION)
 [lsp]
