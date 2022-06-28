@@ -12,3 +12,4 @@ planetscale
 yarn
 sanity
 .jira
+zk/private/*

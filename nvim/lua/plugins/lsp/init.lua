@@ -5,6 +5,9 @@ return function()
 	local format_config = require("plugins.lsp.format")
 	require("plugins.lsp.ui").setup()
 
+	local capabilities = vim.lsp.protocol.make_client_capabilities()
+	capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 	local servers = {
 		efm = {
 			filetypes = vim.tbl_keys(format_config),
@@ -38,7 +41,15 @@ return function()
 			root_dir = lspconfig.util.root_pattern({ "deno.json", "import_map.json", "mod.ts" }),
 		},
 		cssls = {
-			-- cmd = { "vscode-css-language-server", "--stdio" },
+			capabilities = capabilities,
+			settings = {
+				css = {
+					validate = true,
+				},
+				scss = {
+					validate = true,
+				},
+			},
 		},
 		gopls = {
 			settings = {

@@ -230,6 +230,14 @@ require("packer").startup(function(use)
 	})
 
 	----------------------------
+	-- COLOUR PICKER
+	----------------------------
+	use({
+		"ziontee113/color-picker.nvim",
+		-- config = require("plugins.colourpicker"),
+	})
+
+	----------------------------
 	-- AUTO PAIRS
 	----------------------------
 	use({
