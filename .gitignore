@@ -13,3 +13,4 @@ yarn
 sanity
 .jira
 zk/private/*
+zk/.zk/notebook.db
