@@ -153,6 +153,36 @@ require("packer").startup(function(use)
 		config = require("plugins.lualinee"),
 	})
 
+	-- use({
+	-- 	"ghillb/cybu.nvim",
+	-- 	branch = "main", -- timely updates
+	-- 	requires = { "kyazdani42/nvim-web-devicons" }, -- optional
+	-- 	config = function()
+	-- 		require("cybu").setup({
+	-- 			style = {
+	-- 				border = "rounded",
+	-- 				padding = "10",
+	-- 			},
+	-- 			behavior = { -- set behavior for different modes
+	-- 				mode = {
+	-- 					default = {
+	-- 						switch = "immediate", -- immediate, on_close
+	-- 						view = "paging", -- paging, rolling
+	-- 					},
+	-- 					last_used = {
+	-- 						switch = "on_close", -- immediate, on_close
+	-- 						view = "paging", -- paging, rolling
+	-- 					},
+	-- 				},
+	-- 			},
+	-- 		})
+	-- 		vim.keymap.set("n", "<C-left>", "<Plug>(CybuPrev)")
+	-- 		vim.keymap.set("n", "<C-right>", "<Plug>(CybuNext)")
+	-- 		vim.keymap.set({ "n", "v" }, "<c-s-tab>", "<plug>(CybuLastusedPrev)")
+	-- 		vim.keymap.set({ "n", "v" }, "<c-tab>", "<plug>(CybuLastusedNext)")
+	-- 	end,
+	-- })
+
 	----------------------------
 	-- EXPLORER
 	----------------------------

@@ -1,10 +1,10 @@
 return function()
-  require('zen-mode').setup {
-    window = {
-      backdrop = 1,
-    },
-    plugins = {
-      twilight = { enabled = false },
-    },
-  }
+	require("zen-mode").setup({
+		window = {
+			backdrop = 1,
+		},
+		plugins = {
+			twilight = { enabled = true },
+		},
+	})
 end

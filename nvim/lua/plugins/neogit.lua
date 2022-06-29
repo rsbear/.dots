@@ -17,6 +17,14 @@ return function()
 			item = { "", "" },
 			hunk = { "", "" },
 		},
+		sections = {
+			unpulled = {
+				folded = true,
+			},
+			unmerged = {
+				folded = true,
+			},
+		},
 		mappings = {
 			status = {
 				-- Adds a mapping with "B" as key that does the "BranchPopup" command

@@ -4,8 +4,7 @@ date: 2022-06-28
 tags: [ts]
 ---
 
-```
-
+``` typescript
 type THashMap = {
   id: string // doesnt matter if undefined or not
 	//.... properties

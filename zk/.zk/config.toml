@@ -2,7 +2,7 @@
 [note]
 language = "en"
 default-title = "Untitled"
-filename = "{{title}}-{{date now}}"
+filename = "{{slug}}-{{date now}}"
 extension = "md"
 template = "default.md"
 id-charset = "alphanum"
@@ -47,7 +47,7 @@ editor = "nvim"
 # Pager used to scroll through long output.
 pager = "less -FIRX"
 # Command used to preview a note during interactive fzf mode.
-fzf-preview = "bat -p --color always {-1}"
+fzf-preview = "glow --style dark {-1}"
 fzf-line = "{{style 'blue' title-or-path}}"
 
 
@@ -65,6 +65,7 @@ private = 'zk new "$ZK_NOTEBOOK_DIR/private" --group private --title "$*"'
 tslist = 'zk list --tag ts --quiet --interactive'
 anylist = 'zk list --tag any --quiet --interactive'
 privlist = 'zk list --tag private --quiet --interactive'
+ls = 'zk list --tag "$*" --quiet --interactive'
 
 # LSP (EDITOR INTEGRATION)
 [lsp]

@@ -68,13 +68,16 @@ map("i", "<S-Down>", "<cmd>:m+<CR>")
 map("n", "<C-=>", "<cmd>:vert sb#<CR>")
 map("n", "<leader><BS>", "<cmd>:bd<CR>")
 map("n", "<C-BS>", "<cmd>:bd<CR>")
+
 -- map('n', '<C-right>', '<cmd>:bprev<CR>')
 -- map('n', '<C-left>', '<cmd>:bnext<CR>')
+
 -- barbar
 map("n", "<C-right>", "<cmd>:BufferNext<CR>")
 map("n", "<C-]>", "<cmd>:BufferNext<CR>")
 map("n", "<C-left>", "<cmd>:BufferPrevious<CR>")
 map("n", "<C-[>", "<cmd>:BufferPrevious<CR>")
+map("n", "<leader>1", "<cmd>:BufferFirst<CR>")
 
 -- indenters
 map("v", "<", "<gv")

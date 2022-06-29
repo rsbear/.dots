@@ -11,7 +11,7 @@ type Items = Array<{
 	slug: string
 }>
 
-```
+``` typescript
 const result = Promise.all(items?.map(async (x) => {
   const dataForItem = await fetch("/endpoint/${x.slug}")
 
@@ -24,7 +24,7 @@ const result = Promise.all(items?.map(async (x) => {
 
 We can infer the response of the map iteration function and extract it into something reusable.
 
-```
+``` typescript
 type ResultsPromise = Awaited<typeof result>
 ```
 
