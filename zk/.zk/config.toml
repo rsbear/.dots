@@ -24,6 +24,11 @@ template = "ts.md"
 filename = "{{title}}_{{date now}}"
 template = "any.md"
 
+[group.nvim]
+[group.nvim.note]
+filename = "{{title}}_{{date now}}"
+template = "nvim.md"
+
 [group.private]
 [group.private.note]
 filename = "{{title}}_{{date now}}"
@@ -62,9 +67,7 @@ recent = "zk edit --sort created- --created-after 'last two weeks' --interactive
 ts = 'zk new "$ZK_NOTEBOOK_DIR/ts" --group ts --title "$*"'
 any = 'zk new "$ZK_NOTEBOOK_DIR/any" --group any --title "$*"'
 private = 'zk new "$ZK_NOTEBOOK_DIR/private" --group private --title "$*"'
-tslist = 'zk list --tag ts --quiet --interactive'
-anylist = 'zk list --tag any --quiet --interactive'
-privlist = 'zk list --tag private --quiet --interactive'
+nvim = 'zk new "$ZK_NOTEBOOK_DIR/nvim" --group nvim --title "$*"'
 ls = 'zk list --tag "$*" --quiet --interactive'
 
 # LSP (EDITOR INTEGRATION)

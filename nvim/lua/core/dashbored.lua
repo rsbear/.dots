@@ -21,7 +21,7 @@ dash.custom_center = {
 		icon = "  ",
 		desc = "dots                             ",
 		shortcut = "~",
-		action = "Telescope dotfiles path=" .. home .. "~/.config",
+		action = "Telescope find_files cwd=~/.config",
 	},
 	{
 		icon = "  ",

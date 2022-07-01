@@ -11,16 +11,15 @@ end
 
 -- TELESCOPE
 telemap("<C-p>", "git_files()")
-telemap("<C-f>", "find_files()")
 telemap("<leader>ff", "find_files()")
 telemap("<leader>fb", "current_buffer_fuzzy_find()")
 telemap("<leader>fg", "live_grep()")
-telemap("<leader>fw", "find_word()")
+telemap("<leader>fw", "grep_string({ search = vim.fn.input('GREPPER > '), theme = 'ivy' })")
 telemap("<leader>gs", "git_status()")
 telemap("<leader>gc", "git_commits()")
-telemap("<leader>km", "keymaps()")
+telemap("<C-k>", "keymaps()")
 telemap("<leader>w", "buffers()")
-telemap("<leader>ps", "grep_string({ search = vim.fn.input('GREPPER > ')})")
+telemap("<leader>en", "find_files({ cwd = '~/.config' })")
 telemap("<C-q>", "quickfix()")
 
 -- TROUBLE

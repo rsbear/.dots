@@ -7,40 +7,8 @@
 -- vim.cmd([[colorscheme tokyonight]])
 vim.cmd([[
 " colorscheme substrata
-" colorscheme nord
 
-hi GitGutterChange guibg=none guifg=#ebbcba ctermbg=none
-hi DiffDelete guibg=#333333 guifg=#f0a0c0 ctermbg=none
-
-highlight TelescopeBorder         guifg=#ea9a97
-highlight TelescopePromptBorder   guifg=#2a273f
-highlight TelescopeResultsBorder  guifg=#2a273f
-highlight TelescopePreviewBorder  guifg=#2a273f
-highlight TelescopeMatching       guifg=#ea9a97
-highlight TelescopeNormal         guifg=#9F9ABA
-
-hi NeoTreeFloatBorder guifg=#2a273f guibg=#191724
-
-" search and replace border
-hi FloatBorder guifg=#ea9a97 guibg=none
-
- "more barbar
-hi BufferOffset guifg=#2a273f guibg=none 
-hi BufferTabpageFill guifg=#2a273f guibg=none
-hi BufferCurrent guifg=#FF6F91 guibg=none
-
-" hop colors
-" hi HopNextKey guifg=#f7wf38
-" hi HopNextKey1 guifg=#f7wf38
-" hi HopNextKey2 guifg=#f7wf38
-
-" dashboard
-hi DashboardHeader guifg=#ebbcba "rose pine, rose
-hi DashboardCenterIcon guifg=#696778
-hi DashboardShortCut guifg=#696778
-hi DashboardFooter guifg=#696778
-
-" hide tildes at end of buffer NOW INT OPTIONS
+" hide tildes at end of buffer NOW IN OPTIONS
 " hi EndOfBuffer guifg=#191724
 ]])
 
@@ -48,24 +16,46 @@ hi DashboardFooter guifg=#696778
 -- instead of cfg but whatever
 -- itss for barbar
 vim.g.bufferline = {
-	--   animation = false,
-	--   closable = true,
 	clickable = false,
-	--   icons = false,
-	--
-	--   icon_separator_active = '',
-	--   icon_separator_inactive = '',
+	icon_separator_inactive = "",
 	icon_close_tab = "",
 	icon_close_tab_modified = "",
-	--   icon_pinned = '',
 	insert_at_end = true,
 	insert_at_start = false,
+	maximum_padding = 1,
 }
 
--- this api is still only in nightly sadzone
--- vim.api.nvim_set_hl(0, 'GitSignsAdd', { fg = '#008D83', bg = 'none' })
--- vim.api.nvim_set_hl(0, 'GitGutterChange', { fg = '#845ec2', bg = 'red' })
--- vim.api.nvim_set_hl(0, 'DiffDelete', { fg = '#f0a0c0', bg = '#333333' })
+local hi = vim.api.nvim_set_hl
+
+-- git gutter theme
+-- hi(0, "GitSignsAdd", { fg = "#008D83", bg = "none" })
+-- hi(0, "GitGutterChange", { fg = "#845ec2", bg = "none" })
+-- hi(0, "DiffDelete", { fg = "#f0a0c0", bg = "#333333" })
+
+-- dashboard theme
+hi(0, "DashboardHeader", { fg = "#ebbcba", bg = "none" }) -- rose pine, rose
+hi(0, "DashboardCenterIcon", { fg = "#696778", bg = "none" })
+hi(0, "DashboardShortCut", { fg = "#696778", bg = "none" })
+hi(0, "DashboardFooter", { fg = "#696778", bg = "none" })
+
+-- telescope colors
+hi(0, "TelescopeBorder", { fg = "#ea9a97", bg = "none" })
+hi(0, "TelescopePromptBorder", { fg = "#2a273f", bg = "none" })
+hi(0, "TelescopeResultsBorder", { fg = "#2a273f", bg = "none" })
+hi(0, "TelescopePreviewBorder", { fg = "#2a273f", bg = "none" })
+hi(0, "TelescopeMatching", { fg = "#ea9a97", bg = "none" })
+hi(0, "TelescopeNormal", { fg = "#9F9ABA", bg = "none" })
+
+-- search and replace border
+hi(0, "FloatBorder", { fg = "#ea9a97", bg = "none" })
+
+-- neotree border
+hi(0, "NeoTreeBorder", { fg = "#ea9a97", bg = "none" })
+
+-- barbar colors
+-- hi(0, "BarbarStatusLine", { fg = "#696778", bg = "none" })
+-- hi(0, "BarbarStatusLineFocused", { fg = "#696778", bg = "none" })
+-- hi(0, "BarbarStatusLineSelected", { fg = "#696778", bg = "none" })
 
 vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
 vim.fn.sign_define("DiagnosticSignWarn", { text = "!", texthl = "DiagnosticSignWarn" })

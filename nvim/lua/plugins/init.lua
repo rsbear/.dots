@@ -125,8 +125,8 @@ require("packer").startup(function(use)
 	----------------------------
 	-- GIT
 	----------------------------
-	-- use 'tpope/vim-fugitive'
-	-- use 'tpope/vim-rhubarb'
+	use("tpope/vim-fugitive")
+	use("tpope/vim-rhubarb")
 	use({
 		"lewis6991/gitsigns.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
@@ -135,7 +135,7 @@ require("packer").startup(function(use)
 	use({
 		"TimUntersberger/neogit",
 		requires = { "nvim-lua/plenary.nvim", "sindrets/diffview.nvim" },
-		config = require("plugins.neogit"),
+		config = require("plugins.neogitter"),
 	})
 	use({
 		"dinhhuy258/git.nvim",
@@ -213,6 +213,26 @@ require("packer").startup(function(use)
 
 	-- haha uh oh
 	use({ "github/copilot.vim" })
+	use({
+		"zbirenbaum/copilot.lua",
+		event = { "VimEnter" },
+		config = function()
+			vim.defer_fn(function()
+				require("copilot").setup({
+					cmp = {
+						enabled = true,
+						method = "getCompletionsCycling",
+					},
+					ft_disable = { "markdown" },
+				})
+			end, 100)
+		end,
+	})
+
+	use({
+		"zbirenbaum/copilot-cmp",
+		module = "copilot_cmp",
+	})
 
 	-- stuff
 	use({

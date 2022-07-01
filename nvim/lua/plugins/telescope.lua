@@ -39,7 +39,7 @@ return function()
 			},
 		},
 		pickers = {
-			git_status = { theme = "ivy", shorten_path = true },
+			git_status = { shorten_path = true },
 			live_grep = { theme = "ivy" },
 			buffers = { theme = "dropdown" },
 			find_files = { theme = "dropdown", previewer = false },

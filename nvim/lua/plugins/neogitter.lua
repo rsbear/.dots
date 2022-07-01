@@ -24,6 +24,9 @@ return function()
 			unmerged = {
 				folded = true,
 			},
+			recent = {
+				folded = false,
+			},
 		},
 		mappings = {
 			status = {
