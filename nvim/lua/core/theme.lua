@@ -15,21 +15,21 @@ vim.cmd([[
 -- kinda annoying that this is a vim global
 -- instead of cfg but whatever
 -- itss for barbar
-vim.g.bufferline = {
-	clickable = false,
-	icon_separator_inactive = "",
-	icon_close_tab = "",
-	icon_close_tab_modified = "",
-	insert_at_end = true,
-	insert_at_start = false,
-	maximum_padding = 1,
-}
+-- vim.g.bufferline = {
+-- 	clickable = false,
+-- 	icon_separator_inactive = "",
+-- 	icon_close_tab = "",
+-- 	icon_close_tab_modified = "",
+-- 	insert_at_end = true,
+-- 	insert_at_start = false,
+-- 	maximum_padding = 1,
+-- }
 
 local hi = vim.api.nvim_set_hl
 
 -- git gutter theme
 -- hi(0, "GitSignsAdd", { fg = "#008D83", bg = "none" })
--- hi(0, "GitGutterChange", { fg = "#845ec2", bg = "none" })
+hi(0, "GitGutterChange", { fg = "#845ec2", bg = "none" })
 -- hi(0, "DiffDelete", { fg = "#f0a0c0", bg = "#333333" })
 
 -- dashboard theme
@@ -46,11 +46,12 @@ hi(0, "TelescopePreviewBorder", { fg = "#2a273f", bg = "none" })
 hi(0, "TelescopeMatching", { fg = "#ea9a97", bg = "none" })
 hi(0, "TelescopeNormal", { fg = "#9F9ABA", bg = "none" })
 
--- search and replace border
-hi(0, "FloatBorder", { fg = "#ea9a97", bg = "none" })
+-- search and replace border and lsp float, covered in rose pine setup
+-- hi(0, "FloatBorder", { fg = "#008D83", bg = "#1F1D2F" })
 
 -- neotree border
 hi(0, "NeoTreeBorder", { fg = "#ea9a97", bg = "none" })
+hi(0, "NeoTreeFloatBorder", { fg = "#2a273f", bg = "#191724" })
 
 -- barbar colors
 -- hi(0, "BarbarStatusLine", { fg = "#696778", bg = "none" })

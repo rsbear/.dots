@@ -1,4 +1,4 @@
--- Install packer
+-- Install packerp
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
@@ -26,7 +26,9 @@ require("packer").startup(function(use)
 				highlight_groups = {
 					GitSignsAdd = { fg = "#008D83" },
 					-- GitSignsChange = { fg = '#f6c177' },
-					IndentBlanklineChar = { fg = "#2c2a36" },
+					-- IndentBlanklineChar = { fg = "#2c2a36" },
+					IndentBlanklineChar = { fg = "#191724" },
+					FloatBorder = { fg = "#2a273f", bg = "none" },
 				},
 			})
 			vim.cmd("colorscheme rose-pine")
@@ -80,6 +82,9 @@ require("packer").startup(function(use)
 	use({ "RishabhRD/popfix" })
 	use({ "RishabhRD/nvim-lsputils" })
 
+	use("ray-x/go.nvim")
+	use("ray-x/guihua.lua")
+
 	----------------------------
 	-- FUZZY
 	----------------------------
@@ -97,9 +102,7 @@ require("packer").startup(function(use)
 	})
 	use({
 		"phaazon/hop.nvim",
-		config = function()
-			require("hop").setup({})
-		end,
+		config = require("plugins.tinycfg").hop(),
 	})
 
 	----------------------------
@@ -118,8 +121,8 @@ require("packer").startup(function(use)
 
 	use({
 		"mvllow/modes.nvim",
-		event = "BufRead", -- optional lazy loading
-		config = require("plugins.modess"),
+		event = "BufRead",
+		config = require("plugins.tinycfg").modes(),
 	})
 
 	----------------------------
@@ -139,7 +142,7 @@ require("packer").startup(function(use)
 	})
 	use({
 		"dinhhuy258/git.nvim",
-		config = require("plugins.gitt"),
+		config = require("plugins.tinycfg").git(),
 	})
 	-- use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 
@@ -148,39 +151,9 @@ require("packer").startup(function(use)
 	----------------------------
 	use({ "romgrk/barbar.nvim", config = require("plugins.barbruh") })
 
-	use({
-		"nvim-lualine/lualine.nvim",
-		config = require("plugins.lualinee"),
-	})
-
 	-- use({
-	-- 	"ghillb/cybu.nvim",
-	-- 	branch = "main", -- timely updates
-	-- 	requires = { "kyazdani42/nvim-web-devicons" }, -- optional
-	-- 	config = function()
-	-- 		require("cybu").setup({
-	-- 			style = {
-	-- 				border = "rounded",
-	-- 				padding = "10",
-	-- 			},
-	-- 			behavior = { -- set behavior for different modes
-	-- 				mode = {
-	-- 					default = {
-	-- 						switch = "immediate", -- immediate, on_close
-	-- 						view = "paging", -- paging, rolling
-	-- 					},
-	-- 					last_used = {
-	-- 						switch = "on_close", -- immediate, on_close
-	-- 						view = "paging", -- paging, rolling
-	-- 					},
-	-- 				},
-	-- 			},
-	-- 		})
-	-- 		vim.keymap.set("n", "<C-left>", "<Plug>(CybuPrev)")
-	-- 		vim.keymap.set("n", "<C-right>", "<Plug>(CybuNext)")
-	-- 		vim.keymap.set({ "n", "v" }, "<c-s-tab>", "<plug>(CybuLastusedPrev)")
-	-- 		vim.keymap.set({ "n", "v" }, "<c-tab>", "<plug>(CybuLastusedNext)")
-	-- 	end,
+	-- 	"nvim-lualine/lualine.nvim",
+	-- 	config = require("plugins.lualinee"),
 	-- })
 
 	----------------------------
@@ -245,18 +218,8 @@ require("packer").startup(function(use)
 	-- which key
 	use({
 		"folke/which-key.nvim",
-		config = function()
-			require("which-key").setup({
-				plugins = {
-					presets = {
-						-- Disable operators
-						operators = false,
-					},
-				},
-			})
-		end,
+		config = require("plugins.tinycfg").whichkey(),
 	})
-
 	----------------------------
 	-- writer mode
 	---------------------------
@@ -284,7 +247,7 @@ require("packer").startup(function(use)
 	----------------------------
 	use({
 		"ziontee113/color-picker.nvim",
-		-- config = require("plugins.colourpicker"),
+		config = require("plugins.colourpicker"),
 	})
 
 	----------------------------
@@ -309,16 +272,8 @@ require("packer").startup(function(use)
 		end,
 	})
 
-	----------------------------
-	-- LUA LINE
-	----------------------------
-
 	-- disable search highlight on move
 	use({ "romainl/vim-cool" })
-
-	-- THIS SHIT GOTTA BE PRETTY YOU KNOW
-	-- use 'folke/tokyonight.nvim'
-	-- use 'wadackel/vim-dogrun'
 
 	-- require('packer').compile()
 	-- require('packer').install()

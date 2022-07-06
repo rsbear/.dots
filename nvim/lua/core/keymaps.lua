@@ -9,6 +9,10 @@ local function telemap(key, cmd)
 	map("n", key, '<cmd>lua require("telescope.builtin").' .. cmd .. "<CR>")
 end
 
+local function troublemap(key, cmd)
+	map("n", key, "<cmd>Trouble " .. cmd .. "<CR>")
+end
+
 -- TELESCOPE
 telemap("<C-p>", "git_files()")
 telemap("<leader>ff", "find_files()")
@@ -17,16 +21,17 @@ telemap("<leader>fg", "live_grep()")
 telemap("<leader>fw", "grep_string({ search = vim.fn.input('GREPPER > '), theme = 'ivy' })")
 telemap("<leader>gs", "git_status()")
 telemap("<leader>gc", "git_commits()")
-telemap("<C-k>", "keymaps()")
-telemap("<leader>w", "buffers()")
+telemap("<leader>k", "keymaps()")
+telemap("<leader>b", "buffers()")
 telemap("<leader>en", "find_files({ cwd = '~/.config' })")
 telemap("<C-q>", "quickfix()")
 
 -- TROUBLE
-map("n", "<leader>tw", "<cmd>Trouble document_diagnostics<cr>")
-map("n", "<leader>xl", "<cmd>Trouble loclist<cr>")
-map("n", "<leader>tq", "<cmd>Trouble quickfix<cr>")
-map("n", "gr", "<cmd>Trouble lsp_references<cr>")
+troublemap("<leader>tw", "workspace_diagnostics")
+troublemap("<leader>td", "workspace_diagnostics")
+troublemap("<leader>xl", "loclist")
+troublemap("<leader>tq", "quickfix")
+troublemap("gR", "lsp_references")
 
 -- NEOGIT
 map("n", "<leader>gg", "<cmd>:Neogit<cr>")
@@ -37,6 +42,7 @@ map("n", "<leader>re", '<cmd>lua require("searchbox").replace()<CR>', { noremap 
 
 -- HOP
 map("n", "s", "<cmd>:HopWord<CR>")
+
 -- FLOAT TERM
 map("n", "<leader>m", "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true })
 map("t", "<leader>m", "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true })
@@ -68,8 +74,8 @@ map("n", "<C-=>", "<cmd>:vert sb#<CR>")
 map("n", "<leader><BS>", "<cmd>:bd<CR>")
 map("n", "<C-BS>", "<cmd>:bd<CR>")
 
--- map('n', '<C-right>', '<cmd>:bprev<CR>')
--- map('n', '<C-left>', '<cmd>:bnext<CR>')
+-- map("n", "<C-right>", "<cmd>:bprev<CR>")
+-- map("n", "<C-left>", "<cmd>:bnext<CR>")
 
 -- barbar
 map("n", "<C-right>", "<cmd>:BufferNext<CR>")

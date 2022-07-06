@@ -41,7 +41,7 @@ return function()
 		pickers = {
 			git_status = { shorten_path = true },
 			live_grep = { theme = "ivy" },
-			buffers = { theme = "dropdown" },
+			buffers = { theme = "ivy" },
 			find_files = { theme = "dropdown", previewer = false },
 		},
 	})

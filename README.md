@@ -5,7 +5,7 @@ try [gist cli](https://github.com/b4b4r07/gist)
 
 ```
 main = {
-		base = '#191724',
+		base = '191724', // this is the background color
 		surface = '#1f1d2e',
 		overlay = '#26233a',
 		muted = '#6e6a86',

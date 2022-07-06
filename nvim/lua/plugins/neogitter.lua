@@ -13,8 +13,8 @@ return function()
 		},
 		signs = {
 			-- { CLOSED, OPENED }
-			section = { "", "" },
-			item = { "", "" },
+			section = { "", "" },
+			item = { "", "絛" },
 			hunk = { "", "" },
 		},
 		sections = {
@@ -22,10 +22,10 @@ return function()
 				folded = true,
 			},
 			unmerged = {
-				folded = true,
+				folded = false,
 			},
 			recent = {
-				folded = false,
+				folded = true,
 			},
 		},
 		mappings = {

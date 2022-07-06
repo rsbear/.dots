@@ -21,7 +21,7 @@ o.swapfile = false -- disable swap
 o.writebackup = false -- disable backup
 o.backup = false -- disable backup
 o.backupcopy = "yes" -- fix weirdness for stuff that replaces the entire file when hot reloading
--- o.laststatus = 2
+o.laststatus = 0
 o.scrolloff = 8
 
 -- required for modes plugin
