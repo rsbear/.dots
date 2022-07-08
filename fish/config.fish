@@ -22,6 +22,7 @@ alias llg="ls -l | rg ^d"
 alias cat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
 alias catp="cat package.json"
 alias ff="fz"
+alias tko="tmux kill-server"
 
 
 export EDITOR="nvim"
@@ -38,6 +39,8 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 export PATH="/Users/rsbear/.deno/bin:$PATH"
 export ZK_NOTEBOOK_DIR="$HOME/.config/zk"
+
+export PATH="$HOME/.cargo/bin:$PATH"
 
 
 starship init fish | source

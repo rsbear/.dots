@@ -85,16 +85,22 @@ require("packer").startup(function(use)
 	use("ray-x/go.nvim")
 	use("ray-x/guihua.lua")
 
+	use({
+		"glepnir/lspsaga.nvim",
+		branch = "main",
+		config = require("plugins.saga"),
+	})
+
 	----------------------------
 	-- FUZZY
 	----------------------------
 	use({
 		"folke/trouble.nvim",
-		config = require("plugins.trouble"),
+		config = require("plugins.truble"),
 	})
 	use({
 		"nvim-telescope/telescope.nvim",
-		config = require("plugins.telescope"),
+		config = require("plugins.telescopic"),
 		requires = {
 			{ "nvim-lua/popup.nvim" },
 			{ "nvim-lua/plenary.nvim" },

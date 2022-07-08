@@ -14,8 +14,8 @@ local function troublemap(key, cmd)
 end
 
 -- TELESCOPE
-telemap("<C-p>", "git_files()")
-telemap("<leader>ff", "find_files()")
+telemap("<C-p>", "find_files()")
+telemap("<leader>ff", "git_files()")
 telemap("<leader>fb", "current_buffer_fuzzy_find()")
 telemap("<leader>fg", "live_grep()")
 telemap("<leader>fw", "grep_string({ search = vim.fn.input('GREPPER > '), theme = 'ivy' })")
@@ -32,6 +32,13 @@ troublemap("<leader>td", "workspace_diagnostics")
 troublemap("<leader>xl", "loclist")
 troublemap("<leader>tq", "quickfix")
 troublemap("gR", "lsp_references")
+
+-- LSP SAGA
+map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
+map("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>")
+map("n", "gr", "<cmd>Lspsaga lsp_finder<CR>", { silent = true, noremap = true })
+-- map("n", "?", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+-- map("n", "<leader>h", "<Cmd>Lspsaga signature_help<CR>", { silent = true, noremap = true })
 
 -- NEOGIT
 map("n", "<leader>gg", "<cmd>:Neogit<cr>")

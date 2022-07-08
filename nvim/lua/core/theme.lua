@@ -15,15 +15,15 @@ vim.cmd([[
 -- kinda annoying that this is a vim global
 -- instead of cfg but whatever
 -- itss for barbar
--- vim.g.bufferline = {
--- 	clickable = false,
--- 	icon_separator_inactive = "",
--- 	icon_close_tab = "",
--- 	icon_close_tab_modified = "",
--- 	insert_at_end = true,
--- 	insert_at_start = false,
--- 	maximum_padding = 1,
--- }
+vim.g.bufferline = {
+	clickable = false,
+	icon_separator_inactive = "",
+	icon_close_tab = "",
+	icon_close_tab_modified = "",
+	insert_at_end = true,
+	insert_at_start = false,
+	maximum_padding = 0.1,
+}
 
 local hi = vim.api.nvim_set_hl
 
