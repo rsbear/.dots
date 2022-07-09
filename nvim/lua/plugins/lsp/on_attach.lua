@@ -22,7 +22,18 @@ return function(client, bufnr)
 	lspmap("<leader>[", 'vim.lsp.diagnostic.goto_prev({ border = "rounded" })')
 	lspmap("<leader>]", 'vim.lsp.diagnostic.goto_next({ border = "rounded" })')
 	lspmap("<leader>n", "vim.lsp.buf.signature_help()")
-	lspmap("?", "vim.lsp.buf.hover()")
+	-- lspmap("?", "vim.lsp.buf.hover()")
+	require("core.utils").keymap.map("n", "?", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+
+	local action = require("lspsaga.action")
+	-- scroll down hover doc or scroll in definition preview
+	vim.keymap.set("n", "<C-f>", function()
+		action.smart_scroll_with_saga(1)
+	end, { silent = true })
+	-- scroll up hover doc
+	vim.keymap.set("n", "<C-b>", function()
+		action.smart_scroll_with_saga(-1)
+	end, { silent = true })
 
 	-- So that the only client with format capabilities is efm
 	if client.name ~= "efm" then
