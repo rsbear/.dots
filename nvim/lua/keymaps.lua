@@ -1,4 +1,4 @@
-local utils = require("core.utils")
+local utils = require("utils")
 local map = utils.keymap.map
 
 -- MAP SPACE TO LEADER

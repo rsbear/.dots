@@ -11,5 +11,7 @@ return function()
 		--   icon_pinned = '',
 		insert_at_end = true,
 		insert_at_start = false,
+		maximum_padding = 0,
+		no_name_title = nil,
 	})
 end
