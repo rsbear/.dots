@@ -1,5 +1,5 @@
 local function lspmap(key, cmd, opts)
-	require("utils").keymap.buf_map("n", key, "<cmd>lua " .. cmd .. "<CR>", opts)
+	vim.keymap.set("n", key, "<cmd>lua " .. cmd .. "<CR>", opts)
 end
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
@@ -9,7 +9,7 @@ vim.lsp.handlers["textDocument/codeActions"] = vim.lsp.with(vim.lsp.handlers.hov
 	border = "rounded",
 })
 
-return function(client, bufnr)
+return function(client)
 	vim.opt.omnifunc = "v:lua.vim.lsp.omnifunc"
 	-- LSP
 	lspmap("K", "vim.lsp.buf.type_definition()")
@@ -23,7 +23,7 @@ return function(client, bufnr)
 	lspmap("<leader>]", 'vim.lsp.diagnostic.goto_next({ border = "rounded" })')
 	lspmap("<leader>n", "vim.lsp.buf.signature_help()")
 	-- lspmap("?", "vim.lsp.buf.hover()")
-	require("utils").keymap.map("n", "?", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+	vim.keymap.set("n", "?", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 
 	local action = require("lspsaga.action")
 	-- scroll down hover doc or scroll in definition preview

@@ -1,9 +1,9 @@
 return function()
 	local lspconfig = require("lspconfig")
 
-	local on_attach = require("plugins.lsp.on_attach")
-	local format_config = require("plugins.lsp.format")
-	require("plugins.lsp.ui").setup()
+	local on_attach = require("lsp.on_attach")
+	local format_config = require("lsp.format")
+	require("lsp.ui").setup()
 
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -11,9 +11,7 @@ return function()
 	local servers = {
 		efm = {
 			filetypes = vim.tbl_keys(format_config),
-			-- filetypes = filetypes,
 			init_options = { documentFormatting = true },
-			-- root_dir = lspconfig.util.root_pattern({ '.git/', '.' }),
 			settings = {
 				languages = format_config,
 			},

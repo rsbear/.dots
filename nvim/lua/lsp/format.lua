@@ -1,8 +1,3 @@
-local dprint = {
-	formatCommand = "dprint fmt --stdin ${INPUT}",
-	formatStdin = true,
-}
-
 local prettier = {
 	formatCommand = "prettierd ${INPUT}",
 	formatStdin = true,
