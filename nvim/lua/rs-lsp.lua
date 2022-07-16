@@ -36,6 +36,34 @@ use({
 })
 
 use({
+	"folke/trouble.nvim",
+	config = function()
+		require("trouble").setup({
+			position = "right", -- position of the list can be: bottom, top, left, right
+			width = 50,
+			signs = {
+				error = "",
+				warning = "",
+				hint = "",
+				information = "",
+				other = "﫠",
+			},
+		})
+	end,
+})
+
+use({ "simrat39/symbols-outline.nvim" })
+vim.g.symbols_outline = {
+	width = 40,
+	symbols = {
+		Constant = { icon = "", hl = "TSConstant" },
+		Function = { icon = "", hl = "TSFunction" },
+		Method = { icon = "", hl = "TSMethod" },
+		Variable = { icon = "", hl = "TSVariable" },
+	},
+}
+
+use({
 	"L3MON4D3/LuaSnip",
 	config = function()
 		local ls = require("luasnip")

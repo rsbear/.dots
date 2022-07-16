@@ -24,17 +24,19 @@ telemap("<C-q>", "quickfix()")
 
 -- TROUBLE
 troublemap("<leader>tw", "workspace_diagnostics")
-troublemap("<leader>td", "workspace_diagnostics")
-troublemap("<leader>xl", "loclist")
+troublemap("<leader>tl", "loclist")
 troublemap("<leader>tq", "quickfix")
-troublemap("gR", "lsp_references")
+troublemap("gr", "lsp_references")
 
 -- LSP SAGA
 km("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
 km("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
-km("n", "gr", "<cmd>Lspsaga lsp_finder<CR>", opts)
+-- km("n", "gr", "<cmd>Lspsaga lsp_finder<CR>", opts)
 -- map("n", "?", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 -- map("n", "<leader>h", "<Cmd>Lspsaga signature_help<CR>", { silent = true, noremap = true })
+
+-- SYMBOLS OUTLINE
+km("n", "<leader>s", "<cmd>SymbolsOutline<CR>", opts)
 
 -- NEOGIT
 km("n", "<leader>gg", "<cmd>:Neogit<cr>", opts)
@@ -74,8 +76,8 @@ km("i", "<S-Down>", "<cmd>:m+<CR>", opts)
 
 -- buffer manager
 km("n", "<C-=>", "<cmd>:vert sb#<CR>", opts)
-km("n", "<leader><BS>", "<cmd>:bd<CR>", opts)
-km("n", "<C-BS>", "<cmd>:bd<CR>", opts)
+km("n", "<leader><BS>", "<cmd>:Bdelete<CR>", opts)
+km("n", "<C-BS>", "<cmd>:Bdelete<CR>", opts)
 
 -- map("n", "<C-right>", "<cmd>:bprev<CR>")
 -- map("n", "<C-left>", "<cmd>:bnext<CR>")

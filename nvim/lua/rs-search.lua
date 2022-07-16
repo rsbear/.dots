@@ -56,21 +56,6 @@ use({
 })
 
 use({
-	"folke/trouble.nvim",
-	config = function()
-		require("trouble").setup({
-			signs = {
-				error = "",
-				warning = "",
-				hint = "",
-				information = "",
-				other = "﫠",
-			},
-		})
-	end,
-})
-
-use({
 	"phaazon/hop.nvim",
 	config = function()
 		require("hop").setup()

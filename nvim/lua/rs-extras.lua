@@ -4,14 +4,18 @@ use({
 	"romgrk/barbar.nvim",
 	config = function()
 		require("bufferline").setup({
+			closable = false,
 			clickable = false,
 			icon_separator_inactive = "",
+			icon_separator_active = "",
+			icon_custom_colors = true,
+			icons = false,
 			icon_close_tab = "",
 			icon_close_tab_modified = "",
 			insert_at_end = true,
 			insert_at_start = false,
 			maximum_padding = 0,
-			no_name_title = nil,
+			no_name_title = "[nullish]",
 		})
 	end,
 })
@@ -105,5 +109,33 @@ use({
 			line_opacity = 0.3,
 			focus_only = false,
 		})
+	end,
+})
+
+use("famiu/bufdelete.nvim")
+
+local function get_listed_buffers()
+	local len = 0
+	for buffer = 1, vim.fn.bufnr("$") do
+		if vim.fn.buflisted(buffer) == 1 then
+			len = len + 1
+		end
+	end
+
+	return len
+end
+
+-- adapted to be short sighted from
+-- https://github.com/goolord/alpha-nvim/discussions/85#discussioncomment-2798017
+vim.api.nvim_create_augroup("dashboard_on_empty", { clear = true })
+vim.api.nvim_create_autocmd({ "User" }, {
+	pattern = "BDeletePre",
+	group = "dashboard_on_empty",
+	callback = function()
+		local len = get_listed_buffers()
+
+		if len == 1 then
+			vim.cmd([[:Dashboard]])
+		end
 	end,
 })

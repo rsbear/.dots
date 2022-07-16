@@ -26,6 +26,10 @@ use({
 				-- IndentBlanklineChar = { fg = "#2c2a36" },
 				IndentBlanklineChar = { fg = "#191724" },
 				FloatBorder = { fg = "#2a273f", bg = "none" },
+				-- bar bar
+				BufferCurrent = { fg = "#191724", bg = "#ebbcba" },
+				BufferCurrentMod = { fg = "#191724", bg = "#ebbcba" },
+				BufferCurrentIcon = { fg = "#191724", bg = "#ebbcba" },
 			},
 		})
 		vim.cmd("colorscheme rose-pine")
@@ -186,6 +190,7 @@ hi(0, "NeoTreeFloatBorder", { fg = "#2a273f", bg = "#191724" })
 -- hi(0, "BarbarStatusLine", { fg = "#696778", bg = "none" })
 -- hi(0, "BarbarStatusLineFocused", { fg = "#696778", bg = "none" })
 -- hi(0, "BarbarStatusLineSelected", { fg = "#696778", bg = "none" })
+hi(0, "BarbarCurrentIcon", { fg = "#191724", bg = "#ebbcba" })
 
 vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
 vim.fn.sign_define("DiagnosticSignWarn", { text = "!", texthl = "DiagnosticSignWarn" })
