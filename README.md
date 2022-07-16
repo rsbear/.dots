@@ -1,14 +1,14 @@
 try [gist cli](https://github.com/b4b4r07/gist)
 
 ## tools
-neovim (brew install neovim)
-tmux (brew install tmux)
-[tmux spaces](https://github.com/rsbear/tmux-spaces) tui for executing tmux bash scripts
-[volta](https://volta.sh/) node version manager
-[ni](https://github.com/antfu/ni) automatically use node package manager based on project
-[gh cli](https://cli.github.com/)(brew install gh)
-[yabai](https://github.com/koekeishiya/yabai)
-[skhd](https://github.com/koekeishiya/skhd)
+- neovim (brew install neovim)
+- tmux (brew install tmux)
+- [tmux spaces](https://github.com/rsbear/tmux-spaces) tui for executing tmux bash scripts
+- [volta](https://volta.sh/) node version manager
+- [ni](https://github.com/antfu/ni) automatically use node package manager based on project
+- [gh cli](https://cli.github.com/)(brew install gh)
+- [yabai](https://github.com/koekeishiya/yabai)
+- [skhd](https://github.com/koekeishiya/skhd)
 
 ## rose-pine color pallete
 ```lua
