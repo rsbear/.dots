@@ -23,6 +23,7 @@ alias cat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /de
 alias catp="cat package.json"
 alias ff="fzf"
 alias tko="tmux kill-server"
+alias gopen="gh browse"
 
 alias edb="edgedb $argv"
 
