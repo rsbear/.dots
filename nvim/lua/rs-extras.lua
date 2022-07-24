@@ -1,6 +1,11 @@
 local use = require("rs-utils").use
 
+-- better buffer deleter
 use("famiu/bufdelete.nvim")
+-- disable search highlight on move
+use({ "romainl/vim-cool" })
+-- why not in vim core?
+use({ "tpope/vim-surround" })
 
 use({
 	"romgrk/barbar.nvim",
@@ -74,8 +79,6 @@ use({
 		})
 	end,
 })
-
-use({ "tpope/vim-surround" })
 
 use({
 	"folke/zen-mode.nvim",

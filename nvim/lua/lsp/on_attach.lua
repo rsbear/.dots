@@ -8,6 +8,33 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 vim.lsp.handlers["textDocument/codeActions"] = vim.lsp.with(vim.lsp.handlers.hover, {
 	border = "rounded",
 })
+-- local util = require("vim.lsp.util")
+-- vim.lsp.handlers["textDocument/definition"] = function(_, result, params)
+-- 	if result == nil or vim.tbl_isempty(result) then
+-- 		local _ = vim.lsp.log.info() and vim.lsp.log.info(params.method, "No location found")
+-- 		return nil
+-- 	end
+--
+-- 	print(result)
+-- 	if vim.tbl_islist(result) then
+-- 		vim.lsp.util.jump_to_location(result[1])
+-- 		if #result > 1 then
+-- 			local isReactDTs = false
+-- 			for key, value in pairs(result) do
+-- 				if string.match(value.uri, "react/index.d.ts") then
+-- 					isReactDTs = true
+-- 					break
+-- 				end
+-- 			end
+-- 			if not isReactDTs then
+-- 				vim.fn.setqflist(vim.lsp.util.locations_to_items(result))
+-- 				vim.api.nvim_command("copen")
+-- 			end
+-- 		end
+-- 	else
+-- 		vim.lsp.util.jump_to_location(result)
+-- 	end
+-- end
 
 return function(client)
 	vim.opt.omnifunc = "v:lua.vim.lsp.omnifunc"
@@ -19,11 +46,12 @@ return function(client)
 	lspmap("<leader>e", 'vim.diagnostic.open_float({ border = "rounded" })')
 	lspmap("<leader>gh", "vim.lsp.buf.signature_help()")
 	lspmap("<leader>rn", "vim.lsp.buf.rename()")
-	lspmap("<leader>[", 'vim.lsp.diagnostic.goto_prev({ border = "rounded" })')
-	lspmap("<leader>]", 'vim.lsp.diagnostic.goto_next({ border = "rounded" })')
+	lspmap("<leader>[", 'vim.diagnostic.goto_prev({ border = "rounded" })')
+	lspmap("<leader>]", 'vim.diagnostic.goto_next({ border = "rounded" })')
 	lspmap("<leader>n", "vim.lsp.buf.signature_help()")
 	-- lspmap("?", "vim.lsp.buf.hover()")
 	vim.keymap.set("n", "?", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+	vim.keymap.set("n", "gp", "<cmd>Lspsaga preview_definition<CR>", { silent = true })
 
 	local action = require("lspsaga.action")
 	-- scroll down hover doc or scroll in definition preview

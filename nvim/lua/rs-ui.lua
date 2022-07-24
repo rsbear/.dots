@@ -1,5 +1,6 @@
 local use = require("rs-utils").use
 
+use({ "lewis6991/impatient.nvim" })
 use({ "nvim-lua/plenary.nvim", module = "plenary" })
 use({ "nvim-lua/popup.nvim", module = "popup" })
 
@@ -171,6 +172,18 @@ dash.custom_header = {
 	[[                               ]],
 	[[                               ]],
 }
+-- dash.custom_header = {
+-- 	[[                                        ]],
+-- 	[[                                        ]],
+-- 	[[      __________________,............., ]],
+-- 	[[     /_/_/_/_/_/_/_/_/,-',  ,. -,-,--/| ]],
+-- 	[[    /_/_/_/_/_/_/_/,-' //  /-| / /--/ / ]],
+-- 	[[   /_/_/_/_/_/_/,-' `-''--'  `' '--/ /  ]],
+-- 	[[  /_/_/_/_/_/_,:................../ /   ]],
+-- 	[[  |________,'                   hh|/    ]],
+-- 	[[                                        ]],
+-- 	[[                                        ]],
+-- }
 
 local hi = vim.api.nvim_set_hl
 

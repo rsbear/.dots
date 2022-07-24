@@ -77,13 +77,10 @@ use({
 			},
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp", group_index = 2 },
-				-- { name = "copilot", group_index = 2 },
 				{ name = "luasnip", group_index = 1 },
-				{ name = "buffer", group_index = 3 },
-				{ name = "path", group_index = 4 },
+				-- { name = "copilot", group_index = 2 },
 			}),
 			{
-				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
 			},
