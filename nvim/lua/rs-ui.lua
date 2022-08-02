@@ -28,9 +28,9 @@ use({
 				IndentBlanklineChar = { fg = "#191724" },
 				FloatBorder = { fg = "#2a273f", bg = "none" },
 				-- bar bar
-				BufferCurrent = { fg = "#191724", bg = "#ebbcba" },
-				BufferCurrentMod = { fg = "#191724", bg = "#ebbcba" },
-				BufferCurrentIcon = { fg = "#191724", bg = "#ebbcba" },
+				BufferCurrent = { fg = "#ebbcba", bg = "#191724" },
+				BufferCurrentMod = { fg = "#ebbcba", bg = "#191724" },
+				BufferCurrentIcon = { fg = "#ebbcba", bg = "#191724" },
 			},
 		})
 		vim.cmd("colorscheme rose-pine")
@@ -193,7 +193,10 @@ hi(0, "GitGutterChange", { fg = "#845ec2", bg = "none" })
 -- hi(0, "DiffDelete", { fg = "#f0a0c0", bg = "#333333" })
 
 hi(0, "DashboardHeader", { fg = "#ebbcba", bg = "none" }) -- rose pine, rose
-hi(0, "DashboardCenterIcon", { fg = "#696778", bg = "none" })
+hi(0, "DashboardCenter1Icon", { fg = "#696778", bg = "none" })
+hi(0, "DashboardCenter3Icon", { fg = "#696778", bg = "none" })
+hi(0, "DashboardCenter5Icon", { fg = "#696778", bg = "none" })
+hi(0, "DashboardCenter7Icon", { fg = "#696778", bg = "none" })
 hi(0, "DashboardShortCut", { fg = "#696778", bg = "none" })
 hi(0, "DashboardFooter", { fg = "#696778", bg = "none" })
 hi(0, "TelescopeBorder", { fg = "#ea9a97", bg = "none" })

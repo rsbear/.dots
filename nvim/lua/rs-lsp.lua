@@ -9,9 +9,15 @@ use({
 	"neovim/nvim-lspconfig",
 	requires = {
 		"williamboman/nvim-lsp-installer",
-		-- 'ray-x/lsp_signature.nvim',
 	},
 	config = require("lsp"),
+})
+
+use({
+	"williamboman/mason.nvim",
+	config = function()
+		require("mason").setup()
+	end,
 })
 
 use({ "RishabhRD/popfix" })

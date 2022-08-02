@@ -29,36 +29,59 @@ use({
 
 use({
 	"nvim-neo-tree/neo-tree.nvim",
+	branch = "v2.x",
 	requires = {
 		"nvim-lua/plenary.nvim",
 		"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
 		"MunifTanjim/nui.nvim",
 	},
 	config = function()
+		vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 		require("neo-tree").setup({
+			close_if_last_window = true,
 			default_component_configs = {
 				icon = {
-					folder_closed = "",
-					folder_open = "",
+					folder_closed = "",
+					folder_open = "",
 				},
 			},
+			window = {
+				position = "current",
+				-- height = 100,
+				-- width = 60,
+			},
 			filesystem = {
-				filters = { --These filters are applied to both browsing and searching
-					show_hidden = true,
-					respect_gitignore = false,
+				filtered_items = { --These filters are applied to both browsing and searching
+					hide_dotfiles = false,
+					hide_gitignored = false,
+					hide_by_name = {
+						"node_modules",
+						".git",
+					},
 				},
+				follow_current_file = true,
+				group_empty_dirs = false,
 				use_libuv_file_watcher = true,
+				hijack_netrw_behavior = "open_current",
+				-- window = {
+				-- 	position = "current",
+				-- },
+			},
+			buffers = {
+				follow_current_file = true,
+				group_empty_dirs = false,
+			},
+			git_status = {
 				window = {
-					popup = {
-						position = { col = "0%", row = "1" },
-						size = function(state)
-							local root_name = vim.fn.fnamemodify(state.path, ":~")
-							local root_len = string.len(root_name) + 4
-							return {
-								width = math.max(root_len, 60),
-								height = vim.o.lines - 0,
-							}
-						end,
+					position = "float",
+					mappings = {
+						["A"] = "git_add_all",
+						["u"] = "git_unstage_file",
+						["a"] = "git_add_file",
+						["r"] = "git_revert_file",
+						["c"] = "git_commit",
+						["p"] = "git_push",
+						["gg"] = "git_commit_and_push",
 					},
 				},
 			},
@@ -113,6 +136,39 @@ use({
 		require("modes").setup({
 			line_opacity = 0.3,
 			focus_only = false,
+		})
+	end,
+})
+
+use({
+	"GustavoKatel/tasks.nvim",
+	requires = { "nvim-lua/plenary.nvim" },
+	config = function()
+		local source_npm = require("tasks.sources.npm")
+		require("tasks").setup({
+			sources = {
+				npm = source_npm,
+				utils = require("tasks.sources.builtin").new_builtin_source({
+					sleep = {
+						fn = function()
+							local pasync = require("plenary.async")
+							pasync.util.sleep(10000)
+						end,
+					},
+				}),
+			},
+		})
+	end,
+})
+require("telescope").load_extension("tasks")
+
+use({
+	"sidebar-nvim/sidebar.nvim",
+	config = function()
+		local tasks_section = require("sidebar-nvim.sections.tasks")
+		require("sidebar-nvim").setup({
+			side = "right",
+			sections = { tasks_section, "git" },
 		})
 	end,
 })

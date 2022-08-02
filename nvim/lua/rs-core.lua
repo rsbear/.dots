@@ -16,10 +16,10 @@ telemap("<C-f>", "git_files()")
 telemap("<leader>fb", "current_buffer_fuzzy_find()")
 telemap("<leader>fg", "live_grep()")
 telemap("<leader>fw", "grep_string({ search = vim.fn.input('GREP FOR WORD > '), theme = 'ivy' })")
-telemap("<leader>gs", "git_status()")
+telemap("<leader>gt", "git_status()")
 telemap("<leader>gc", "git_commits()")
 telemap("<leader>k", "keymaps()")
-telemap("<leader>b", "buffers()")
+telemap("<leader><space>", "buffers()")
 telemap("<leader>en", "find_files({ cwd = '~/.config' })")
 telemap("<C-q>", "quickfix()")
 
@@ -49,6 +49,9 @@ km("n", "<leader>re", '<cmd>lua require("searchbox").replace()<CR>', opts)
 -- HOP
 km("n", "s", "<cmd>:HopWord<CR>")
 
+-- SIDEBAR
+km("n", "<leader>b", "<cmd>:SidebarNvimToggle<CR>")
+
 -- FLOAT TERM
 km("n", "<leader>m", "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true })
 km("t", "<leader>m", "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true })
@@ -64,7 +67,9 @@ km("n", "<leader>yy", '"+y', opts)
 km("n", "Y", "y$", { noremap = true })
 
 -- NEO TREE
-km("n", "<leader><space>", ":NeoTreeFloatToggle<CR>", opts)
+-- km("n", "\\", "<cmd>Neotree toggle<CR>", opts)
+km("n", "\\", "<cmd>Neotree reveal<CR>", opts) -- this is a fix for using neotree 'current' pos
+km("n", "<leader>gs", "<cmd>Neotree git_status<CR>", opts)
 
 -- copilot
 km("i", "<C-h>", 'copilot#Accept("<CR>")', { noremap = true, silent = true, expr = true })
@@ -80,8 +85,8 @@ km("n", "<C-=>", "<cmd>:vert sb#<CR>", opts)
 km("n", "<leader><BS>", "<cmd>:Bdelete<CR>", opts)
 km("n", "<C-BS>", "<cmd>:Bdelete<CR>", opts)
 
--- map("n", "<C-right>", "<cmd>:bprev<CR>")
--- map("n", "<C-left>", "<cmd>:bnext<CR>")
+-- km("n", "<C-right>", "<cmd>:bprev<CR>")
+-- km("n", "<C-left>", "<cmd>:bnext<CR>")
 
 -- barbar
 km("n", "<C-right>", "<cmd>:BufferNext<CR>", opts)
@@ -97,6 +102,10 @@ km("v", ">", ">gv", opts)
 --Remap for dealing with word wrap
 km("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 km("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
+
+km("n", "<leader>z", "<cmd>ZenMode<CR>", opts)
+
+-- vim.cmd([[nnoremap \ :NeoTreeFloatToggle<cr>]])
 
 local o = vim.opt
 
