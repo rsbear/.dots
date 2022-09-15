@@ -21,10 +21,10 @@ return {
 	javascriptreact = { prettier },
 	json = { prettier },
 	lua = { stylua },
-	-- markdown = { prettier },
 	scss = { prettier },
 	typescript = { prettier },
 	typescriptreact = { prettier },
+	-- markdown = { prettier },
 	-- svelte = { projectPathPrettier },
-	yaml = { prettier },
+	-- yaml = { prettier },
 }

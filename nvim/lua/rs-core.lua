@@ -49,8 +49,9 @@ km("n", "<leader>re", '<cmd>lua require("searchbox").replace()<CR>', opts)
 -- HOP
 km("n", "s", "<cmd>:HopWord<CR>")
 
--- SIDEBAR
-km("n", "<leader>b", "<cmd>:SidebarNvimToggle<CR>")
+-- NPM <C-i> = install, <C-d> = uninstall
+km("n", "<leader>b", "<cmd>:Telescope npm scripts<CR>")
+km("n", "<leader>p", "<cmd>:Telescope npm packages<CR>")
 
 -- FLOAT TERM
 km("n", "<leader>m", "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true })

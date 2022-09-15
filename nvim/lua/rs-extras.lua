@@ -11,14 +11,18 @@ use({
 	"romgrk/barbar.nvim",
 	config = function()
 		require("bufferline").setup({
-			closable = false,
+			closable = true,
 			clickable = false,
 			icon_separator_inactive = "",
 			icon_separator_active = "",
-			icon_custom_colors = true,
+			icon_custom_colors = false,
 			icons = false,
 			icon_close_tab = "",
-			icon_close_tab_modified = "",
+			-- icon_close_tab_modified = "",
+			-- icon_close_tab_modified = "",
+			icon_close_tab_modified = "",
+			-- icon_close_tab_modified = "",
+			-- icon_close_tab_modified = "縷",
 			insert_at_end = true,
 			insert_at_start = false,
 			maximum_padding = 0,
@@ -40,16 +44,9 @@ use({
 		require("neo-tree").setup({
 			close_if_last_window = true,
 			default_component_configs = {
-				icon = {
-					folder_closed = "",
-					folder_open = "",
-				},
+				icon = { folder_closed = "", folder_open = "" },
 			},
-			window = {
-				position = "current",
-				-- height = 100,
-				-- width = 60,
-			},
+			window = { position = "current" },
 			filesystem = {
 				filtered_items = { --These filters are applied to both browsing and searching
 					hide_dotfiles = false,
@@ -63,9 +60,6 @@ use({
 				group_empty_dirs = false,
 				use_libuv_file_watcher = true,
 				hijack_netrw_behavior = "open_current",
-				-- window = {
-				-- 	position = "current",
-				-- },
 			},
 			buffers = {
 				follow_current_file = true,
@@ -109,8 +103,14 @@ use({
 		require("zen-mode").setup({
 			window = { backdrop = 1 },
 			plugins = {
-				twilight = { enabled = true },
+				twilight = { enabled = false },
 			},
+			on_open = function()
+				vim.opt.number = false
+			end,
+			on_close = function()
+				vim.opt.number = true
+			end,
 		})
 	end,
 })
@@ -140,35 +140,7 @@ use({
 	end,
 })
 
+-- npm task runner
 use({
-	"GustavoKatel/tasks.nvim",
-	requires = { "nvim-lua/plenary.nvim" },
-	config = function()
-		local source_npm = require("tasks.sources.npm")
-		require("tasks").setup({
-			sources = {
-				npm = source_npm,
-				utils = require("tasks.sources.builtin").new_builtin_source({
-					sleep = {
-						fn = function()
-							local pasync = require("plenary.async")
-							pasync.util.sleep(10000)
-						end,
-					},
-				}),
-			},
-		})
-	end,
-})
-require("telescope").load_extension("tasks")
-
-use({
-	"sidebar-nvim/sidebar.nvim",
-	config = function()
-		local tasks_section = require("sidebar-nvim.sections.tasks")
-		require("sidebar-nvim").setup({
-			side = "right",
-			sections = { tasks_section, "git" },
-		})
-	end,
+	"elianiva/telescope-npm.nvim",
 })

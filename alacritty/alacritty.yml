@@ -1,5 +1,5 @@
 font:
-  size: 16
+  size: 14
   normal:
     # family: RobotoMono Nerd Font Mono
     family: Liga SFMono Nerd Font
@@ -12,13 +12,14 @@ font:
 
     # comment out the regular and the font will be fatter like semiboldRegular
     style: Light
+    # style: Normal
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     # roboto spacing
     # x: -1
-    # y: 8
+    # y: 6
     # iM writer spacing
     # x: 1SF Mono
     # y: 8
@@ -178,6 +179,10 @@ mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 
 cursor:
+  style:
+    shape: Block
+    blinking: Never
+  blink_interval: 700
   # Cursor style
   #
   # Values for 'style':

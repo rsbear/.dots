@@ -5,6 +5,21 @@ use({ "nvim-lua/plenary.nvim", module = "plenary" })
 use({ "nvim-lua/popup.nvim", module = "popup" })
 
 use({
+	"olivercederborg/poimandres.nvim",
+	config = function()
+		require("poimandres").setup({})
+	end,
+})
+
+use({
+	"kvrohit/substrata.nvim",
+})
+
+use 'B4mbus/oxocarbon-lua.nvim'
+
+-- vim.cmd("colorscheme oxocarbon-lua")
+
+use({
 	"rose-pine/neovim",
 	as = "rose-pine",
 	-- tag = 'v1.*', -- Optional tag release
@@ -15,22 +30,26 @@ use({
 			dim_nc_background = false,
 			disable_background = false,
 			disable_float_background = false,
-			disable_italics = false,
+			disable_italics = true,
 			groups = {
 				TSString = { style = "italic" },
 			},
 			highlight_groups = {
 				LineNr = { fg = "#3b384d" },
 				CursorLineNr = { fg = "#9ccfd8" },
+				DashboardHeader = { fg = "#ebbcba" },
+				DashboardCenter = { fg = "#696778" },
+				DashboardShortCut = { fg = "#696778" },
 				GitSignsAdd = { fg = "#008D83" },
 				-- GitSignsChange = { fg = '#f6c177' },
-				-- IndentBlanklineChar = { fg = "#2c2a36" },
-				IndentBlanklineChar = { fg = "#191724" },
+				IndentBlanklineChar = { fg = "#2c2a36" },
+				-- IndentBlanklineChar = { fg = "#191724" },
 				FloatBorder = { fg = "#2a273f", bg = "none" },
 				-- bar bar
 				BufferCurrent = { fg = "#ebbcba", bg = "#191724" },
 				BufferCurrentMod = { fg = "#ebbcba", bg = "#191724" },
 				BufferCurrentIcon = { fg = "#ebbcba", bg = "#191724" },
+				BufferInactiveMod = { fg = "#908caa", bg = "#191724" },
 			},
 		})
 		vim.cmd("colorscheme rose-pine")
@@ -192,12 +211,12 @@ local hi = vim.api.nvim_set_hl
 hi(0, "GitGutterChange", { fg = "#845ec2", bg = "none" })
 -- hi(0, "DiffDelete", { fg = "#f0a0c0", bg = "#333333" })
 
-hi(0, "DashboardHeader", { fg = "#ebbcba", bg = "none" }) -- rose pine, rose
+--[[ hi(0, "DashboardHeader", { fg = "#ebbcba", bg = "none" }) -- rose pine, rose ]]
 hi(0, "DashboardCenter1Icon", { fg = "#696778", bg = "none" })
 hi(0, "DashboardCenter3Icon", { fg = "#696778", bg = "none" })
 hi(0, "DashboardCenter5Icon", { fg = "#696778", bg = "none" })
 hi(0, "DashboardCenter7Icon", { fg = "#696778", bg = "none" })
-hi(0, "DashboardShortCut", { fg = "#696778", bg = "none" })
+--[[ hi(0, "DashboardShortCut", { fg = "#696778", bg = "none" }) ]]
 hi(0, "DashboardFooter", { fg = "#696778", bg = "none" })
 hi(0, "TelescopeBorder", { fg = "#ea9a97", bg = "none" })
 hi(0, "TelescopePromptBorder", { fg = "#2a273f", bg = "none" })
@@ -205,6 +224,8 @@ hi(0, "TelescopeResultsBorder", { fg = "#2a273f", bg = "none" })
 hi(0, "TelescopePreviewBorder", { fg = "#2a273f", bg = "none" })
 hi(0, "TelescopeMatching", { fg = "#ea9a97", bg = "none" })
 hi(0, "TelescopeNormal", { fg = "#9F9ABA", bg = "none" })
+-- command line
+hi(0, "MsgArea", { fg = "#696778", bg = "none" })
 
 -- search and replace border and lsp float, covered in rose pine setup
 -- hi(0, "FloatBorder", { fg = "#008D83", bg = "#1F1D2F" })

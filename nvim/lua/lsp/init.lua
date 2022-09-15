@@ -24,7 +24,7 @@ return function()
 	end
 
 	local function filterReactDTS(value)
-		return string.match(value.uri, "react/index.d.ts") == nil
+		return string.match(value.targetUri, "%.d.ts") == nil
 	end
 
 	local servers = {
@@ -46,7 +46,7 @@ return function()
 		},
 		tailwindcss = {
 			filetypes = { "typescriptreact", "astro", "javascriptreact" },
-			root_dir = lspconfig.util.root_pattern({ "tailwind.config.js" }),
+			root_dir = lspconfig.util.root_pattern({ "tailwind.config.js", "tailwind.config.cjs" }),
 		},
 		svelteserver = {
 			filetypes = { "html", "svelte" },

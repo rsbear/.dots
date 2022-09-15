@@ -76,14 +76,12 @@ use({
 				end),
 			},
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp", group_index = 2 },
-				{ name = "luasnip", group_index = 1 },
-				-- { name = "copilot", group_index = 2 },
-			}),
-			{
+				{ name = "nvim_lsp" },
+				{ name = "luasnip" },
+			}, {
 				{ name = "buffer" },
 				{ name = "path" },
-			},
+			}),
 			formatting = {
 				fields = { "kind", "abbr", "menu" },
 				format = function(_, vim_item)

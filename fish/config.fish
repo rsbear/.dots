@@ -1,4 +1,19 @@
-set -U fish_greeting ""
+set -U fish_greeting ""
+
+function git_committer
+  set TYPE $(gum choose "fix" "feat" "docs" "style" "refactor" "test" "chore" "revert")
+	set SCOPE $(gum input --placeholder "scope")
+
+	test -n "$SCOPE" && set SCOPE "($SCOPE)"
+
+	# Pre-populate the input with the type(scope): so that the user may change it
+	set SUMMARY $(gum input --value "$TYPE$SCOPE: " --placeholder "Summary of this change")
+	set DESCRIPTION $(gum write --placeholder "Details of this change")
+
+	# Commit these changes if user confirms
+	gum confirm "Commit changes?" && git commit -m "$SUMMARY" -m "$DESCRIPTION"
+end
+
 
 # ALIASES
 alias fishy="nvim ~/.config/fish/config.fish"
@@ -24,6 +39,14 @@ alias catp="cat package.json"
 alias ff="fzf"
 alias tko="tmux kill-server"
 alias gopen="gh browse"
+alias glol="git log --oneline | gum filter"
+alias cmt='git_committer'
+alias zz="zellij --layout ~/.config/zellij/layout-classic.yaml"
+alias cc="clear"
+
+# shortcuts to be deleted someday
+alias tf="cd ~/side/typefeel/"
+alias kcn="cd ~/work/kitco-cms-next/"
 
 alias edb="edgedb $argv"
 

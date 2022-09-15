@@ -83,7 +83,7 @@ symbol = " "
 
 [directory]
 read_only = " "
-style = "bold #ebbcba"
+style = "bold #6e6a86"
 truncation_length = 8
 truncation_symbol = "…/"
 
