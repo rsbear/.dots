@@ -43,6 +43,8 @@ alias glol="git log --oneline | gum filter"
 alias cmt='git_committer'
 alias zz="zellij --layout ~/.config/zellij/layout-classic.yaml"
 alias cc="clear"
+alias sf="cd ~/side/streamingfamily"
+alias ds="cd ~/side/duesplit"
 
 # shortcuts to be deleted someday
 alias tf="cd ~/side/typefeel/"

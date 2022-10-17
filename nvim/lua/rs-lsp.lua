@@ -26,20 +26,20 @@ use({ "RishabhRD/nvim-lsputils" })
 use("ray-x/go.nvim")
 use("ray-x/guihua.lua")
 
-use({
-	"glepnir/lspsaga.nvim",
-	branch = "main",
-	config = function()
-		require("lspsaga").init_lsp_saga({
-			border_style = "rounded",
-			code_action_icon = "",
-			code_action_lightbulb = {
-				enable = false,
-				sign = true,
-			},
-		})
-	end,
-})
+-- use({
+-- 	"glepnir/lspsaga.nvim",
+-- 	branch = "main",
+-- 	config = function()
+-- 		require("lspsaga").init_lsp_saga({
+-- 			border_style = "rounded",
+-- 			code_action_icon = "",
+-- 			code_action_lightbulb = {
+-- 				enable = false,
+-- 				sign = true,
+-- 			},
+-- 		})
+-- 	end,
+-- })
 
 use({
 	"folke/trouble.nvim",
@@ -129,7 +129,11 @@ use({
 			ps("button", '<button className="$1" onClick={$2} type="button">$0</button>'),
 			ps(
 				"rfc",
-				'import type { FC } from "react"\n\nconst $1:FC = () => {\n  return(\n    <div>\n$0\n</div>)}\n\nexport default $2'
+				'import type { FC } from "react"\n\nexport const $1:FC = () => {\n  return(\n    <div>\n$0\n</div>)}\n'
+			),
+			ps(
+				"rfp",
+				'import type { NextPage } from "next"\n\nconst $1:FC = () => {\n  return(\n    <div>\n$0\n</div>)}\n\nexport default $2'
 			),
 			s("clg", fmt("console.log('{}', {})", { rep(1), i(1) })),
 		})

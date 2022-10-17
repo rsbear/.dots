@@ -15,19 +15,20 @@ return function(client)
 	lspmap("<leader>[", 'vim.diagnostic.goto_prev({ border = "rounded" })')
 	lspmap("<leader>]", 'vim.diagnostic.goto_next({ border = "rounded" })')
 	lspmap("<leader>n", "vim.lsp.buf.signature_help()")
-	-- lspmap("?", "vim.lsp.buf.hover()")
-	vim.keymap.set("n", "?", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
-	vim.keymap.set("n", "gp", "<cmd>Lspsaga preview_definition<CR>", { silent = true })
+	lspmap("<leader>ca", "vim.lsp.buf.code_action()")
+	lspmap("?", "vim.lsp.buf.hover()")
+	-- vim.keymap.set("n", "?", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+	-- vim.keymap.set("n", "gp", "<cmd>Lspsaga preview_definition<CR>", { silent = true })
 
---	local action = require("lspsaga.action")
+	--	local action = require("lspsaga.action")
 	-- scroll down hover doc or scroll in definition preview
---	vim.keymap.set("n", "<C-f>", function()
---		action.smart_scroll_with_saga(1)
---	end, { silent = true })
+	--	vim.keymap.set("n", "<C-f>", function()
+	--		action.smart_scroll_with_saga(1)
+	--	end, { silent = true })
 	-- scroll up hover doc
---	vim.keymap.set("n", "<C-b>", function()
---		action.smart_scroll_with_saga(-1)
---	end, { silent = true })
+	--	vim.keymap.set("n", "<C-b>", function()
+	--		action.smart_scroll_with_saga(-1)
+	--	end, { silent = true })
 
 	-- So that the only client with format capabilities is efm
 	if client.name ~= "efm" then
@@ -49,4 +50,7 @@ return function(client)
 		-- vim.cmd 'autocmd BufWritePre silent exec "!yarn run format"'
 		-- vim.cmd ':silent exec "!yarn run format"'
 	end
+
+	-- vim.g.coq_settings = {auto_start = true}
+	-- vim.cmd("COQnow -s")
 end

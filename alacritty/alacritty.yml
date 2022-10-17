@@ -2,16 +2,18 @@ font:
   size: 14
   normal:
     # family: RobotoMono Nerd Font Mono
-    family: Liga SFMono Nerd Font
+    # family: Liga SFMono Nerd Font
     # family: BlexMono Nerd Font Mono
     # family: Cousine Nerd Font Mono
     # family: Inconsolata Nerd Font Mono
     # family: Hasklug Nerd Font
     # family: iA Writer Mono S
     # family: iMWritingMonoS Nerd Font
+    # family: MesloLGLDZ Nerd Font
+    family: MesloLGSDZ Nerd Font Mono
 
     # comment out the regular and the font will be fatter like semiboldRegular
-    style: Light
+    # style: Light
     # style: Normal
 
   # Offset is the extra space around each character. `offset.y` can be thought of
@@ -24,8 +26,11 @@ font:
     # x: 1SF Mono
     # y: 8
     # SFMono spacing
+    # x: 1
+    # y: 8
+    # Meslo spacing
     x: 1
-    y: 8
+    y: 2
 
 window:
   dynamic_padding: false

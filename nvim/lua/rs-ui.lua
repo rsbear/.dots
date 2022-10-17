@@ -4,20 +4,16 @@ use({ "lewis6991/impatient.nvim" })
 use({ "nvim-lua/plenary.nvim", module = "plenary" })
 use({ "nvim-lua/popup.nvim", module = "popup" })
 
+-- require("poimandress/poimandres")
+
 use({
-	"olivercederborg/poimandres.nvim",
+	"rsbear/poimandres.nvim",
 	config = function()
 		require("poimandres").setup({})
 	end,
 })
 
-use({
-	"kvrohit/substrata.nvim",
-})
-
-use 'B4mbus/oxocarbon-lua.nvim'
-
--- vim.cmd("colorscheme oxocarbon-lua")
+-- vim.cmd("colorscheme poimandres")
 
 use({
 	"rose-pine/neovim",
@@ -191,18 +187,6 @@ dash.custom_header = {
 	[[                               ]],
 	[[                               ]],
 }
--- dash.custom_header = {
--- 	[[                                        ]],
--- 	[[                                        ]],
--- 	[[      __________________,............., ]],
--- 	[[     /_/_/_/_/_/_/_/_/,-',  ,. -,-,--/| ]],
--- 	[[    /_/_/_/_/_/_/_/,-' //  /-| / /--/ / ]],
--- 	[[   /_/_/_/_/_/_/,-' `-''--'  `' '--/ /  ]],
--- 	[[  /_/_/_/_/_/_,:................../ /   ]],
--- 	[[  |________,'                   hh|/    ]],
--- 	[[                                        ]],
--- 	[[                                        ]],
--- }
 
 local hi = vim.api.nvim_set_hl
 
@@ -238,7 +222,7 @@ hi(0, "NeoTreeFloatBorder", { fg = "#2a273f", bg = "#191724" })
 -- hi(0, "BarbarStatusLine", { fg = "#696778", bg = "none" })
 -- hi(0, "BarbarStatusLineFocused", { fg = "#696778", bg = "none" })
 -- hi(0, "BarbarStatusLineSelected", { fg = "#696778", bg = "none" })
-hi(0, "BarbarCurrentIcon", { fg = "#191724", bg = "#ebbcba" })
+-- hi(0, "BarbarCurrentIcon", { fg = "#191724", bg = "#ebbcba" })
 
 vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
 vim.fn.sign_define("DiagnosticSignWarn", { text = "!", texthl = "DiagnosticSignWarn" })

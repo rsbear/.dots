@@ -10,8 +10,8 @@ local function troublemap(key, cmd)
 end
 
 -- TELESCOPE
-telemap("<C-p>", "find_files()")
-telemap("<leader>ff", "git_files()")
+telemap("<C-p>", "git_files()")
+telemap("<leader>ff", "find_files()")
 telemap("<C-f>", "git_files()")
 telemap("<leader>fb", "current_buffer_fuzzy_find()")
 telemap("<leader>fg", "live_grep()")
@@ -30,8 +30,8 @@ troublemap("<leader>tq", "quickfix")
 troublemap("gr", "lsp_references")
 
 -- LSP SAGA
-km("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
-km("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
+-- km("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
+-- km("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
 -- km("n", "gr", "<cmd>Lspsaga lsp_finder<CR>", opts)
 -- map("n", "?", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 -- map("n", "<leader>h", "<Cmd>Lspsaga signature_help<CR>", { silent = true, noremap = true })
@@ -41,6 +41,9 @@ km("n", "<leader>s", "<cmd>SymbolsOutline<CR>", opts)
 
 -- NEOGIT
 km("n", "<leader>gg", "<cmd>:Neogit<cr>", opts)
+
+-- COQ SNIPPET EVAL REPL
+km("n", "<leader>j", "<cmd>coq_settings.keymap.eval_snips<cr>")
 
 -- find replacer
 km("n", "<S-f>", '<cmd>lua require("searchbox").incsearch()<CR>', opts)
@@ -73,7 +76,7 @@ km("n", "\\", "<cmd>Neotree reveal<CR>", opts) -- this is a fix for using neotre
 km("n", "<leader>gs", "<cmd>Neotree git_status<CR>", opts)
 
 -- copilot
-km("i", "<C-h>", 'copilot#Accept("<CR>")', { noremap = true, silent = true, expr = true })
+km("i", "<C-c>", 'copilot#Accept("<CR>")', { noremap = true, silent = true, expr = true })
 
 -- Move lines up and down
 km("n", "<S-up>", "<cmd>:m-2<CR>", opts)
@@ -83,7 +86,7 @@ km("i", "<S-Down>", "<cmd>:m+<CR>", opts)
 
 -- buffer manager
 km("n", "<C-=>", "<cmd>:vert sb#<CR>", opts)
-km("n", "<leader><BS>", "<cmd>:Bdelete<CR>", opts)
+km("n", "<leader><BS>", "<cmd>:bd<CR>", opts)
 km("n", "<C-BS>", "<cmd>:Bdelete<CR>", opts)
 
 -- km("n", "<C-right>", "<cmd>:bprev<CR>")
@@ -161,6 +164,9 @@ o.shortmess = o.shortmess
 		c = true, -- don't give |ins-completion-menu| messages
 		m = true, -- use "[+]" instead of "[Modified]"
 	}
+
+-- lsp shit
+vim.diagnostic.config({ virtual_text = false, underline = true })
 
 -- Stop 'o' continuing comments
 vim.api.nvim_create_autocmd("BufEnter", {

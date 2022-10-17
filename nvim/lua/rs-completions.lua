@@ -2,6 +2,11 @@ local use = require("rs-utils").use
 
 use({ "saadparwaiz1/cmp_luasnip" })
 
+-- use({
+-- 	branch = "coq",
+-- 	"ms-jpq/coq_nvim",
+-- })
+
 use({
 	"hrsh7th/nvim-cmp",
 	requires = {
