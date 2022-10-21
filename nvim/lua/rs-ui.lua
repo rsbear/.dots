@@ -6,12 +6,12 @@ use({ "nvim-lua/popup.nvim", module = "popup" })
 
 -- require("poimandress/poimandres")
 
-use({
-	"rsbear/poimandres.nvim",
-	config = function()
-		require("poimandres").setup({})
-	end,
-})
+-- use({
+-- 	"rsbear/poimandres.nvim",
+-- 	config = function()
+-- 		require("poimandres").setup({})
+-- 	end,
+-- })
 
 -- vim.cmd("colorscheme poimandres")
 
@@ -119,6 +119,8 @@ use({
 		"windwp/nvim-ts-autotag",
 	},
 })
+
+use 'nvim-treesitter/nvim-treesitter-context'
 
 use({
 	"lukas-reineke/indent-blankline.nvim",

@@ -98,7 +98,7 @@ return function()
 		local config = servers[server_name] or {}
 
 		if package.loaded["cmp_nvim_lsp"] then
-			capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+			capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 		end
 
 		config.on_attach = on_attach

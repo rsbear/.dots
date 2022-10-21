@@ -16,6 +16,7 @@ end
 
 
 # ALIASES
+alias vv="nvim"
 alias fishy="nvim ~/.config/fish/config.fish"
 alias fishysauce="source ~/.config/fish/config.fish"
 alias l="ll"

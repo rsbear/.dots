@@ -32,18 +32,18 @@ return function(client)
 
 	-- So that the only client with format capabilities is efm
 	if client.name ~= "efm" then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
 	end
 
 	if client.name == "gopls" then
-		client.resolved_capabilities.document_formatting = true
+		client.server_capabilities.documentFormattingProvider = true
 	end
 
 	if client.name == "svelte" then
-		client.resolved_capabilities.document_formatting = true
+		client.server_capabilities.documentFormattingProvider = true
 	end
 
-	if client.resolved_capabilities.document_formatting then
+	if client.server_capabilities.documentFormattingProvider then
 		vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
 		-- vim.cmd 'autocmd BufWritePre silent exec "!dprint fmt"'
 		-- vim.cmd ':silent exec "!dprint fmt"'
