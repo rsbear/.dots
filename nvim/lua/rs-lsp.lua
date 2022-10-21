@@ -13,9 +13,7 @@ use({
 	config = require("lsp"),
 })
 
--- require("packer").startup(function()
---	use("lukas-reineke/lsp-format.nvim")
--- end)
+-- use("lukas-reineke/lsp-format.nvim")
 
 --[[ use({
 	"williamboman/mason.nvim",

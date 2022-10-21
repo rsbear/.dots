@@ -5,7 +5,7 @@ end
 return function(client)
 	vim.opt.omnifunc = "v:lua.vim.lsp.omnifunc"
 	-- LSP
-	lspmap("K", "vim.lsp.buf.type_definition()")
+  lspmap("K", "vim.lsp.buf.type_definition()")
 	lspmap("gd", "vim.lsp.buf.definition()")
 	lspmap("gD", "vim.lsp.buf.declaration()")
 	lspmap("gi", "vim.lsp.buf.implementation()")
@@ -17,18 +17,7 @@ return function(client)
 	lspmap("<leader>n", "vim.lsp.buf.signature_help()")
 	lspmap("<leader>ca", "vim.lsp.buf.code_action()")
 	lspmap("?", "vim.lsp.buf.hover()")
-	-- vim.keymap.set("n", "?", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
-	-- vim.keymap.set("n", "gp", "<cmd>Lspsaga preview_definition<CR>", { silent = true })
 
-	--	local action = require("lspsaga.action")
-	-- scroll down hover doc or scroll in definition preview
-	--	vim.keymap.set("n", "<C-f>", function()
-	--		action.smart_scroll_with_saga(1)
-	--	end, { silent = true })
-	-- scroll up hover doc
-	--	vim.keymap.set("n", "<C-b>", function()
-	--		action.smart_scroll_with_saga(-1)
-	--	end, { silent = true })
 
 	-- So that the only client with format capabilities is efm
 	if client.name ~= "efm" then
@@ -36,14 +25,22 @@ return function(client)
 	end
 
 	if client.name == "gopls" then
-		client.server_capabilities.documentFormattingProvider = true
+		client.server_capabilities.document_formatting = true
 	end
 
 	if client.name == "svelte" then
-		client.server_capabilities.documentFormattingProvider = true
+		client.server_capabilities.document_formatting = true
 	end
 
-	if client.server_capabilities.documentFormattingProvider then
+	-- if client.name == "tsserver" then
+	-- 	 vim.cmd 'autocmd BufWritePre silent execute "!dprint fmt --config ~/.config/dprintcfg/config.json"'
+	-- end
+	--
+	-- if client.name == "denols" then
+	-- 	 vim.cmd 'autocmd BufWritePre silent execute "!dprint fmt --config ~/.config/dprintcfg/config.json"'
+	-- end
+
+	if client.server_capabilities.document_formatting then
 		vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
 		-- vim.cmd 'autocmd BufWritePre silent exec "!dprint fmt"'
 		-- vim.cmd ':silent exec "!dprint fmt"'
