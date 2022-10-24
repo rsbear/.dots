@@ -1,9 +1,9 @@
-local M = {}
+local export = {}
 
 local function disable_virtual_text()
 	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 		vim.lsp.diagnostic.on_publish_diagnostics,
-		{ virtual_text = true } -- false to hide lsp ghost text
+		{ virtual_text = true }-- false to hide lsp ghost text
 	)
 end
 
@@ -19,10 +19,10 @@ local function code_action_style()
 	})
 end
 
-function M.setup()
+function export.setup()
 	disable_virtual_text()
 	hover_doc_style()
 	code_action_style()
 end
 
-return M
+return export

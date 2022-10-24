@@ -1,7 +1,7 @@
 local use = require("rs-utils").use
 
 -- better buffer deleter
-use("famiu/bufdelete.nvim")
+-- use("famiu/bufdelete.nvim")
 -- disable search highlight on move
 use({ "romainl/vim-cool" })
 -- why not in vim core?

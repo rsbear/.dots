@@ -37,14 +37,13 @@ use({
 				DashboardCenter = { fg = "#696778" },
 				DashboardShortCut = { fg = "#696778" },
 				GitSignsAdd = { fg = "#008D83" },
-				-- GitSignsChange = { fg = '#f6c177' },
 				IndentBlanklineChar = { fg = "#2c2a36" },
-				-- IndentBlanklineChar = { fg = "#191724" },
 				FloatBorder = { fg = "#2a273f", bg = "none" },
 				-- bar bar
 				BufferCurrent = { fg = "#ebbcba", bg = "#191724" },
 				BufferCurrentMod = { fg = "#ebbcba", bg = "#191724" },
-				BufferCurrentIcon = { fg = "#ebbcba", bg = "#191724" },
+				BufferCurrentIcon = { fg = "#ebbcba", bg = "#191725" },
+				BufferCurrentSign = { fg = "#ebbcba", bg = "#191725" },
 				BufferInactiveMod = { fg = "#908caa", bg = "#191724" },
 			},
 		})

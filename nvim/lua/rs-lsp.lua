@@ -5,22 +5,58 @@ use({ "github/copilot.vim" })
 
 use({ "folke/lsp-colors.nvim" })
 
-use({
+use {
 	"neovim/nvim-lspconfig",
 	requires = {
-		"williamboman/nvim-lsp-installer",
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
-	config = require("lsp"),
-})
-
--- use("lukas-reineke/lsp-format.nvim")
-
---[[ use({
-	"williamboman/mason.nvim",
 	config = function()
 		require("mason").setup()
+		require("lsp").init()
 	end,
-}) ]]
+}
+
+use {
+	"mhartington/formatter.nvim",
+	config = function()
+		require('formatter').setup({
+			filetype = {
+				typescript = {
+					function()
+						return {
+							exe = "dprint",
+							args = {
+								"fmt",
+								-- "--config",
+								-- "~/.config/dprint/dprint.json",
+								"--stdin",
+								vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))
+							},
+							stdin = true
+						}
+					end
+				},
+				typescriptreact = {
+					function()
+						return {
+							exe = "dprint",
+							args = {
+								"fmt",
+								-- "--config",
+								-- "~/.config/dprint/dprint.json",
+								"--stdin",
+								vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))
+							},
+							stdin = true
+						}
+					end
+				},
+			}
+		})
+	end
+}
 
 use({ "RishabhRD/popfix" })
 use({ "RishabhRD/nvim-lsputils" })
