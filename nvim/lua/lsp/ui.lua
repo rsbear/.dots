@@ -3,7 +3,7 @@ local export = {}
 local function disable_virtual_text()
 	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 		vim.lsp.diagnostic.on_publish_diagnostics,
-		{ virtual_text = true }-- false to hide lsp ghost text
+		{ virtual_text = false }-- false to hide lsp ghost text
 	)
 end
 
