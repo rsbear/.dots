@@ -43,9 +43,9 @@ end
 
 function export.plugin_keymaps()
 	-- TELESCOPE
-	telemap("<C-p>", "git_files()")
-	telemap("<leader>ff", "find_files()")
-	telemap("<C-f>", "git_files()")
+	telemap("<C-p>", "find_files()")
+	telemap("<leader>ff", "git_files()")
+	telemap("<leader>gf", "git_status()")
 	telemap("<leader>fb", "current_buffer_fuzzy_find()")
 	telemap("<leader>fg", "live_grep()")
 	telemap("<leader>fw", "grep_string({ search = vim.fn.input('GREP FOR WORD > '), theme = 'ivy' })")
@@ -88,7 +88,7 @@ function export.plugin_keymaps()
 	km("n", "<leader>gs", "<cmd>Neotree git_status<CR>", opts)
 
 	-- copilot
-	km("i", "<C-h>", 'copilot#Accept("<CR>")', { noremap = true, silent = true, expr = true })
+	-- km("i", "<C-h>", 'copilot#Accept("<CR>")', { noremap = true, silent = true, expr = true })
 
 	-- barbar
 	km("n", "<C-right>", "<cmd>:BufferNext<CR>", opts)
@@ -127,6 +127,15 @@ function export.core_keymaps()
 	--Remap for dealing with word wrap
 	km("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 	km("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
+
+	-- inspect highlight group
+	km("n",    "<leader>o",
+    function()
+        local result = vim.treesitter.get_captures_at_cursor(0)
+        print(vim.inspect(result))
+    end,
+    { noremap = true, silent = false }
+)
 end
 
 return export

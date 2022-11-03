@@ -10,7 +10,8 @@ font:
     # family: iA Writer Mono S
     # family: iMWritingMonoS Nerd Font
     # family: MesloLGLDZ Nerd Font
-    family: MesloLGSDZ Nerd Font Mono
+    # family: MesloLGSDZ Nerd Font Mono
+    family: MesloLGM Nerd Font Mono
 
     # comment out the regular and the font will be fatter like semiboldRegular
     # style: Light
@@ -62,7 +63,11 @@ colors:
     # foreground: '0xc0caf5'
 
     # rose-pine
-    background: "0x191724"
+    # background: "0x191724"
+    # foreground: "0xc0caf5"
+
+    # poimandres
+    background: "0x1A1C25"
     foreground: "0xc0caf5"
 
     # substrata

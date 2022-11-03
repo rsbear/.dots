@@ -49,7 +49,10 @@ use({
 				git_status = { shorten_path = true },
 				live_grep = { theme = "ivy" },
 				buffers = { theme = "ivy" },
-				find_files = { theme = "dropdown", previewer = false },
+				-- find_files = {
+					-- theme = "dropdown",
+					-- previewer = false 
+				-- },
 			},
 		})
 	end,

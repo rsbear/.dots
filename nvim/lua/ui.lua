@@ -4,17 +4,6 @@ use({ "lewis6991/impatient.nvim" })
 use({ "nvim-lua/plenary.nvim", module = "plenary" })
 use({ "nvim-lua/popup.nvim", module = "popup" })
 
--- require("poimandress/poimandres")
-
--- use({
--- 	"rsbear/poimandres.nvim",
--- 	config = function()
--- 		require("poimandres").setup({})
--- 	end,
--- })
-
--- vim.cmd("colorscheme poimandres")
-
 use({
 	"rose-pine/neovim",
 	as = "rose-pine",
@@ -28,7 +17,9 @@ use({
 			disable_float_background = false,
 			disable_italics = true,
 			groups = {
+				background =  '#1A1C25', -- poimandres
 				TSString = { style = "italic" },
+				["@tag.attribute"] = { style = "italic" },
 			},
 			highlight_groups = {
 				LineNr = { fg = "#3b384d" },
@@ -45,6 +36,32 @@ use({
 				BufferCurrentIcon = { fg = "#ebbcba", bg = "#191725" },
 				BufferCurrentSign = { fg = "#ebbcba", bg = "#191725" },
 				BufferInactiveMod = { fg = "#908caa", bg = "#191724" },
+				-- ["@tag.attribute"] = { style = "italic"},
+				-- working on poimandres
+				-- working on poimandres
+				-- working on poimandres
+				["@constructor"] = { fg = "#ADD7FF" }, -- something related to the query below
+				["@constructor.tsx"] = { fg = "#5DE4C7" }, -- components in jsx, import statements
+				["@exception"] = { fg = "#D0679D" }, -- throw keyword
+				["@function"] = { fg = "#ADD7FF" }, -- self explanatory
+				["@function.call"] = { fg = "#B4AFBC" }, -- builtin fns like useCallback
+				["@include"] = { fg = "#908caa" }, -- import and from 
+				["@keyword"] = { fg = "#91B4D5" },
+				["@keyword.control"] = { fg = "#5DE4C7" },
+				["@keyword.operator"] = { fg = "#5DE4C7" },
+				["@method.call"] = { fg = "#B4AFBC" }, -- methods
+				["@parameter"] = { fg = "#E4F0FB" }, -- fn args 
+				["@property"] = { fg = "#E4F0FB" }, -- dot notation 
+				["@punctuation.bracket"] = { fg = "#ebbcba"},
+				["@string"] = { fg = "#5DE4C7" },
+				-- ["@tag"] = { fg = "#ADD7FF" }, -- regular html tags
+				["@tag.attribute"] = { fg = "#91B4D5", style = "italic" }, -- html tag attrs
+				["@tag.delimiter"] = { fg = "#e0def4" }, -- html tag attrs
+				["@type"] = { fg = "#908caa" }, -- types
+				-- figure these out please
+				["@namespace"] = { fg = "#E4F0FB" }, -- i dont know
+				["@preproc"] = { fg = "#eb6f92" }, --  i dont know
+				tsxTag = { fg = "#5DE4C7" },
 			},
 		})
 		vim.cmd("colorscheme rose-pine")

@@ -10,15 +10,15 @@
 -- MAP SPACE TO LEADER
 vim.g.mapleader = " "
 vim.keymap.set("n", "<space>", "<nop>", { silent = true })
--- require("impatient")
+require("impatient")
 
 require("options")
-require("rs-ui")
+require("ui")
 require("keymaps").core_keymaps()
 require("keymaps").plugin_keymaps()
-require("rs-lsp")
-require("rs-completions")
-require("rs-git")
-require("rs-extras")
-require("rs-search")
+require("lspp")
+require("completions")
+require("gitter")
+require("extras")
+require("search")
 require("autocommands").setup()

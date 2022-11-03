@@ -7,6 +7,45 @@ use({ "saadparwaiz1/cmp_luasnip" })
 -- 	"ms-jpq/coq_nvim",
 -- })
 
+use {
+  "zbirenbaum/copilot.lua",
+  event = "VimEnter",
+  config = function()
+    vim.defer_fn(function()
+      require("copilot").setup({
+				server_opts_overrides = {
+					trace = "verbose",
+					settings = {
+						advanced = {
+							listCount = 10, -- #completions for panel
+							inlineSuggestCount = 3, -- #completions for getCompletions
+							indentationMode = {
+								typescript = "client",
+								javascript = "client",
+							}
+						}
+					},
+				}
+			})
+    end, 100)
+  end,
+}
+
+use {
+  "zbirenbaum/copilot-cmp",
+  after = { "copilot.lua" },
+  config = function ()
+    require("copilot_cmp").setup({
+			method = "getCompletionsCycling",
+			formatters = {
+				label = require("copilot_cmp.format").format_label_text,
+				insert_text = require("copilot_cmp.format").format_insert_text,
+				preview = require("copilot_cmp.format").deindent,
+			},
+		})
+  end
+}
+
 use({
 	"hrsh7th/nvim-cmp",
 	requires = {
@@ -47,17 +86,21 @@ use({
 		}
 
 		cmp.setup({
+			window = { -- rounded border; thin-style scrollbar
+				completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+			},
 			snippet = {
 				expand = function(args)
 					luasnip.lsp_expand(args.body)
 				end,
 			},
 			mapping = {
-				["<C-d>"] = cmp.mapping.scroll_docs(-4),
-				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(),
-				["<C-q>"] = cmp.mapping.close(),
-				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<CR>"] = cmp.mapping.confirm({ 
+					select = false, -- was true before copilot cmp
+		      behavior = cmp.ConfirmBehavior.Replace,
+				}),
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
@@ -83,12 +126,14 @@ use({
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
+				{ name = "copilot", group_index = 1 },
 			}, {
 				{ name = "buffer" },
 				{ name = "path" },
 			}),
 			formatting = {
 				fields = { "kind", "abbr", "menu" },
+		    -- insert_text = require("copilot_cmp.format").remove_existing,
 				format = function(_, vim_item)
 					vim_item.menu = vim_item.kind
 					vim_item.kind = icons[vim_item.kind]
