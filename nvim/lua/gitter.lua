@@ -14,14 +14,26 @@ use({
 		require("neogit").setup({
 			disable_commit_confirmation = true,
 			sections = {
+				untracked = {
+					folded = true
+				},
+				unstaged = {
+					folded = true
+				},
+				staged = {
+					folded = true
+				},
+				stashes = {
+					folded = true
+				},
 				unpulled = {
-					folded = true,
+					folded = true
 				},
 				unmerged = {
-					folded = false,
+					folded = true
 				},
 				recent = {
-					folded = true,
+					folded = true
 				},
 			},
 			mappings = {
