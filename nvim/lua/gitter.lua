@@ -2,7 +2,7 @@ local use = require("rs-utils").use
 
 -- use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 
-use("tpope/vim-fugitive")
+-- use("tpope/vim-fugitive")
 use("tpope/vim-rhubarb")
 
 use({

@@ -14,13 +14,16 @@ function git_committer
 	gum confirm "Commit changes?" && git commit -m "$SUMMARY" -m "$DESCRIPTION"
 end
 
+function code
+  open -a "Visual Studio Code.app" $argv
+end
+
 
 # ALIASES
 alias vv="nvim"
 alias fishy="nvim ~/.config/fish/config.fish"
 alias fishysauce="source ~/.config/fish/config.fish"
-alias l="ll"
-alias zshrc="nvim ~/.zshrc"
+alias l="ls -lah"
 alias lg='lazygit'
 alias vim="nvim"
 alias vi="vim"

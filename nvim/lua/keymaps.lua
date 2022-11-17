@@ -44,6 +44,7 @@ end
 function export.plugin_keymaps()
 	-- TELESCOPE
 	telemap("<C-p>", "find_files()")
+	telemap("<leader>a", "find_files()")
 	telemap("<leader>ff", "git_files()")
 	telemap("<leader>gf", "git_status()")
 	telemap("<leader>fb", "current_buffer_fuzzy_find()")

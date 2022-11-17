@@ -1,5 +1,5 @@
 font:
-  size: 14
+  size: 12
   normal:
     # family: RobotoMono Nerd Font Mono
     # family: Liga SFMono Nerd Font
@@ -44,7 +44,7 @@ window:
   padding:
     # x: 30
     # y: 10
-    x: 40
+    x: 60
     y: 8
 
 colors:

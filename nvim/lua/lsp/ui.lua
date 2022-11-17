@@ -23,6 +23,7 @@ function export.setup()
 	disable_virtual_text()
 	hover_doc_style()
 	code_action_style()
+	-- vim.cmd([[COQnow]])
 end
 
 return export
