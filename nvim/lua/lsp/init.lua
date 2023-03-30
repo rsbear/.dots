@@ -17,6 +17,42 @@ function export.init()
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+  local function filter(arr, fn)
+    if type(arr) ~= 'table' then
+      return arr
+    end
+
+    local filtered = {}
+    for k, v in pairs(arr) do
+      if fn(v, k, arr) then
+        table.insert(filtered, v)
+      end
+    end
+
+    return filtered
+  end
+
+  local function filterReactDTS(value)
+    return string.match(value.targetUri, 'react/index.d.ts') == nil
+  end
+
+  local function patch(result)
+    if not vim.tbl_islist(result) or type(result) ~= 'table' then
+      return result
+    end
+
+    -- if there is a second result return it
+    if #result > 1 then
+      return { result[2] }
+    end
+
+    return { result[1] }
+  end
+
+  local function handle_gtd(err, result, ctx, ...)
+    vim.lsp.handlers['textDocument/definition'](err, patch(result), ctx, ...)
+  end
+
   mason_lspconfig.setup_handlers({
     function(server_name)
       require('lspconfig')[server_name].setup(lsp_opts)
@@ -68,6 +104,19 @@ function export.init()
         settings = {
           update_on_insert = false,
         },
+        handlers = {
+          ['textDocument/definition'] = function(err, result, method, ...)
+            if vim.tbl_islist(result) and #result > 1 then
+              local filtered_result = filter(result, filterReactDTS)
+              return vim.lsp.handlers['textDocument/definition'](err, filtered_result, method, ...)
+            end
+
+            vim.lsp.handlers['textDocument/definition'](err, result, method, ...)
+          end,
+        },
+        -- handlers = {
+        --   ['textDocument/definition'] = handle_gtd,
+        -- },
       }))
     end,
   })

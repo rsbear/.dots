@@ -20,6 +20,26 @@ use({
 
 -- use {"lukas-reineke/lsp-format.nvim"}
 
+-- use({
+--   'jose-elias-alvarez/typescript.nvim',
+--   config = function()
+--     require('typescript').setup({
+--       disable_commands = false, -- prevent the plugin from creating Vim commands
+--       debug = false, -- enable debug logging for commands
+--       go_to_source_definition = {
+--         fallback = false, -- fall back to standard LSP definition on failure
+--       },
+--       server = { -- pass options to lspconfig's setup method
+--         root_dir = require('lspconfig').util.root_pattern({ 'package.json', 'yarn.lock', 'package-lock.json' }),
+--         settings = {
+--           update_on_insert = false,
+--         },
+--         on_attach = require('keymaps').lsp_on_attach,
+--       },
+--     })
+--   end,
+-- })
+
 use({
   'mhartington/formatter.nvim',
   config = function()

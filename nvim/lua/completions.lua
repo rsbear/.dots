@@ -98,7 +98,7 @@ use({
       mapping = {
         -- ['<C-Space>'] = cmp.mapping.complete(),
         ['<CR>'] = cmp.mapping.confirm({
-          select = false, -- was true before copilot cmp
+          select = true, -- was true before copilot cmp
           behavior = cmp.ConfirmBehavior.Replace,
         }),
         ['\\'] = cmp.mapping(function(fallback)
