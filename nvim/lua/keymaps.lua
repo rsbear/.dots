@@ -47,7 +47,7 @@ function export.plugin_keymaps()
   telemap('<leader>fw', "grep_string({ search = vim.fn.input('GREP FOR WORD > '), theme = 'ivy' })")
   telemap('<leader>gt', 'git_status()')
   telemap('<leader>gc', 'git_commits()')
-  telemap('gr', 'lsp_references()')
+  telemap('<leader>gr', 'lsp_references()')
   telemap('<leader>k', 'keymaps()')
   telemap('<leader><space>', 'buffers()')
   telemap('<leader>en', "find_files({ cwd = '~/.config' })")
@@ -63,7 +63,7 @@ function export.plugin_keymaps()
   troublemap('<leader>tw', 'workspace_diagnostics')
   troublemap('<leader>tl', 'loclist')
   troublemap('<leader>tq', 'quickfix')
-  -- troublemap('gr', 'lsp_references')
+  troublemap('gr', 'lsp_references')
 
   -- SYMBOLS OUTLINE
   km('n', '<leader>s', '<cmd>SymbolsOutline<CR>', opts)
@@ -87,20 +87,25 @@ function export.plugin_keymaps()
   km('n', '<leader>c', '<cmd>:MindClose<cr>', { noremap = true })
 
   -- NEO TREE
-  km('n', '\\', '<cmd>Neotree float<CR>', opts)
-  -- km('n', '\\', '<cmd>Neotree reveal<CR>', opts) -- this is a fix for using neotree 'current' pos
+  -- km('n', '\\', '<cmd>Neotree float<CR>', opts)
+  km('n', '\\', '<cmd>Neotree reveal<CR>', opts) -- this is a fix for using neotree 'current' pos
   km('n', '<leader>gs', '<cmd>Neotree git_status<CR>', opts)
 
   -- copilot
-  km('i', '<C-Space>', 'copilot#Accept("<CR>")', { noremap = true, silent = true, expr = true })
+  km('i', '<C-Space>', 'copilot#Accept("<CR>")', { silent = true, expr = true, replace_keycodes = false })
 
   -- barbar
-  km('n', '<C-right>', '<cmd>:BufferNext<CR>', opts)
-  km('n', '<C-]>', '<cmd>:BufferNext<CR>', opts)
-  km('n', '<C-l>', '<cmd>:BufferNext<CR>', opts)
-  km('n', '<C-left>', '<cmd>:BufferPrevious<CR>', opts)
-  km('n', '<C-h>', '<cmd>:BufferPrevious<CR>', opts)
-  km('n', '<leader>1', '<cmd>:BufferFirst<CR>', opts)
+  -- km('n', '<C-right>', '<cmd>:BufferNext<CR>', opts)
+  -- km('n', '<C-]>', '<cmd>:BufferNext<CR>', opts)
+  -- km('n', '<C-l>', '<cmd>:BufferNext<CR>', opts)
+  -- km('n', '<C-left>', '<cmd>:BufferPrevious<CR>', opts)
+  -- km('n', '<C-h>', '<cmd>:BufferPrevious<CR>', opts)
+  -- km('n', '<leader>1', '<cmd>:BufferFirst<CR>', opts)
+
+  -- km('n', '<C-]>', '<cmd>:bnext<CR>', opts)
+  -- km('n', '<C-[>', '<cmd>:bprevious<CR>', opts)
+  km('n', '<C-right>', '<cmd>:bnext<CR>', opts)
+  km('n', '<C-left>', '<cmd>:bprevious<CR>', opts)
 
   -- ZenMode
   km('n', '<leader>z', '<cmd>ZenMode<CR>', opts)

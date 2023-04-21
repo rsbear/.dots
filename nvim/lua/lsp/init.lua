@@ -71,18 +71,23 @@ function export.init()
     ['tailwindcss'] = function()
       require('lspconfig').tailwindcss.setup(vim.tbl_deep_extend('force', lsp_opts, {
         filetypes = { 'typescriptreact', 'astro', 'javascriptreact' },
-        root_dir = require('lspconfig').util.root_pattern({ 'tailwind.config.js', 'tailwind.config.cjs' }),
+        root_dir = require('lspconfig').util.root_pattern({ 'tailwind.config.js', 'tailwind.config.cjs', 'deno.json' }),
       }))
     end,
     ['denols'] = function()
       require('lspconfig').denols.setup(vim.tbl_deep_extend('force', lsp_opts, {
-        root_dir = require('lspconfig').util.root_pattern({ 'deno.json', 'import_map.json', 'mod.ts' }),
+        root_dir = require('lspconfig').util.root_pattern({ 'deno.json', 'importMap.json', 'mod.ts' }),
       }))
     end,
     ['unocss'] = function()
       require('lspconfig').unocss.setup(vim.tbl_deep_extend('force', lsp_opts, {
         filetypes = { 'typescriptreact', 'astro', 'javascriptreact' },
-        root_dir = require('lspconfig').util.root_pattern({ 'deno.json', 'import_map.json', 'mod.ts' }),
+        root_dir = require('lspconfig').util.root_pattern({
+          'deno.json',
+          'importMap.json',
+          'mod.ts',
+          'astro.config.mjs',
+        }),
       }))
     end,
     ['cssls'] = function()

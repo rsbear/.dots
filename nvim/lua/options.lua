@@ -1,6 +1,6 @@
 local o = vim.opt
 
-o.inccommand = "nosplit"
+o.inccommand = 'nosplit'
 
 o.tabstop = 2
 o.softtabstop = 2
@@ -8,7 +8,7 @@ o.shiftwidth = 2
 
 o.hlsearch = true
 o.hidden = true
-o.mouse = "a"
+o.mouse = 'a'
 o.breakindent = true
 o.updatetime = 100
 o.ignorecase = true
@@ -20,7 +20,7 @@ o.undofile = true
 o.swapfile = false -- disable swap
 o.writebackup = false -- disable backup
 o.backup = false -- disable backup
-o.backupcopy = "yes" -- fix weirdness for stuff that replaces the entire file when hot reloading
+o.backupcopy = 'yes' -- fix weirdness for stuff that replaces the entire file when hot reloading
 o.laststatus = 0
 o.scrolloff = 8
 
@@ -28,29 +28,31 @@ o.scrolloff = 8
 o.cursorline = true
 
 -- disable ~ at end of buffer
-o.fcs = "eob: "
+o.fcs = 'eob: '
 
 vim.wo.number = true
-vim.wo.signcolumn = "yes"
+vim.wo.signcolumn = 'yes'
 
 -- fugitive husky fix
 vim.g.fugitive_pty = 0
 
 vim.g.copilot_no_tab_map = true
 
-o.diffopt:append({ "algorithm:histogram", "indent-heuristic" })
+o.diffopt:append({ 'algorithm:histogram', 'indent-heuristic' })
 
-o.completeopt = "menu,menuone,noselect"
+o.completeopt = 'menu,menuone,noselect'
+
+o.winbar = '%=%f%m%r%h%w'
 
 -- Concat values to line above
 o.shortmess = o.shortmess
-		+ {
-			A = true, -- don't give the "ATTENTION" message when an existing swap file is found.
-			I = true, -- don't give the intro message when starting Vim |:intro|.
-			W = true, -- don't give "written" or "[w]" when writing a file
-			c = true, -- don't give |ins-completion-menu| messages
-			m = true, -- use "[+]" instead of "[Modified]"
-		}
+  + {
+    A = true, -- don't give the "ATTENTION" message when an existing swap file is found.
+    I = true, -- don't give the intro message when starting Vim |:intro|.
+    W = true, -- don't give "written" or "[w]" when writing a file
+    c = true, -- don't give |ins-completion-menu| messages
+    m = true, -- use "[+]" instead of "[Modified]"
+  }
 
 -- lsp shit
 vim.diagnostic.config({ virtual_text = false, underline = true })

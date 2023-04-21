@@ -18,6 +18,28 @@ use({
   end,
 })
 
+-- this is actually a really cool breadcrumb
+use({
+  'utilyre/barbecue.nvim',
+  tag = '*',
+  requires = {
+    'SmiteshP/nvim-navic',
+    'nvim-tree/nvim-web-devicons', -- optional dependency
+  },
+  after = 'nvim-web-devicons', -- keep this if you're using NvChad
+  config = function()
+    require('barbecue').setup({
+      theme = {
+        normal = { fg = '#8CB2C0' },
+        dirname = { fg = '#667F9E' },
+      },
+      symbols = {
+        separator = '',
+      },
+    })
+  end,
+})
+
 -- use {"lukas-reineke/lsp-format.nvim"}
 
 -- use({
@@ -50,7 +72,7 @@ use({
         typescript = {
           function()
             return {
-              exe = 'prettierd',
+              exe = 'prettier',
               args = { vim.api.nvim_buf_get_name(0) },
               -- args = {
               -- 	"fmt",
@@ -66,7 +88,24 @@ use({
         typescriptreact = {
           function()
             return {
-              exe = 'prettierd',
+              exe = 'prettier',
+              args = { vim.api.nvim_buf_get_name(0) },
+              -- exe = 'dprint',
+              -- args = {
+              -- 	"fmt",
+              -- 	"--config",
+              -- 	"~/.config/dprint/dprint.json",
+              -- 	"--stdin",
+              -- 	vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))
+              -- },
+              stdin = true,
+            }
+          end,
+        },
+        svelte = {
+          function()
+            return {
+              exe = 'prettier',
               args = { vim.api.nvim_buf_get_name(0) },
               -- exe = 'dprint',
               -- args = {
@@ -135,16 +174,22 @@ use({
   end,
 })
 
--- use({ "simrat39/symbols-outline.nvim" })
--- vim.g.symbols_outline = {
--- 	width = 40,
--- 	symbols = {
--- 		Constant = { icon = "", hl = "TSConstant" },
--- 		Function = { icon = "", hl = "TSFunction" },
--- 		Method = { icon = "", hl = "TSMethod" },
--- 		Variable = { icon = "", hl = "TSVariable" },
--- 	},
--- }
+use({
+  'simrat39/symbols-outline.nvim',
+  config = function()
+    require('symbols-outline').setup({
+      width = 40,
+      autofold_depth = 0,
+      auto_unfold_hover = false,
+      symbols = {
+        Constant = { icon = '', hl = 'TSConstant' },
+        Function = { icon = '', hl = 'TSFunction' },
+        Method = { icon = '', hl = 'TSMethod' },
+        Variable = { icon = '', hl = 'TSVariable' },
+      },
+    })
+  end,
+})
 
 -- use({
 -- 	"edgedb/edgedb-vim",

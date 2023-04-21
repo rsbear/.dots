@@ -17,29 +17,29 @@ use({
   end,
 })
 
-use({
-  'romgrk/barbar.nvim',
-  config = function()
-    require('bufferline').setup({
-      closable = true,
-      clickable = false,
-      icon_separator_inactive = '',
-      icon_separator_active = '',
-      icon_custom_colors = false,
-      icons = false,
-      icon_close_tab = '',
-      -- icon_close_tab_modified = "",
-      -- icon_close_tab_modified = "",
-      icon_close_tab_modified = '',
-      -- icon_close_tab_modified = "",
-      -- icon_close_tab_modified = "縷",
-      insert_at_end = true,
-      insert_at_start = false,
-      maximum_padding = 0,
-      no_name_title = '[nullish]',
-    })
-  end,
-})
+-- use({
+--   'romgrk/barbar.nvim',
+--   config = function()
+--     require('bufferline').setup({
+--       closable = true,
+--       clickable = false,
+--       icon_separator_inactive = '',
+--       icon_separator_active = '',
+--       icon_custom_colors = false,
+--       icons = false,
+--       icon_close_tab = '',
+--       -- icon_close_tab_modified = "",
+--       -- icon_close_tab_modified = "",
+--       icon_close_tab_modified = '',
+--       -- icon_close_tab_modified = "",
+--       -- icon_close_tab_modified = "縷",
+--       insert_at_end = true,
+--       insert_at_start = false,
+--       maximum_padding = 0,
+--       no_name_title = '[nullish]',
+--     })
+--   end,
+-- })
 
 use({
   'nvim-neo-tree/neo-tree.nvim',
@@ -53,18 +53,17 @@ use({
     vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
     require('neo-tree').setup({
       close_if_last_window = true,
+      popup_border_style = 'rounded',
       default_component_configs = {
-        icon = { folder_closed = '', folder_open = '' },
+        icon = { folder_closed = '-', folder_open = '' },
       },
-      window = { position = 'current' },
+      window = { position = 'float' },
       filesystem = {
         filtered_items = { --These filters are applied to both browsing and searching
           hide_dotfiles = false,
           hide_gitignored = false,
-          hide_by_name = {
-            'node_modules',
-            '.git',
-          },
+          hide_by_name = { 'node_modules', '.git' },
+          never_show = { '.DS_Store' },
         },
         follow_current_file = true,
         group_empty_dirs = false,
@@ -78,6 +77,8 @@ use({
       git_status = {
         window = {
           position = 'float',
+          -- width = 40,
+          width = 100,
           mappings = {
             ['A'] = 'git_add_all',
             ['u'] = 'git_unstage_file',
