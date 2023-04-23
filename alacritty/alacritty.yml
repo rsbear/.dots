@@ -2,7 +2,7 @@ font:
   size: 13
   normal:
     # family: RobotoMono Nerd Font Mono
-    # family: Liga SFMono Nerd Font
+    family: Liga SFMono Nerd Font
     # family: BlexMono Nerd Font Mono
     # family: Cousine Nerd Font Mono
     # family: Inconsolata Nerd Font Mono
@@ -11,7 +11,8 @@ font:
     # family: iMWritingMonoS Nerd Font
     # family: MesloLGLDZ Nerd Font
     # family: MesloLGSDZ Nerd Font Mono
-    family: MesloLGM Nerd Font Mono
+    # family: MesloLGM Nerd Font Mono # this the pick
+    # family: LiterationMono Nerd Font Mono
 
     # comment out the regular and the font will be fatter like semiboldRegular
     # style: Light

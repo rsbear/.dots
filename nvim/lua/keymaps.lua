@@ -21,6 +21,10 @@ function export.lsp_on_attach(client, bufnr)
   lspmap('?', 'vim.lsp.buf.hover()', opts)
   lspmap('<leader>i', 'vim.lsp.show()', opts)
 
+  -- km('n', '<leader>ca', '<cmd>:Lspsaga code_action<CR>')
+  -- km('n', '<leader>rn', '<cmd>:Lspsaga rename<CR>')
+  -- km('n', '<leader>rn', '<cmd>:Lspsaga peek_definition<CR>')
+
   vim.api.nvim_create_autocmd('BufWritePost', {
     pattern = {
       '*',

@@ -69,6 +69,7 @@ use({
         -- working on substrata
         -- working on substrata
         -- working on substrata
+        Function = { fg = '#C4A7E7' },
         ['@constructor'] = { fg = '#ADD7FF' }, -- something related to the query below
         ['@constructor.tsx'] = { fg = '#5DE4C7' }, -- components in jsx, import statements
         ['@exception'] = { fg = '#D0679D' }, -- throw keyword
@@ -164,6 +165,11 @@ use({
     'JoosepAlviste/nvim-ts-context-commentstring',
     'windwp/nvim-ts-autotag',
   },
+})
+
+use({
+  'nvim-treesitter/playground',
+  cmd = 'TSPlaygroundToggle',
 })
 
 -- use 'nvim-treesitter/nvim-treesitter-context'

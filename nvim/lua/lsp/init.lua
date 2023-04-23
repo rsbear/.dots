@@ -7,10 +7,6 @@ function export.init()
   })
 
   local lsp_opts = {
-    -- on_attach = function(client)
-    -- 	require("keymaps").lsp_on_attach(client)
-    -- 	-- require("lsp-format").on_attach(client)
-    -- end
     on_attach = require('keymaps').lsp_on_attach,
   }
 

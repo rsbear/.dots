@@ -18,6 +18,30 @@ use({
   end,
 })
 
+-- use({
+--   'glepnir/lspsaga.nvim',
+--   opt = true,
+--   -- after = true,
+--   branch = 'main',
+--   event = 'LspAttach',
+--   config = function()
+--     require('lspsaga').setup({})
+--   end,
+--   requires = {
+--     { 'nvim-tree/nvim-web-devicons' },
+--     --Please make sure you install markdown and markdown_inline parser
+--     { 'nvim-treesitter/nvim-treesitter' },
+--   },
+-- })
+
+-- use({
+--   'jinzhongjia/LspUI.nvim',
+--   -- event = 'VimEnter',
+--   config = function()
+--     require('LspUI').setup()
+--   end,
+-- })
+
 -- this is actually a really cool breadcrumb
 use({
   'utilyre/barbecue.nvim',
