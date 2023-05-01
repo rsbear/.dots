@@ -60,6 +60,9 @@ function export.plugin_keymaps()
   km('n', '<leader>b', '<cmd>:Telescope npm scripts<CR>')
   km('n', '<leader>p', '<cmd>:Telescope npm packages<CR>')
 
+  -- buffer manager j-morano/buffer_manager.nvim' -eh remove
+  -- km('n', '<leader><space>', '<cmd>lua require("buffer_manager.ui").toggle_quick_menu()<CR>', opts)
+
   -- TROUBLE
   local function troublemap(key, cmd)
     km('n', key, '<cmd>Trouble ' .. cmd .. '<CR>', opts)

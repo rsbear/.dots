@@ -1,8 +1,9 @@
 font:
-  size: 13
+  size: 16
   normal:
     # family: RobotoMono Nerd Font Mono
-    family: Liga SFMono Nerd Font
+    # family: Liga SFMono Nerd Font
+    family: SFMono Nerd Font
     # family: BlexMono Nerd Font Mono
     # family: Cousine Nerd Font Mono
     # family: Inconsolata Nerd Font Mono
@@ -32,7 +33,7 @@ font:
     # y: 8
     # Meslo spacing
     x: 1
-    y: 2
+    y: 3
 
 window:
   dynamic_padding: false
@@ -68,7 +69,7 @@ colors:
     # foreground: "0xc0caf5"
 
     # poimandres
-    background: "0x1A1C25"
+    background: "0x1B1D23"
     foreground: "0xc0caf5"
 
     # substrata
