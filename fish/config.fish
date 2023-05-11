@@ -31,6 +31,7 @@ alias fishy="nvim ~/.config/fish/config.fish"
 alias fishysauce="source ~/.config/fish/config.fish"
 alias l="ls -lah"
 alias lg='lazygit'
+alias lgcfg='nvim ~/Library/Application\ Support/lazygit/config.yml'
 alias vim="nvim"
 alias vi="vim"
 alias work="cd ~/work && l"
