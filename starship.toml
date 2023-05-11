@@ -5,7 +5,7 @@ add_newline = true
 # success_symbol = "[](bold bright-purple)"     # The "success_symbol" is being set to "➜" with the color "bold green"
 # success_symbol = "[](bold purple)"     # The "success_symbol" is being set to "➜" with the color "bold green"
 # success_symbol = "[聾](bold bright-purple)"     # The "success_symbol" is being set to "➜" with the color "bold green"
-success_symbol = "[](bold #ebbcba)"     # The "success_symbol" is being set to "➜" with the color "bold green"
+success_symbol = "[ ](bold #ebbcba)"     # The "success_symbol" is being set to "➜" with the color "bold green"
 
 # format = """
 # $username\
@@ -102,8 +102,13 @@ format = '[k8s@$namespace](green) '
 disabled = true
 
 [git_branch]
-symbol = " "
+symbol = "  "
 style = "bright-purple"
+
+[git_metrics]
+added_style = 'bold blue'
+disabled = false
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
 
 [git_status]
 style = "#eb6f92"

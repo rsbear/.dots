@@ -1,29 +1,40 @@
 local export = {}
+local km = vim.keymap.set
+local opts = { silent = true, noremap = true }
 
 local function lspmap(key, cmd, opt)
   vim.keymap.set('n', key, '<cmd>lua ' .. cmd .. '<CR>', opt)
 end
 
+local function telemap(key, cmd)
+  km('n', key, '<cmd>lua require("telescope.builtin").' .. cmd .. '<CR>', opts)
+end
+
+local function troublemap(key, cmd)
+  km('n', key, '<cmd>Trouble ' .. cmd .. '<CR>', opts)
+end
+
 function export.lsp_on_attach(client, bufnr)
   require('lsp.ui').setup()
-  local opts = { noremap = true, silent = true, buffer = bufnr }
-  lspmap('K', 'vim.lsp.buf.type_definition()', opts)
-  lspmap('gd', 'vim.lsp.buf.definition()', opts)
-  lspmap('gD', 'vim.lsp.buf.declaration()', opts)
-  lspmap('gi', 'vim.lsp.buf.implementation()', opts)
+  local o = { noremap = true, silent = true, buffer = bufnr }
+  lspmap('K', 'vim.lsp.buf.type_definition()', o)
+  lspmap('gd', 'vim.lsp.buf.definition()', o)
+  lspmap('gD', 'vim.lsp.buf.declaration()', o)
+  lspmap('gi', 'vim.lsp.buf.implementation()', o)
   lspmap('<leader>e', 'vim.diagnostic.open_float({ border = "rounded" })')
-  lspmap('<leader>gh', 'vim.lsp.buf.signature_help()', opts)
-  lspmap('<leader>rn', 'vim.lsp.buf.rename()', opts)
+  lspmap('<leader>gh', 'vim.lsp.buf.signature_help()', o)
+  -- lspmap('<leader>rn', 'vim.lsp.buf.rename()', o)
   lspmap('<leader>[', 'vim.diagnostic.goto_prev({ border = "rounded" })')
   lspmap('<leader>]', 'vim.diagnostic.goto_next({ border = "rounded" })')
-  lspmap('<leader>n', 'vim.lsp.buf.signature_help()', opts)
-  lspmap('<leader>ca', 'vim.lsp.buf.code_action()', opts)
-  lspmap('?', 'vim.lsp.buf.hover()', opts)
-  lspmap('<leader>i', 'vim.lsp.show()', opts)
+  lspmap('<leader>n', 'vim.lsp.buf.signature_help()', o)
+  -- lspmap('<leader>ca', 'vim.lsp.buf.code_action()', opts)
+  -- lspmap('?', 'vim.lsp.buf.hover()', opts)
+  lspmap('<leader>i', 'vim.lsp.show()', o)
 
-  -- km('n', '<leader>ca', '<cmd>:Lspsaga code_action<CR>')
-  -- km('n', '<leader>rn', '<cmd>:Lspsaga rename<CR>')
-  -- km('n', '<leader>rn', '<cmd>:Lspsaga peek_definition<CR>')
+  km('n', '<leader>ca', '<cmd>:Lspsaga code_action<CR>', o)
+  km('n', '<leader>rn', '<cmd>:Lspsaga rename<CR>', o)
+  km('n', '>', '<cmd>:Lspsaga peek_definition<CR>', o)
+  km('n', '?', '<cmd>:Lspsaga hover_doc<CR>', o)
 
   vim.api.nvim_create_autocmd('BufWritePost', {
     pattern = {
@@ -31,13 +42,6 @@ function export.lsp_on_attach(client, bufnr)
     },
     command = [[:FormatWrite]],
   })
-end
-
-local opts = { silent = true, noremap = true }
-local km = vim.keymap.set
-
-local function telemap(key, cmd)
-  km('n', key, '<cmd>lua require("telescope.builtin").' .. cmd .. '<CR>', opts)
 end
 
 function export.plugin_keymaps()
@@ -64,9 +68,6 @@ function export.plugin_keymaps()
   -- km('n', '<leader><space>', '<cmd>lua require("buffer_manager.ui").toggle_quick_menu()<CR>', opts)
 
   -- TROUBLE
-  local function troublemap(key, cmd)
-    km('n', key, '<cmd>Trouble ' .. cmd .. '<CR>', opts)
-  end
   troublemap('<leader>tw', 'workspace_diagnostics')
   troublemap('<leader>tl', 'loclist')
   troublemap('<leader>tq', 'quickfix')

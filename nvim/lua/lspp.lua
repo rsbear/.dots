@@ -92,18 +92,23 @@ return {
 
       require('formatter').setup({
         filetype = {
+          javascript = {
+            function()
+              return {
+                exe = 'rome',
+                args = { 'format', '--stdin-file-path', vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
+                stdin = true,
+              }
+            end,
+          },
           typescript = {
             function()
               return {
-                exe = 'prettier',
-                args = { vim.api.nvim_buf_get_name(0) },
-                -- args = {
-                -- 	"fmt",
-                -- 	"--config",
-                -- 	"~/.config/dprint/dprint.json",
-                -- 	"--stdin",
-                -- 	vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))
-                -- },
+                -- exe = 'prettierd',
+                -- args = { vim.api.nvim_buf_get_name(0) },
+                -- stdin = true,
+                exe = 'rome',
+                args = { 'format', '--stdin-file-path', vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
                 stdin = true,
               }
             end,
@@ -111,16 +116,11 @@ return {
           typescriptreact = {
             function()
               return {
-                exe = 'prettier',
-                args = { vim.api.nvim_buf_get_name(0) },
-                -- exe = 'dprint',
-                -- args = {
-                -- 	"fmt",
-                -- 	"--config",
-                -- 	"~/.config/dprint/dprint.json",
-                -- 	"--stdin",
-                -- 	vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))
-                -- },
+                -- exe = 'prettierd',
+                -- args = { vim.api.nvim_buf_get_name(0) },
+                -- stdin = true,
+                exe = 'rome',
+                args = { 'format', '--stdin-file-path', vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
                 stdin = true,
               }
             end,
@@ -128,8 +128,8 @@ return {
           svelte = {
             function()
               return {
-                exe = 'prettier',
-                args = { vim.api.nvim_buf_get_name(0) },
+                -- exe = 'prettier',
+                -- args = { vim.api.nvim_buf_get_name(0) },
                 exe = 'dprint',
                 args = {
                   'fmt',
@@ -193,6 +193,43 @@ return {
       })
     end,
   },
+
+  {
+    'simrat39/symbols-outline.nvim',
+    config = function()
+      require('symbols-outline').setup({
+        width = 40,
+        autofold_depth = 2,
+        auto_unfold_hover = false,
+        symbols = {
+          Constant = { icon = '', hl = 'TSConstant' },
+          Function = { icon = '', hl = 'TSFunction' },
+          Method = { icon = '', hl = 'TSMethod' },
+          Variable = { icon = '', hl = 'TSVariable' },
+        },
+      })
+    end,
+  },
+
+  {
+    'glepnir/lspsaga.nvim',
+    event = 'LspAttach',
+    config = function()
+      require('lspsaga').setup({
+        lightbulb = {
+          enable = false,
+          enable_in_insert = false,
+          sign = false,
+          virtual_text = false,
+        },
+      })
+    end,
+    dependencies = {
+      { 'nvim-tree/nvim-web-devicons' },
+      --Please make sure you install markdown and markdown_inline parser
+      { 'nvim-treesitter/nvim-treesitter' },
+    },
+  },
 }
 
 -- haha uh oh
@@ -224,28 +261,6 @@ return {
 --   end,
 -- })
 
--- this is actually a really cool breadcrumb
--- use({
---  'utilyre/barbecue.nvim',
---  tag = '*',
---  dependencies = {
---  'SmiteshP/nvim-navic',
---    'nvim-tree/nvim-web-devicons', -- optional dependency
---  },
---  after = 'nvim-web-devicons', -- keep this if you're using NvChad
---  config = function()
---    require('barbecue').setup({
---      theme = {
---        normal = { fg = '#8CB2C0' },
---        dirname = { fg = '#667F9E' },
---      },
---      symbols = {
---        separator = '',
---      },
---    })
---  end,
--- })
-
 -- use {"lukas-reineke/lsp-format.nvim"}
 
 -- use({
@@ -273,23 +288,6 @@ return {
 
 -- use('ray-x/go.nvim')
 -- use('ray-x/guihua.lua')
-
--- use({
---  'simrat39/symbols-outline.nvim',
---  config = function()
---    require('symbols-outline').setup({
---      width = 40,
---      autofold_depth = 0,
---      auto_unfold_hover = false,
---      symbols = {
---        Constant = { icon = '', hl = 'TSConstant' },
---        Function = { icon = '', hl = 'TSFunction' },
---        Method = { icon = '', hl = 'TSMethod' },
---        Variable = { icon = '', hl = 'TSVariable' },
---      },
---    })
---  end,
--- })
 
 -- use({
 -- 	"edgedb/edgedb-vim",

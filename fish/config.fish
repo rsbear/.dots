@@ -85,8 +85,11 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS""
 
 
 starship init fish | source
+zoxide init fish | source
 
 # pnpm
 set -gx PNPM_HOME "/Users/rsbear/Library/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
 # pnpm end
+
+

@@ -110,8 +110,19 @@ return {
         default_component_configs = {
           icon = { folder_closed = '-', folder_open = '' },
         },
-        window = { position = 'float' },
-        -- window = { position = 'right' },
+        window = {
+          position = 'float', -- left, right, top, bottom, float, current
+          width = 40, -- applies to left and right positions
+          height = 15, -- applies to top and bottom positions
+          auto_expand_width = false, -- expand the window when file exceeds the window width.
+          popup = { -- settings that apply to float position only
+            size = {
+              height = '100%',
+              width = '80%',
+            },
+            position = '0%',
+          },
+        },
         filesystem = {
           filtered_items = { --These filters are applied to both browsing and searching
             hide_dotfiles = false,
@@ -130,7 +141,7 @@ return {
         },
         git_status = {
           window = {
-            position = 'float',
+            position = 'right',
             -- width = 40,
             width = 100,
             mappings = {
