@@ -14,6 +14,12 @@ function git_committer
 	gum confirm "Commit changes?" && git commit -m "$SUMMARY" 
 end
 
+function favorites
+  set LOCATION $(gum choose "~/.config" "~/side/duesplitting" "~/work/kitco-cms-next" "~/work/helm-charts")
+	test -n "$LOCATION" && set LOCATION $LOCATION
+	cd "$LOCATION"
+end
+
 function code
   open -a "Visual Studio Code.app" $argv
 end
@@ -51,6 +57,7 @@ alias sf="cd ~/side/streamingfamily"
 alias ds="cd ~/side/duesplit"
 alias dsn="cd ~/side/duesplit/next"
 alias cm="git_committer"
+alias favs="favorites"
 
 # shortcuts to be deleted someday
 alias tf="cd ~/side/typefeel/"
