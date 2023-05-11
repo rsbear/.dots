@@ -90,7 +90,6 @@ function export.plugin_keymaps()
   km('n', '<leader>.', "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true })
   km('t', '<leader>.', "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true })
 
-  -- FLOAT TERM
   km('n', '<leader>m', '<cmd>:MindOpenMain<cr>', { noremap = true })
   km('n', '<leader>c', '<cmd>:MindClose<cr>', { noremap = true })
 
