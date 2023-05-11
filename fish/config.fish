@@ -8,10 +8,10 @@ function git_committer
 
 	# Pre-populate the input with the type(scope): so that the user may change it
 	set SUMMARY $(gum input --value "$TYPE$SCOPE: " --placeholder "Summary of this change")
-	set DESCRIPTION $(gum write --placeholder "Details of this change")
+	# set DESCRIPTION $(gum write --placeholder "Details of this change")
 
 	# Commit these changes if user confirms
-	gum confirm "Commit changes?" && git commit -m "$SUMMARY" -m "$DESCRIPTION"
+	gum confirm "Commit changes?" && git commit -m "$SUMMARY" 
 end
 
 function code
@@ -50,6 +50,7 @@ alias cc="clear"
 alias sf="cd ~/side/streamingfamily"
 alias ds="cd ~/side/duesplit"
 alias dsn="cd ~/side/duesplit/next"
+alias cm="git_committer"
 
 # shortcuts to be deleted someday
 alias tf="cd ~/side/typefeel/"
