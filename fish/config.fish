@@ -59,6 +59,7 @@ alias ds="cd ~/side/duesplit"
 alias dsn="cd ~/side/duesplit/next"
 alias cm="git_committer"
 alias favs="favorites"
+alias ai="chatgpt"
 
 # shortcuts to be deleted someday
 alias tf="cd ~/side/typefeel/"
