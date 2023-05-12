@@ -1,0 +1,57 @@
+{
+  "conversations": [
+    {
+      "config": {
+        "prompt": "default",
+        "context_length": 6,
+        "model": "gpt-3.5-turbo",
+        "stream": true,
+        "temperature": 0,
+        "max_tokens": 1024
+      },
+      "context": [
+        {
+          "question": "hello",
+          "answer": ""
+        },
+        {
+          "question": "whats my email",
+          "answer": ""
+        },
+        {
+          "question": "q",
+          "answer": ""
+        },
+        {
+          "question": "quit",
+          "answer": ""
+        },
+        {
+          "question": "hello",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "config": {
+        "prompt": "default",
+        "context_length": 6,
+        "model": "gpt-3.5-turbo",
+        "stream": true,
+        "temperature": 0,
+        "max_tokens": 1024
+      },
+      "context": [
+        {
+          "question": "lets build a form in react using react hook form. it has an input for an email address",
+          "answer": "To build a form in React using `react-hook-form` and an input for an email address, you can use the following code:\n\n```\nimport { useForm } from 'react-hook-form';\n\nfunction EmailForm() {\n  const { register, handleSubmit } = useForm();\n\n  const onSubmit = (data) =\u003e {\n    console.log(data.email);\n  };\n\n  return (\n    \u003cform onSubmit={handleSubmit(onSubmit)}\u003e\n      \u003cinput type=\"email\" {...register('email')} /\u003e\n      \u003cbutton type=\"submit\"\u003eSubmit\u003c/button\u003e\n    \u003c/form\u003e\n  );\n}\n```\n\nNote that the `useForm` hook from `react-hook-form` is used to register input fields and handle form submissions. The `register` method is used to register the input field with the name `email`. The `handleSubmit` method is used to handle when the form is submitted, and the `onSubmit` function is called, which logs the email data to the console."
+        },
+        {
+          "question": "we need to add the ability to select multiple items from a list of services. services have an id, name, and monthly price",
+          "answer": "To add the ability to select multiple items from a list of services in your React form, you can use the `react-hook-form` library's `useController` hook with the `Checkbox` input component. Here's an example code snippet that you can use:\n\n```\nimport { useForm, useController } from 'react-hook-form';\n\nfunction ServicesForm() {\n  const { control, handleSubmit } = useForm();\n\n  const services = [\n    { id: 1, name: 'Service A', monthlyPrice: 10.99 },\n    { id: 2, name: 'Service B', monthlyPrice: 20.99 },\n    { id: 3, name: 'Service C', monthlyPrice: 15.50 },\n  ];\n\n  const { field: selectedServices } = useController({\n    name: 'selectedServices',\n    control,\n    defaultValue: [],\n  });\n\n  const onSubmit = (data) =\u003e {\n    console.log(data.selectedServices);\n  };\n\n  return (\n    \u003cform onSubmit={handleSubmit(onSubmit)}\u003e\n      {services.map((service) =\u003e (\n        \u003cdiv key={service.id}\u003e\n          \u003cinput\n            type=\"checkbox\"\n            id={`service-${service.id}`}\n            value={service.id}\n            {...selectedServices}\n          /\u003e\n          \u003clabel htmlFor={`service-${service.id}`}\u003e{service.name} (${service.monthlyPrice}/month)\u003c/label\u003e\n        \u003c/div\u003e\n      ))}\n      \u003cbutton type=\"submit\"\u003eSubmit\u003c/button\u003e\n    \u003c/form\u003e\n  );\n}\n```\n\nIn this example, we define an array of `services` with `id`, `name`, and `monthlyPrice` properties. We then use the `useController` hook to define a `selectedServices` field with an empty array as the default value. We render a checkbox input element for each service using the `.map` function and connect it to the `selectedServices` controller with the `...selectedServices` spread syntax. Finally, we handle the form submission with the `onSubmit` function, which logs the selected services to the console."
+        }
+      ]
+    }
+  ],
+  "last_idx": 1
+}
