@@ -16,3 +16,4 @@ zk/private/*
 zk/.zk/notebook.db
 gh-dash
 gh
+chatgpt/config.json

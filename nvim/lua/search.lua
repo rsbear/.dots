@@ -15,9 +15,6 @@ return {
 
       require('telescope').setup({
         defaults = {
-          path_display = {
-            shorten = 7,
-          },
           vimgrep_arguments = {
             'rg',
             '--no-heading',
@@ -27,8 +24,17 @@ return {
             '--smart-case',
           },
           layout_config = {
-            horizontal = { width = 0.9 },
+            width = 0.9,
+            prompt_position = 'top',
+            horizontal = { mirror = false },
+            vertical = { mirror = false },
           },
+          layout_strategy = 'horizontal',
+          winblend = 0,
+          sorting_strategy = 'ascending',
+          prompt_prefix = '   ',
+          selection_caret = 'ﰲ ',
+          path_display = { 'smart' },
           file_ignore_patterns = {
             'node_modules',
             'yarn.lock',

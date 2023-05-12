@@ -87,6 +87,31 @@ return {
         },
       })
       vim.cmd('colorscheme rose-pine')
+      local hi = vim.api.nvim_set_hl
+
+      -- git gutter theme
+      -- hi(0, "GitSignsAdd", { fg = "#008D83", bg = "none" })
+      -- hi(0, 'GitGutterChange', { fg = '#845ec2', bg = 'none' })
+      -- hi(0, "DiffDelete", { fg = "#f0a0c0", bg = "#333333" })
+
+      --[[ hi(0, "DashboardHeader", { fg = "#ebbcba", bg = "none" }) -- rose pine, rose ]]
+      -- hi(0, 'DashboardCenter1Icon', { fg = '#696778', bg = 'none' })
+      -- hi(0, 'DashboardCenter3Icon', { fg = '#696778', bg = 'none' })
+      -- hi(0, 'DashboardCenter5Icon', { fg = '#696778', bg = 'none' })
+      -- hi(0, 'DashboardCenter7Icon', { fg = '#696778', bg = 'none' })
+      --[[ hi(0, "DashboardShortCut", { fg = "#696778", bg = "none" }) ]]
+      -- hi(0, 'DashboardFooter', { fg = '#696778', bg = 'none' })
+      hi(0, 'TelescopeBorder', { fg = '#ea9a97', bg = '#201E26' })
+      hi(0, 'TelescopeMatching', { fg = '#ea9a97', bg = '#252830' })
+      hi(0, 'TelescopeSelection', { fg = '#ea9a97', bg = '#252830' })
+      hi(0, 'TelescopeNormal', { fg = '#ffffff', bg = '#2a273f' })
+      hi(0, 'TelescopePromptTitle', { fg = '#c4a7e7', bg = '#353945' })
+      hi(0, 'TelescopePromptBorder', { fg = '#353945', bg = '#353945' })
+      hi(0, 'TelescopePromptNormal', { fg = '#ffffff', bg = '#353945' })
+      hi(0, 'TelescopeResultsBorder', { fg = '#252830', bg = '#252830' })
+      hi(0, 'TelescopeResultsNormal', { fg = '#b0c6ce', bg = '#252830' })
+      hi(0, 'TelescopePreviewBorder', { fg = '#252830', bg = '#252830' })
+      hi(0, 'TelescopePreviewNormal', { fg = '#252830', bg = '#252830' })
     end,
   },
 
@@ -207,15 +232,78 @@ return {
       })
     end,
   },
+
+  {
+    'glepnir/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup({
+        theme = 'doom',
+        preview = {
+          file_height = 12,
+          file_width = 80,
+        },
+        config = {
+          center = {
+            {
+              icon = '  ',
+              icon_hl = 'DashboardCenter1Icon',
+              desc = 'finder                           ',
+              key = '~',
+              key_hl = 'DashboardCenter1Icon',
+              action = 'Telescope find_files find_command=rg,--hidden,--files',
+            },
+            {
+              icon = '  ',
+              icon_hl = 'DashboardCenter1Icon',
+              desc = 'notes                            ',
+              key = '~',
+              key_hl = 'DashboardCenter1Icon',
+              action = ':e ~/Documents/vimnotes.md',
+            },
+            {
+              icon = '  ',
+              icon_hl = 'DashboardCenter1Icon',
+              desc = 'dots                             ',
+              key = '~',
+              key_hl = 'DashboardCenter1Icon',
+              action = 'Telescope find_files cwd=~/.config',
+            },
+            {
+              icon = '  ',
+              icon_hl = 'DashboardCenter1Icon',
+              desc = 'exit                             ',
+              key = '~',
+              key_hl = 'DashboardCenter1Icon',
+              action = 'qa',
+            },
+          },
+          header = {
+            [[                               ]],
+            [[                               ]],
+            [[                               ]],
+            [[                               ]],
+            [[                               ]],
+            [[                               ]],
+            [[                               ]],
+            [[   ▄████▄              ▒▒▒▒▒   ]],
+            [[  ███▄█▀              ▒ ▄▒ ▄▒  ]],
+            [[ ▐████     █  █  █   ▒▒▒▒▒▒▒▒▒ ]],
+            [[  █████▄             ▒▒▒▒▒▒▒▒▒ ]],
+            [[   ▀████▀            ▒ ▒ ▒ ▒ ▒ ]],
+            [[                               ]],
+            [[                               ]],
+            [[                               ]],
+            [[                               ]],
+          },
+        },
+      })
+    end,
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } },
+  },
 }
 
 -- use({ 'lewis6991/impatient.nvim' })
--- use({ 'nvim-lua/plenary.nvim', module = 'plenary' })
--- use({ 'nvim-lua/popup.nvim', module = 'popup' })
-
--- use('kvrohit/substrata.nvim')
--- Lua
--- vim.cmd([[colorscheme substrata]])
 
 -- use({
 --   'glepnir/dashboard-nvim',
