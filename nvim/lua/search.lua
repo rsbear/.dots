@@ -4,6 +4,19 @@ return {
     'j-morano/buffer_manager.nvim',
   },
 
+  -- {
+  --   'tomiis4/BufferTabs.nvim',
+  --   dependencies = {
+  --     'nvim-tree/nvim-web-devicons', -- optional
+  --   },
+  --   lazy = false,
+  --   config = function()
+  --     require('buffertabs').setup({
+  --       -- config
+  --     })
+  --   end,
+  -- },
+
   {
     'nvim-telescope/telescope.nvim',
     dependencies = {

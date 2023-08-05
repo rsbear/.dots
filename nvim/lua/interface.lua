@@ -1,4 +1,97 @@
 return {
+  -- {
+  --   'rose-pine/neovim',
+  --   as = 'rose-pine',
+  --   -- tag = 'v1.*', -- Optional tag release
+  --   config = function()
+  --     require('rose-pine').setup({
+  --       dark_variant = 'main',
+  --       bold_vert_split = false,
+  --       dim_nc_background = false,
+  --       disable_background = false,
+  --       disable_float_background = false,
+  --       disable_italics = true,
+  --       groups = {
+  --         -- background = '#1B1D23', -- poimandres
+  --         background = 'none', -- poimandres
+  --         TSString = { style = 'italic' },
+  --         text = { fg = '#BDBBCE' }, -- poimandres
+  --         ['@tag.attribute'] = { style = 'italic' },
+  --       },
+  --       highlight_groups = {
+  --         LineNr = { fg = '#3b384d' },
+  --         CursorLineNr = { fg = '#9ccfd8' },
+  --         DashboardHeader = { fg = '#ebbcba' },
+  --         DashboardCenter = { fg = '#696778' },
+  --         DashboardShortCut = { fg = '#696778' },
+  --         GitSignsAdd = { fg = '#008D83' },
+  --         GitGutterChange = { fg = '#6C503C' },
+  --         IndentBlanklineChar = { fg = '#2c2a36' },
+  --         FloatBorder = { fg = '#2a273f', bg = 'none' },
+  --         -- bar bar
+  --         BufferCurrent = { fg = '#ebbcba', bg = '#191724' },
+  --         BufferCurrentMod = { fg = '#ebbcba', bg = '#191724' },
+  --         BufferCurrentIcon = { fg = '#ebbcba', bg = '#191725' },
+  --         BufferCurrentSign = { fg = '#ebbcba', bg = '#191725' },
+  --         BufferInactiveMod = { fg = '#908caa', bg = '#191724' },
+  --         -- working on substrata
+  --         -- working on substrata
+  --         -- working on substrata
+  --         Function = { fg = '#D1C0E6' },
+  --         ['@constructor'] = { fg = '#ADD7FF' }, -- something related to the query below
+  --         ['@constructor.tsx'] = { fg = '#5DE4C7' }, -- components in jsx, import statements
+  --         ['@exception'] = { fg = '#D0679D' }, -- throw keyword
+  --         ['@function'] = { fg = '#ADD7FF' }, -- self explanatory
+  --         ['@function.call'] = { fg = '#B4AFBC' }, -- builtin fns like useCallback
+  --         ['@include'] = { fg = '#908caa' }, -- import and from
+  --         ['@keyword'] = { fg = '#667F9E' }, --  i dont know
+  --         ['@keyword.control'] = { fg = '#5DE4C7' },
+  --         ['@keyword.operator'] = { fg = '#5DE4C7' },
+  --         ['@method.call'] = { fg = '#8CC0C0' }, -- methods
+  --         ['@parameter'] = { fg = '#E4F0FB' }, -- fn args
+  --         ['@property'] = { fg = '#8CB2C0' }, -- dot notation
+  --         ['@punctuation.bracket'] = { fg = '#ebbcba' },
+  --         ['@string'] = { fg = '#659ea2' },
+  --         ['@tag'] = { fg = '#667F9E' }, -- regular html tags
+  --         ['@tag.attribute'] = { fg = '#91B4D5', italic = true }, -- html tag attrs
+  --         ['@tag.delimiter'] = { fg = '#e0def4' }, -- html tag attrs
+  --         -- ['@type'] = { fg = '#908caa' }, -- types
+  --         -- -- figure these out please
+  --         ['@namespace'] = { fg = '#E4F0FB' }, -- i dont know
+  --         ['@preproc'] = { fg = '#eb6f92' }, --  i dont know
+  --         ['@variable'] = { fg = '#91B4D5' },
+  --         tsxTag = { fg = '#667F9E' },
+  --       },
+  --     })
+  --     vim.cmd('colorscheme rose-pine')
+  --     local hi = vim.api.nvim_set_hl
+  --
+  --     -- git gutter theme
+  --     -- hi(0, "GitSignsAdd", { fg = "#008D83", bg = "none" })
+  --     -- hi(0, 'GitGutterChange', { fg = '#845ec2', bg = 'none' })
+  --     -- hi(0, "DiffDelete", { fg = "#f0a0c0", bg = "#333333" })
+  --
+  --     -- [[ hi(0, "DashboardHeader", { fg = "#ebbcba", bg = "none" }) -- rose pine, rose ]]
+  --     hi(0, 'DashboardCenter1Icon', { fg = '#696778', bg = 'none' })
+  --     hi(0, 'DashboardCenter3Icon', { fg = '#696778', bg = 'none' })
+  --     hi(0, 'DashboardCenter5Icon', { fg = '#696778', bg = 'none' })
+  --     hi(0, 'DashboardCenter7Icon', { fg = '#696778', bg = 'none' })
+  --     -- [[ hi(0, "DashboardShortCut", { fg = "#696778", bg = "none" }) ]]
+  --     hi(0, 'DashboardFooter', { fg = '#696778', bg = 'none' })
+  --     hi(0, 'TelescopeBorder', { fg = '#ea9a97', bg = '#201E26' })
+  --     hi(0, 'TelescopeMatching', { fg = '#ea9a97', bg = '#252830' })
+  --     hi(0, 'TelescopeSelection', { fg = '#ea9a97', bg = '#252830' })
+  --     hi(0, 'TelescopeNormal', { fg = '#ffffff', bg = '#2a273f' })
+  --     hi(0, 'TelescopePromptTitle', { fg = '#c4a7e7', bg = '#353945' })
+  --     hi(0, 'TelescopePromptBorder', { fg = '#353945', bg = '#353945' })
+  --     hi(0, 'TelescopePromptNormal', { fg = '#ffffff', bg = '#353945' })
+  --     hi(0, 'TelescopeResultsBorder', { fg = '#252830', bg = '#252830' })
+  --     hi(0, 'TelescopeResultsNormal', { fg = '#b0c6ce', bg = '#252830' })
+  --     hi(0, 'TelescopePreviewBorder', { fg = '#252830', bg = '#252830' })
+  --     hi(0, 'TelescopePreviewNormal', { fg = '#252830', bg = '#252830' })
+  --   end,
+  -- },
+
   {
     'rose-pine/neovim',
     as = 'rose-pine',
@@ -12,106 +105,19 @@ return {
         disable_float_background = false,
         disable_italics = true,
         groups = {
-          background = '#1B1D23', -- poimandres
-          TSString = { style = 'italic' },
-          ['@tag.attribute'] = { style = 'italic' },
+          -- TSString = { style = 'italic' },
+          background = 'none', -- poimandres
+          -- ['@tag.attribute'] = { style = 'italic' },
         },
         highlight_groups = {
-          LineNr = { fg = '#3b384d' },
-          CursorLineNr = { fg = '#9ccfd8' },
-          DashboardHeader = { fg = '#ebbcba' },
-          DashboardCenter = { fg = '#696778' },
-          DashboardShortCut = { fg = '#696778' },
           GitSignsAdd = { fg = '#008D83' },
+          GitGutterChange = { fg = '#6C503C' },
           IndentBlanklineChar = { fg = '#2c2a36' },
-          FloatBorder = { fg = '#2a273f', bg = 'none' },
-          -- bar bar
-          BufferCurrent = { fg = '#ebbcba', bg = '#191724' },
-          BufferCurrentMod = { fg = '#ebbcba', bg = '#191724' },
-          BufferCurrentIcon = { fg = '#ebbcba', bg = '#191725' },
-          BufferCurrentSign = { fg = '#ebbcba', bg = '#191725' },
-          BufferInactiveMod = { fg = '#908caa', bg = '#191724' },
-          -- ["@tag.attribute"] = { style = "italic"},
-          -- working on poimandres
-          -- working on poimandres
-          -- working on poimandres
-          -- ['@constructor'] = { fg = '#ADD7FF' }, -- something related to the query below
-          -- ['@constructor.tsx'] = { fg = '#5DE4C7' }, -- components in jsx, import statements
-          -- ['@exception'] = { fg = '#D0679D' }, -- throw keyword
-          -- ['@function'] = { fg = '#a0b9d8' }, -- self explanatory
-          -- ['@function.call'] = { fg = '#B4AFBC' }, -- builtin fns like useCallback
-          -- ['@include'] = { fg = '#908caa' }, -- import and from
-          -- ['@keyword'] = { fg = '#91B4D5' },
-          -- ['@keyword.control'] = { fg = '#5DE4C7' },
-          -- ['@keyword.operator'] = { fg = '#5DE4C7' },
-          -- ['@method.call'] = { fg = '#B4AFBC' }, -- methods
-          -- ['@parameter'] = { fg = '#E4F0FB' }, -- fn args
-          -- ['@property'] = { fg = '#E4F0FB' }, -- dot notation
-          -- ['@punctuation.bracket'] = { fg = '#ebbcba' },
-          -- ["@string"] = { fg = "#5DE4C7" },
-          -- -- ["@tag"] = { fg = "#ADD7FF" }, -- regular html tags
-          -- ["@tag.attribute"] = { fg = "#91B4D5", style = "italic" }, -- html tag attrs
-          -- ["@tag.delimiter"] = { fg = "#e0def4" }, -- html tag attrs
-          -- ["@type"] = { fg = "#908caa" }, -- types
-          -- -- figure these out please
-          -- ["@namespace"] = { fg = "#E4F0FB" }, -- i dont know
-          -- ["@preproc"] = { fg = "#eb6f92" }, --  i dont know
-          -- tsxTag = { fg = "#5DE4C7" },
-          -- working on substrata
-          -- working on substrata
-          -- working on substrata
-          Function = { fg = '#D1C0E6' },
-          ['@constructor'] = { fg = '#ADD7FF' }, -- something related to the query below
-          ['@constructor.tsx'] = { fg = '#5DE4C7' }, -- components in jsx, import statements
-          ['@exception'] = { fg = '#D0679D' }, -- throw keyword
-          ['@function'] = { fg = '#ADD7FF' }, -- self explanatory
-          ['@function.call'] = { fg = '#B4AFBC' }, -- builtin fns like useCallback
-          ['@include'] = { fg = '#908caa' }, -- import and from
-          ['@keyword'] = { fg = '#667F9E' }, --  i dont know
-          ['@keyword.control'] = { fg = '#5DE4C7' },
-          ['@keyword.operator'] = { fg = '#5DE4C7' },
-          ['@method.call'] = { fg = '#8CC0C0' }, -- methods
-          ['@parameter'] = { fg = '#E4F0FB' }, -- fn args
-          ['@property'] = { fg = '#8CB2C0' }, -- dot notation
-          ['@punctuation.bracket'] = { fg = '#ebbcba' },
-          ['@string'] = { fg = '#659ea2' },
-          ['@tag'] = { fg = '#667F9E' }, -- regular html tags
-          ['@tag.attribute'] = { fg = '#91B4D5', italic = true }, -- html tag attrs
-          ['@tag.delimiter'] = { fg = '#e0def4' }, -- html tag attrs
-          -- ['@type'] = { fg = '#908caa' }, -- types
-          -- -- figure these out please
-          ['@namespace'] = { fg = '#E4F0FB' }, -- i dont know
-          ['@preproc'] = { fg = '#eb6f92' }, --  i dont know
-          ['@variable'] = { fg = '#91B4D5' },
-          tsxTag = { fg = '#667F9E' },
+          ['@tag'] = { fg = '#9CCFD7' }, -- regular html tags
         },
       })
       vim.cmd('colorscheme rose-pine')
       local hi = vim.api.nvim_set_hl
-
-      -- git gutter theme
-      -- hi(0, "GitSignsAdd", { fg = "#008D83", bg = "none" })
-      -- hi(0, 'GitGutterChange', { fg = '#845ec2', bg = 'none' })
-      -- hi(0, "DiffDelete", { fg = "#f0a0c0", bg = "#333333" })
-
-      --[[ hi(0, "DashboardHeader", { fg = "#ebbcba", bg = "none" }) -- rose pine, rose ]]
-      -- hi(0, 'DashboardCenter1Icon', { fg = '#696778', bg = 'none' })
-      -- hi(0, 'DashboardCenter3Icon', { fg = '#696778', bg = 'none' })
-      -- hi(0, 'DashboardCenter5Icon', { fg = '#696778', bg = 'none' })
-      -- hi(0, 'DashboardCenter7Icon', { fg = '#696778', bg = 'none' })
-      --[[ hi(0, "DashboardShortCut", { fg = "#696778", bg = "none" }) ]]
-      -- hi(0, 'DashboardFooter', { fg = '#696778', bg = 'none' })
-      hi(0, 'TelescopeBorder', { fg = '#ea9a97', bg = '#201E26' })
-      hi(0, 'TelescopeMatching', { fg = '#ea9a97', bg = '#252830' })
-      hi(0, 'TelescopeSelection', { fg = '#ea9a97', bg = '#252830' })
-      hi(0, 'TelescopeNormal', { fg = '#ffffff', bg = '#2a273f' })
-      hi(0, 'TelescopePromptTitle', { fg = '#c4a7e7', bg = '#353945' })
-      hi(0, 'TelescopePromptBorder', { fg = '#353945', bg = '#353945' })
-      hi(0, 'TelescopePromptNormal', { fg = '#ffffff', bg = '#353945' })
-      hi(0, 'TelescopeResultsBorder', { fg = '#252830', bg = '#252830' })
-      hi(0, 'TelescopeResultsNormal', { fg = '#b0c6ce', bg = '#252830' })
-      hi(0, 'TelescopePreviewBorder', { fg = '#252830', bg = '#252830' })
-      hi(0, 'TelescopePreviewNormal', { fg = '#252830', bg = '#252830' })
     end,
   },
 

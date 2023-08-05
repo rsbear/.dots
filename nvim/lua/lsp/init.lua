@@ -66,7 +66,7 @@ function export.init()
     -- end,
     ['tailwindcss'] = function()
       require('lspconfig').tailwindcss.setup(vim.tbl_deep_extend('force', lsp_opts, {
-        filetypes = { 'typescriptreact', 'astro', 'javascriptreact' },
+        filetypes = { 'typescriptreact', 'astro', 'javascriptreact', 'svelte' },
         root_dir = require('lspconfig').util.root_pattern({ 'tailwind.config.js', 'tailwind.config.cjs', 'deno.json' }),
       }))
     end,
@@ -99,25 +99,30 @@ function export.init()
         },
       }))
     end,
-    ['tsserver'] = function()
-      require('lspconfig').tsserver.setup(vim.tbl_deep_extend('force', lsp_opts, {
-        root_dir = require('lspconfig').util.root_pattern({ 'package.json', 'yarn.lock', 'package-lock.json' }),
-        settings = {
-          update_on_insert = false,
-        },
-        handlers = {
-          ['textDocument/definition'] = function(err, result, method, ...)
-            if vim.tbl_islist(result) and #result > 1 then
-              local filtered_result = filter(result, filterReactDTS)
-              return vim.lsp.handlers['textDocument/definition'](err, filtered_result, method, ...)
-            end
-
-            vim.lsp.handlers['textDocument/definition'](err, result, method, ...)
-          end,
-        },
-        -- handlers = {
-        --   ['textDocument/definition'] = handle_gtd,
-        -- },
+    -- ['tsserver'] = function()
+    --   require('lspconfig').tsserver.setup(vim.tbl_deep_extend('force', lsp_opts, {
+    --     root_dir = require('lspconfig').util.root_pattern({ 'package.json', 'yarn.lock', 'package-lock.json' }),
+    --     settings = {
+    --       update_on_insert = false,
+    --     },
+    --     handlers = {
+    --       ['textDocument/definition'] = function(err, result, method, ...)
+    --         if vim.tbl_islist(result) and #result > 1 then
+    --           local filtered_result = filter(result, filterReactDTS)
+    --           return vim.lsp.handlers['textDocument/definition'](err, filtered_result, method, ...)
+    --         end
+    --
+    --         vim.lsp.handlers['textDocument/definition'](err, result, method, ...)
+    --       end,
+    --     },
+    --     -- handlers = {
+    --     --   ['textDocument/definition'] = handle_gtd,
+    --     -- },
+    --   }))
+    -- end,
+    ['vtsls'] = function()
+      require('lspconfig').vtsls.setup(vim.tbl_deep_extend('force', lsp_opts, {
+        capabilities = capabilities,
       }))
     end,
   })

@@ -66,11 +66,11 @@ return {
     config = function()
       require('gitsigns').setup({
         signs = {
-          add = { hl = 'GitSignsAdd', text = '│' },
-          change = { hl = 'GitGutterChange', text = '│' },
-          delete = { hl = 'GitGutterDelete', text = '_' },
+          add = { hl = 'GitSignsAdd', text = '' },
+          change = { hl = 'GitGutterChange', text = '' },
+          delete = { hl = 'GitGutterDelete', text = '-' },
           topdelete = { hl = 'GitGutterDelete', text = '‾' },
-          changedelete = { hl = 'GitGutterChange', text = '~' },
+          changedelete = { hl = 'GitGutterChange', text = '' },
         },
       })
     end,

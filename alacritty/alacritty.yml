@@ -3,7 +3,7 @@ font:
   normal:
     # family: RobotoMono Nerd Font Mono
     # family: Liga SFMono Nerd Font
-    family: SFMono Nerd Font
+    # family: SFMono Nerd Font
     # family: BlexMono Nerd Font Mono
     # family: Cousine Nerd Font Mono
     # family: Inconsolata Nerd Font Mono
@@ -12,8 +12,9 @@ font:
     # family: iMWritingMonoS Nerd Font
     # family: MesloLGLDZ Nerd Font
     # family: MesloLGSDZ Nerd Font Mono
-    # family: MesloLGM Nerd Font Mono # this the pick
+    family: MesloLGM Nerd Font Mono # this the pick
     # family: LiterationMono Nerd Font Mono
+    # family: CommitMonoV130
 
     # comment out the regular and the font will be fatter like semiboldRegular
     # style: Light
@@ -32,22 +33,22 @@ font:
     # x: 1
     # y: 8
     # Meslo spacing
-    x: 1
+    x: 0
     y: 5
+    # CommitMono spacing
+    # x: 1
+    # y: 5
 
 window:
   dynamic_padding: false
-  # Window decorations: full | none | transparent | buttonless
   decorations: buttonless
-  dimensions:
-    columns: 120
-    lines: 45
+  opacity: 1.1
 
   padding:
     # x: 30
     # y: 10
     x: 60
-    y: 8
+    y: 14
 
 colors:
   # unset to inverse of the cell colour.
@@ -65,12 +66,12 @@ colors:
     # foreground: '0xc0caf5'
 
     # rose-pine
-    # background: "0x191724"
-    # foreground: "0xc0caf5"
+    background: "0x191724"
+    foreground: "0xc0caf5"
 
     # poimandres
-    background: "0x1B1D23"
-    foreground: "0xc0caf5"
+    # background: "0x1B1D23"
+    # foreground: "0xc0caf5"
 
     # substrata
     # background: "0x191c25"

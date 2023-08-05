@@ -128,16 +128,9 @@ return {
           svelte = {
             function()
               return {
-                -- exe = 'prettier',
-                -- args = { vim.api.nvim_buf_get_name(0) },
-                exe = 'dprint',
-                args = {
-                  'fmt',
-                  '--config',
-                  '~/.config/dprint/dprint.json',
-                  '--stdin',
-                  vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
-                },
+                exe = 'prettier',
+                args = { vim.api.nvim_buf_get_name(0) },
+                -- args = { 'format', '--stdin-file-path', vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
                 stdin = true,
               }
             end,

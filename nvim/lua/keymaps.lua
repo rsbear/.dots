@@ -27,11 +27,11 @@ function export.lsp_on_attach(client, bufnr)
   lspmap('<leader>[', 'vim.diagnostic.goto_prev({ border = "rounded" })')
   lspmap('<leader>]', 'vim.diagnostic.goto_next({ border = "rounded" })')
   lspmap('<leader>n', 'vim.lsp.buf.signature_help()', o)
-  -- lspmap('<leader>ca', 'vim.lsp.buf.code_action()', opts)
+  lspmap('<leader>ca', 'vim.lsp.buf.code_action()', opts)
   -- lspmap('?', 'vim.lsp.buf.hover()', opts)
   lspmap('<leader>i', 'vim.lsp.show()', o)
 
-  km('n', '<leader>ca', '<cmd>:Lspsaga code_action<CR>', o)
+  -- km('n', '<leader>ca', '<cmd>:Lspsaga code_action<CR>', o)
   km('n', '<leader>rn', '<cmd>:Lspsaga rename<CR>', o)
   km('n', '>', '<cmd>:Lspsaga peek_definition<CR>', o)
   km('n', '?', '<cmd>:Lspsaga hover_doc<CR>', o)
@@ -57,7 +57,7 @@ function export.plugin_keymaps()
   telemap('<leader>gc', 'git_commits()')
   telemap('<leader>gr', 'lsp_references()')
   telemap('<leader>k', 'keymaps()')
-  telemap('<leader><space>', 'buffers()')
+  -- telemap('<leader><space>', 'buffers()')
   telemap('<leader>en', "find_files({ cwd = '~/.config' })")
   telemap('<C-q>', 'quickfix()')
   -- NPM <C-i> = install, <C-d> = uninstall
@@ -87,15 +87,13 @@ function export.plugin_keymaps()
   km('n', 's', '<cmd>:HopWord<CR>')
 
   -- FLOAT TERM
-  km('n', '<leader>.', "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true })
-  km('t', '<leader>.', "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true })
-
-  km('n', '<leader>m', '<cmd>:MindOpenMain<cr>', { noremap = true })
-  km('n', '<leader>c', '<cmd>:MindClose<cr>', { noremap = true })
+  km('n', '<leader>m', "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true })
+  km('t', '<leader>m', "<cmd>lua require('FTerm').toggle()<cr>", { noremap = true })
 
   -- NEO TREE
   -- km('n', '\\', '<cmd>Neotree float<CR>', opts)
-  km('n', '\\', '<cmd>Neotree reveal<CR>', opts) -- this is a fix for using neotree 'current' pos
+  -- km('n', '\\', '<cmd>Neotree reveal<CR>', opts) -- this is a fix for using neotree 'current' pos
+  km('n', '<leader><space>', '<cmd>Neotree focus toggle<CR>', opts) -- this is a fix for using neotree 'current' pos
   km('n', '<leader>gs', '<cmd>Neotree git_status<CR>', opts)
 
   -- copilot

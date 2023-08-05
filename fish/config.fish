@@ -54,19 +54,20 @@ alias glol="git log --oneline | gum filter"
 alias cmt='git_committer'
 alias zz="zellij --layout ~/.config/zellij/layout-classic.yaml"
 alias cc="clear"
-alias sf="cd ~/side/streamingfamily"
-alias ds="cd ~/side/duesplit"
-alias dsn="cd ~/side/duesplit/next"
+alias ds="cd ~/tiny/duesplit"
 alias cm="git_committer"
 alias favs="favorites"
 alias ai="chatgpt"
+alias yd="yarn dev"
+alias cool="cd ~/cool"
+alias tiny="cd ~/tiny"
+alias reyarn="rm -rf node_modules && yarn"
 
 # shortcuts to be deleted someday
 alias tf="cd ~/side/typefeel/"
 alias kcn="cd ~/work/kitco-cms-next/"
 
 alias edb="edgedb $argv"
-
 
 export EDITOR="nvim"
 export KUBE_EDITOR="nvim"
@@ -86,6 +87,7 @@ export ZK_NOTEBOOK_DIR="$HOME/.config/zk"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH="/Users/rsbear/Library/Application Support/edgedb/bin:$PATH"
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS""
  --color=fg:#908caa,bg:#191724,hl:#6e6a86

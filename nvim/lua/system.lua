@@ -17,8 +17,9 @@ return {
         border = 'single',
         auto_close = false,
         dimensions = {
-          height = 0.9,
-          width = 0.9,
+          height = 1.0,
+          width = 0.8,
+          x = 1.0,
         },
       })
     end,
