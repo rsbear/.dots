@@ -21,10 +21,10 @@ symbol = " "
 
 [character]                            # The name of the module we are configuring is "character"
 # success_symbol = "[](bold bright-purple)"     # The "success_symbol" is being set to "➜" with the color "bold green"
-# success_symbol = "[](bold bright-purple)"     # The "success_symbol" is being set to "➜" with the color "bold green"
+success_symbol = "[](bright-purple)"     # The "success_symbol" is being set to "➜" with the color "bold green"
 # success_symbol = "[](bold purple)"     # The "success_symbol" is being set to "➜" with the color "bold green"
 # success_symbol = "[聾](bold bright-purple)"     # The "success_symbol" is being set to "➜" with the color "bold green"
-success_symbol = "[](bold #ebbcba)"     # The "success_symbol" is being set to "➜" with the color "bold green"
+# success_symbol = "[](bold #ebbcba)"     # The "success_symbol" is being set to "➜" with the color "bold green"
 
 [aws]
 symbol = " "
@@ -46,7 +46,7 @@ symbol = " "
 
 [directory]
 read_only = " "
-style = "bold #6e6a86"
+style = "#6e6a86"
 truncation_length = 8
 truncation_symbol = "…/"
 
@@ -72,12 +72,12 @@ format = ' [$symbol$branch(:$remote_branch)]($style) '
 
 [git_metrics]
 added_style = 'bold blue'
-disabled = false
+disabled = true
 format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
 
 [git_status]
 style = "#eb6f92"
-disabled = true
+disabled = false
 
 [golang]
 symbol = " "

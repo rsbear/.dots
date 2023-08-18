@@ -4,18 +4,18 @@ return {
     'j-morano/buffer_manager.nvim',
   },
 
-  -- {
-  --   'tomiis4/BufferTabs.nvim',
-  --   dependencies = {
-  --     'nvim-tree/nvim-web-devicons', -- optional
-  --   },
-  --   lazy = false,
-  --   config = function()
-  --     require('buffertabs').setup({
-  --       -- config
-  --     })
-  --   end,
-  -- },
+  {
+    'tomiis4/BufferTabs.nvim',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons', -- optional
+    },
+    lazy = false,
+    config = function()
+      require('buffertabs').setup({
+        horizontal = 'right',
+      })
+    end,
+  },
 
   {
     'nvim-telescope/telescope.nvim',
@@ -47,7 +47,7 @@ return {
           sorting_strategy = 'ascending',
           prompt_prefix = '   ',
           selection_caret = 'ﰲ ',
-          path_display = { 'smart' },
+          -- path_display = { 'smart' },
           file_ignore_patterns = {
             'node_modules',
             'yarn.lock',
@@ -141,6 +141,10 @@ return {
             },
             position = '0%',
           },
+          follow_current_file = {
+            enabled = true,
+            leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+          },
         },
         filesystem = {
           filtered_items = { --These filters are applied to both browsing and searching
@@ -149,13 +153,19 @@ return {
             hide_by_name = { 'node_modules', '.git' },
             never_show = { '.DS_Store' },
           },
-          follow_current_file = true,
+          follow_current_file = {
+            enabled = true,
+            leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+          },
           group_empty_dirs = false,
           use_libuv_file_watcher = true,
           hijack_netrw_behavior = 'open_current',
         },
         buffers = {
-          follow_current_file = true,
+          follow_current_file = {
+            enabled = true,
+            leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+          },
           group_empty_dirs = false,
         },
         git_status = {

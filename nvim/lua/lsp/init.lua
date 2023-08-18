@@ -67,7 +67,12 @@ function export.init()
     ['tailwindcss'] = function()
       require('lspconfig').tailwindcss.setup(vim.tbl_deep_extend('force', lsp_opts, {
         filetypes = { 'typescriptreact', 'astro', 'javascriptreact', 'svelte' },
-        root_dir = require('lspconfig').util.root_pattern({ 'tailwind.config.js', 'tailwind.config.cjs', 'deno.json' }),
+        root_dir = require('lspconfig').util.root_pattern({
+          'tailwind.config.js',
+          'tailwind.config.cjs',
+          'tailwind.config.ts',
+          'deno.json',
+        }),
       }))
     end,
     ['denols'] = function()
@@ -82,7 +87,7 @@ function export.init()
           'deno.json',
           'importMap.json',
           'mod.ts',
-          'astro.config.mjs',
+          'uno.config.ts',
         }),
       }))
     end,

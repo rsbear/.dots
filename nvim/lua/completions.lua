@@ -79,7 +79,7 @@ return {
           end),
         },
         sources = cmp.config.sources({
-          { name = 'nvim_lsp' },
+          { name = 'nvim_lsp', trigger_characters = { '-' } },
           { name = 'luasnip' },
           -- { name = 'copilot', group_index = 1 },
           { name = 'buffer' },

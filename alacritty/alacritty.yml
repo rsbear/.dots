@@ -2,7 +2,7 @@ font:
   size: 16
   normal:
     # family: RobotoMono Nerd Font Mono
-    # family: Liga SFMono Nerd Font
+    family: Liga SFMono Nerd Font
     # family: SFMono Nerd Font
     # family: BlexMono Nerd Font Mono
     # family: Cousine Nerd Font Mono
@@ -12,7 +12,7 @@ font:
     # family: iMWritingMonoS Nerd Font
     # family: MesloLGLDZ Nerd Font
     # family: MesloLGSDZ Nerd Font Mono
-    family: MesloLGM Nerd Font Mono # this the pick
+    # family: MesloLGM Nerd Font Mono # this the pick
     # family: LiterationMono Nerd Font Mono
     # family: CommitMonoV130
 
@@ -30,11 +30,11 @@ font:
     # x: 1SF Mono
     # y: 8
     # SFMono spacing
-    # x: 1
-    # y: 8
+    x: 1
+    y: 10
     # Meslo spacing
-    x: 0
-    y: 5
+    # x: 0
+    # y: 5
     # CommitMono spacing
     # x: 1
     # y: 5
@@ -43,12 +43,15 @@ window:
   dynamic_padding: false
   decorations: buttonless
   opacity: 1.1
+  dimensions:
+    columns: 113
+    lines: 40
 
   padding:
     # x: 30
     # y: 10
-    x: 60
-    y: 14
+    x: 70
+    y: 20
 
 colors:
   # unset to inverse of the cell colour.

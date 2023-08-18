@@ -62,6 +62,8 @@ alias yd="yarn dev"
 alias cool="cd ~/cool"
 alias tiny="cd ~/tiny"
 alias reyarn="rm -rf node_modules && yarn"
+alias goog="glook"
+alias notes="cd ~/notes && vim"
 
 # shortcuts to be deleted someday
 alias tf="cd ~/side/typefeel/"

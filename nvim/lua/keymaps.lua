@@ -93,7 +93,7 @@ function export.plugin_keymaps()
   -- NEO TREE
   -- km('n', '\\', '<cmd>Neotree float<CR>', opts)
   -- km('n', '\\', '<cmd>Neotree reveal<CR>', opts) -- this is a fix for using neotree 'current' pos
-  km('n', '<leader><space>', '<cmd>Neotree focus toggle<CR>', opts) -- this is a fix for using neotree 'current' pos
+  km('n', '<leader><space>', '<cmd>Neotree reveal toggle<CR>', opts) -- this is a fix for using neotree 'current' pos
   km('n', '<leader>gs', '<cmd>Neotree git_status<CR>', opts)
 
   -- copilot

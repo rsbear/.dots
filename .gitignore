@@ -6,6 +6,7 @@ gcloud
 github-copilot
 iterm2
 chatgpt
+chatgpt/conversations.json
 neovim
 nvim/plugin/packer_compiled.lua
 plugged
