@@ -15,9 +15,9 @@ function git_committer
 end
 
 function favorites
-  set LOCATION $(gum choose "~/.config" "~/side/duesplitting" "~/work/kitco-cms-next" "~/work/helm-charts")
-	test -n "$LOCATION" && set LOCATION $LOCATION
-	cd "$LOCATION"
+  set LOCATION $(gum choose "~/.config/" "~/tiny/duesplit/" "~/work/kitco-cms-next/" "~/work/helm-charts/")
+	test -n $LOCATION && set LOCATION $LOCATION
+	cd $LOCATION
 end
 
 function code
@@ -34,9 +34,6 @@ alias lg='lazygit'
 alias lgcfg='nvim ~/Library/Application\ Support/lazygit/config.yml'
 alias vim="nvim"
 alias vi="vim"
-alias work="cd ~/work && l"
-alias side="cd ~/side && l"
-alias home="cd ~"
 alias dc="docker-compose"
 alias dots="cd ~/.config"
 alias dotsn="cd ~/.config/nvim"
@@ -54,20 +51,23 @@ alias glol="git log --oneline | gum filter"
 alias cmt='git_committer'
 alias zz="zellij --layout ~/.config/zellij/layout-classic.yaml"
 alias cc="clear"
-alias ds="cd ~/tiny/duesplit"
 alias cm="git_committer"
 alias favs="favorites"
 alias ai="chatgpt"
 alias yd="yarn dev"
-alias cool="cd ~/cool"
-alias tiny="cd ~/tiny"
 alias reyarn="rm -rf node_modules && yarn"
 alias goog="glook"
 alias notes="cd ~/notes && vim"
 
-# shortcuts to be deleted someday
+# shortcuts 
+alias home="cd ~"
 alias tf="cd ~/side/typefeel/"
 alias kcn="cd ~/work/kitco-cms-next/"
+alias cool="cd ~/cool"
+alias tiny="cd ~/tiny"
+alias ds="cd ~/tiny/duesplit"
+alias work="cd ~/work && l"
+alias side="cd ~/side && l"
 
 alias edb="edgedb $argv"
 
