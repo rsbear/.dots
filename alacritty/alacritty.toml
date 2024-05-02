@@ -1,0 +1,59 @@
+import = ["/Users/rsbear/.config/alacritty/keybinds.toml"]
+live_config_reload = true
+
+[colors.cursor]
+cursor = "#FF8066"
+text = "#000000"
+
+[colors.primary]
+foreground = "0xc0caf5"
+# background = "0x0D1116"
+# background = "0x161616" # oxocarbon
+background = "0x1A1B26"
+
+[cursor]
+blink_interval = 700
+style = "Beam"
+unfocused_hollow = true
+
+[font]
+size = 16
+
+[font.normal]
+# family = "Liga SFMono Nerd Font"
+family = "GeistMono Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 2
+y = 16
+
+[mouse]
+hide_when_typing = true
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+# [mouse.double_click]
+# threshold = 300
+
+# [mouse.triple_click]
+# threshold = 300
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[window]
+decorations = "buttonless"
+dynamic_padding = false
+opacity = 1
+
+[window.dimensions]
+columns = 113
+lines = 40
+
+[window.padding]
+x = 70
+y = 20

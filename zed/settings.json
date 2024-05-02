@@ -7,11 +7,20 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "Rosé Pine",
+  "theme": "Andromeda",
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
-  "buffer_font_size": 15,
-  "vim_mode": true
+  "buffer_font_size": 16,
+  "vim_mode": true,
+  "cursor_blink": false,
+  "tab_size": 2,
+  "buffer_font_family": "GeistMono Nerd Font",
+  // The OpenType features to enable for text in the editor.
+  "buffer_font_features": {
+    // Disable ligatures:
+    // "calt": false
+  }
+  // The default font size for text in the editor
 }

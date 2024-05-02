@@ -1,13 +1,13 @@
 import:
-  - ~/.config/alacritty/keybind.yml
+  - ~/.config/alacritty/keybinds.yml
 
 font:
   size: 16
   normal:
     # family: RobotoMono Nerd Font Mono
-    family: Liga SFMono Nerd Font
+    # family: Liga SFMono Nerd Font
     # family: SFMono Nerd Font
-    # family: BlexMono Nerd Font Mono
+    # family: GeistMono Nerd Font
     # family: Cousine Nerd Font Mono
     # family: Inconsolata Nerd Font Mono
     # family: Hasklug Nerd Font
@@ -33,8 +33,8 @@ font:
     # x: 1SF Mono
     # y: 8
     # SFMono spacing
-    x: 1
-    y: 12
+    x: 2
+    y: 14
     # Meslo spacing
     # x: 0
     # y: 5
@@ -45,7 +45,8 @@ font:
 window:
   dynamic_padding: false
   decorations: buttonless
-  opacity: 1.1
+  # opacity: 0.85
+  opacity: 1
   dimensions:
     columns: 113
     lines: 40
@@ -61,31 +62,40 @@ colors:
   cursor:
     text: "#000000"
     cursor: "#FF8066"
-  # Default colours
+
   primary:
+    foreground: '0xc0caf5'
+
     # dogrun
     # background: "0x222433" # dogrun bgc
     # foreground: "0xD4C3DB"
 
     # tokyonight
     # background: '0x24283b'
-    # foreground: '0xc0caf5'
 
     # rose-pine
-    # background: "0x191724"
-    background: "0x161616"
-    foreground: "0xc0caf5"
+    # background: "0x161616"
+
+    # github_dark_tritanopia
+    background: "0x0D1116"
+
+    # oxocarbon
+    # background: "0x161616"
+
+    # vscode
+    # background: "0x1E1E1E"
 
     # poimandres
     # background: "0x1B1D23"
-    # foreground: "0xc0caf5"
 
     # substrata
     # background: "0x191c25"
 
     # nord
     # background: '0x2E3440'
-    # foreground: '0xc0caf5'
+    
+    # catpuccin-mocha
+    # background: '0x0D1116'
 
 
 mouse:
